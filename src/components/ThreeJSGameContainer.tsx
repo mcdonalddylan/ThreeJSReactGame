@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import ReactDOM from "react-dom";
 import * as THREE from "three";
 
 interface IProps {
@@ -10,15 +9,18 @@ export const ThreeJSGameContainer: React.FC<IProps> = () => {
 
     useEffect(() => {
         // === THREE.JS CODE START ===
-        let scene = new THREE.Scene();
+        
+        // Renderer setup
         let renderer = new THREE.WebGLRenderer();
-        renderer.setSize( window.innerWidth , window.innerHeight );
+        renderer.setSize( window.innerWidth, window.innerHeight );
         document.body.appendChild( renderer.domElement );
 
         // Camera setup
         let camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
         camera.position.z = 5;
-        
+
+        let scene = new THREE.Scene();
+
         // Cube setup
         let geometry = new THREE.BoxGeometry( 2, 1.5, 1.5 );
         let material = new THREE.MeshPhongMaterial( { 
@@ -37,6 +39,9 @@ export const ThreeJSGameContainer: React.FC<IProps> = () => {
         light.position.set(-1, 2, 4);
         scene.add( light );
 
+        // Input setup
+
+
         let animate = () => {
             requestAnimationFrame( animate );
             cube.rotation.x += 0.02;
@@ -49,7 +54,7 @@ export const ThreeJSGameContainer: React.FC<IProps> = () => {
     });
 
     return (
-        <>
-        </>
+        <div style={{margin: "0 auto"}}>
+        </div>
     );
 }
