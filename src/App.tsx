@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import { ThreeJSGameContainer } from '../src/components/ThreeJSGameContainer';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { ThreeJSHomePage } from './components/ThreeJSHomePage';
 
 function App() {
   return (
@@ -13,6 +13,9 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route path='/'>
+              <ThreeJSHomePage />
+            </Route>
+            <Route path='/game'>
               <ThreeJSGameContainer />
             </Route>
           </Switch>  

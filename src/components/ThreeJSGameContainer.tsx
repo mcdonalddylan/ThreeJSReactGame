@@ -7,13 +7,13 @@ interface IProps {
 
 export const ThreeJSGameContainer: React.FC<IProps> = () => {
 
+    // Three JS code is all below
     useEffect(() => {
-        // === THREE.JS CODE START ===
         
         // Renderer setup
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
-        document.body.appendChild( renderer.domElement );
+        //document.body.appendChild( renderer.domElement );
 
         // Camera setup
         let camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -32,7 +32,6 @@ export const ThreeJSGameContainer: React.FC<IProps> = () => {
         let cube = new THREE.Mesh( geometry, material );
         scene.add( cube );
         
-        
         // Light setup
         let lightIntesity = 1;
         let light = new THREE.DirectionalLight(0xFFFFFF, lightIntesity);
@@ -50,11 +49,10 @@ export const ThreeJSGameContainer: React.FC<IProps> = () => {
         };
         
         animate();
-        // === THREE.JS EXAMPLE CODE END ===
     });
 
     return (
-        <div style={{margin: "0 auto"}}>
+        <div style={{margin: "0 auto", display: "block"}}>
         </div>
     );
 }
