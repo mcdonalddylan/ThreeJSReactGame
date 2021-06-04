@@ -7,24 +7,19 @@ import { NavBarContainer } from './components/NavBarContainer';
 function App() {
   return (
     <>
-      <header>
-        <NavBarContainer />
-      </header>
-      <body>
-        <BrowserRouter>
-          <Switch>
-            <Route path='/' exact>
-              <ThreeJSHomePage />
-            </Route>
-            <Route path='/game'>
-              <ThreeJSGameContainer />
-            </Route>
-          </Switch>  
-        </BrowserRouter>
-      </body>
-      <footer>
-
-      </footer>
+    {/* Nav Bar */}
+      <NavBarContainer />
+      {/* Browser Router */}
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' >
+            <ThreeJSHomePage />
+          </Route>
+          <Route path='/game' >
+            <ThreeJSGameContainer />
+          </Route>
+        </Switch>  
+      </BrowserRouter>
     </>
   );
 }
