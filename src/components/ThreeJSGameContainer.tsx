@@ -5,7 +5,7 @@ interface IProps {
 
 }
 
-export const ThreeJSGameContainer: React.FC<IProps> = () => {
+export const ThreeJSGameContainer: React.FC<IProps> = ( props: IProps ) => {
 
     // Three JS code is all below
     useEffect(() => {
@@ -13,7 +13,7 @@ export const ThreeJSGameContainer: React.FC<IProps> = () => {
         // Renderer setup
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
-        //document.body.appendChild( renderer.domElement );
+        document.body.appendChild( renderer.domElement );
 
         // Camera setup
         let camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
