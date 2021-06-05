@@ -1,36 +1,9 @@
 @import '../Colors.scss';
 
-.qual-btn {
-    position: relative;
-    border: 0px;
-    border-radius: 20px;
-    color: #fefefe99;
-    background-color: #55ff0011;
-    font-size: 20px;
-    padding: 30px;
-    transition: 0.3s;
-}
-
-.qual-btn:hover {
+.text-grid {
+    background-image: linear-gradient(180deg, #23232366, #34343466);
     color: $white;
-    transition: 0.3s;
-    background-color: #55ff0055;
-}
-
-.qual-btn:after {
-    content: "";
-    position: absolute;
-    background: $white;
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.5s;
-    top: 50%;
-    left: 50%;
-    padding: 300%;
-}
-
-.qual-btn:active:after {
-    opacity: 1;
-    transition: 0s;
-    padding: 0;
+    border-radius: 30px;
+    padding: 20px;
+    text-align: left;
 }

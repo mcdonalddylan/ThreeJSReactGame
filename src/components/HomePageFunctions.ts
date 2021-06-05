@@ -7,11 +7,21 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer, came
         color: 0x44ff22,
     });
     let tempBox = new THREE.Mesh( boxGeo, boxMat );
-    tempBox.position.set( 0, -0.75, 0 );
+    tempBox.position.set( 0, -0.9, -5.5 );
     scene.add( tempBox );
 
     // Input setup
-    const orbitControls = new OrbitControls( camera, renderer.domElement );
+    //const orbitControls = new OrbitControls( camera, renderer.domElement );
+
+    const moveCamera = () => {
+
+        const currentScrollPos = document.body.getBoundingClientRect().top;
+        camera.position.z = currentScrollPos * -0.02;
+        camera.rotation.y = currentScrollPos * -0.001;
+        camera.position.x = currentScrollPos * -0.01;
+    }
+
+    document.body.onscroll = moveCamera;
 
     // Adding a bunch of random green cubes everywhere
     const addCube = (): THREE.Mesh => {
@@ -27,7 +37,7 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer, came
     }
 
     let cubeArray: THREE.Mesh[] = [];
-    for(let i = 0; i < 350/quality; i++){
+    for(let i = 0; i < 500/quality; i++){
         cubeArray.push(addCube());
     }
 
@@ -53,7 +63,9 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer, came
             }
         }
 
-        orbitControls.update();
+        //orbitControls.update();
+        //console.log(`camera x: `, camera.position.x,`y: `, camera.position.y,`z: `, camera.position.z,);
+        //console.log(`box x: `, tempBox.position.x,`y: `, tempBox.position.y,`z: `, tempBox.position.z,);
 
         renderer.render( scene, camera );
     }

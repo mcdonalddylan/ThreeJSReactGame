@@ -22,7 +22,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         renderer.setPixelRatio( window.devicePixelRatio/quality );
 
         renderer.domElement.id = 'dom';
-        console.log(document.body.contains( document.getElementById( 'dom' ) ));
+        renderer.domElement.style.position = 'fixed';
         if (document.body.contains( document.getElementById( 'dom' ) ) === false) {
             document.body.append( renderer.domElement );
         } else {
@@ -36,8 +36,6 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         // Camera / Scene setup
         let scene = new THREE.Scene();
         let camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
-        camera.position.y = 0.3;
 
         // Render function babyyyyy
         renderer.render( scene, camera );
@@ -53,6 +51,28 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
     });
 
     return(
-        <></>
-    )
+        <div style={{textAlign: "center", margin: "auto", position: "absolute", zIndex: 2 }}>
+            <div className="container">
+                <div className="row justify-content-center text-grid">
+                    <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
+                </div>
+                <br></br>
+                <br></br>
+                <div className="row justify-content-center text-grid">
+                    <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
+                </div>
+                <br></br>
+                <br></br>
+                <div className="row justify-content-center text-grid">
+                    <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
+                </div>
+                <br></br>
+                <br></br>
+                <div className="row justify-content-center text-grid">
+                    <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
+                </div>
+            </div>
+        </div>
+    );
+
 }

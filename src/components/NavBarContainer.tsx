@@ -16,7 +16,7 @@ export const NavBarContainer: React.FC<IProps> = (props:IProps) => {
 
     return(
         <div className="container" style={{ textAlign: "center", margin: "auto", position: "fixed"}}>
-            <div className="row justify-content-center" style={{ zIndex: 3 }}>
+            <div className="row justify-content-center" style={{ zIndex: 100 }}>
                 <div className="col-sm-3">
                     <button onClick={()=>{
                         if(quality === 1){
