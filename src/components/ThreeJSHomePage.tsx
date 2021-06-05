@@ -51,26 +51,24 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
     });
 
     return(
-        <div style={{textAlign: "center", margin: "auto", position: "absolute", zIndex: 2 }}>
-            <div className="container">
-                <div className="row justify-content-center text-grid">
-                    <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
-                </div>
-                <br></br>
-                <br></br>
-                <div className="row justify-content-center text-grid">
-                    <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
-                </div>
-                <br></br>
-                <br></br>
-                <div className="row justify-content-center text-grid">
-                    <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
-                </div>
-                <br></br>
-                <br></br>
-                <div className="row justify-content-center text-grid">
-                    <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
-                </div>
+        <div className="container" style={{textAlign: "center", margin: "auto", position: "absolute", zIndex: 2 }}>
+            <div className="row justify-content-center text-grid">
+                <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="row justify-content-center text-grid">
+                <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="row justify-content-center text-grid">
+                <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
+            </div>
+            <br></br>
+            <br></br>
+            <div className="row justify-content-center text-grid">
+                <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
             </div>
         </div>
     );
