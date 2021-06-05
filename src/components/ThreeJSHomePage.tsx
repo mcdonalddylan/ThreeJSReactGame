@@ -22,7 +22,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         renderer.setPixelRatio( window.devicePixelRatio/quality );
 
         renderer.domElement.id = 'dom';
-        renderer.domElement.style.position = 'fixed';
+        renderer.domElement.className = 'position-fixed';
         if (document.body.contains( document.getElementById( 'dom' ) ) === false) {
             document.body.append( renderer.domElement );
         } else {
@@ -46,30 +46,74 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         // Object placement/animation/inputs
         setupObjects( scene, renderer, camera, quality );
 
-        
-
     });
 
     return(
-        <div className="container" style={{textAlign: "center", margin: "auto", position: "absolute", zIndex: 2 }}>
-            <div className="row justify-content-center text-grid">
-                <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
+        <div className="container" style={{transform: `translate(0%)`, position: "absolute", zIndex: 2 }}>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
+            <div className="row justify-content-center">
+                <div className="col-sm-8 text-grid" >
+                    <h1 style={{textAlign: "center", margin: "auto", fontSize: 50}}>
+                        Dylan McDonald
+                    </h1>
+                    <hr style={{width: "70%", textAlign: "center", margin: "auto", marginTop: 20, marginBottom: 10}}></hr>
+                    <h3 style={{textAlign: "center", marginBottom: 30}}>
+                        React & Java Developer  |  Game Developer
+                    </h3>
+                    <div className="row justify-content-center" style={{margin: "auto", textAlign: "center"}}>
+                        <div className="col-sm-3">
+                            Resume
+                        </div>
+                        <div className="col-sm-3">
+                            Linked-in
+                        </div>
+                        <div className="col-sm-3">
+                            Email
+                        </div>
+                        <div className="col-sm-3">
+                            GitHub
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <br></br>
             <br></br>
-            <div className="row justify-content-center text-grid">
-                <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
-            </div>
             <br></br>
             <br></br>
-            <div className="row justify-content-center text-grid">
-                <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
-            </div>
             <br></br>
             <br></br>
-            <div className="row justify-content-center text-grid">
-                <h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1><h1>ayy</h1>
-            </div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
         </div>
     );
 

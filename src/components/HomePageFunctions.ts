@@ -37,7 +37,7 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer, came
     }
 
     let cubeArray: THREE.Mesh[] = [];
-    for(let i = 0; i < 500/quality; i++){
+    for(let i = 0; i < 600/(quality*2); i++){
         cubeArray.push(addCube());
     }
 
@@ -49,13 +49,14 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer, came
         tempBox.rotation.y += 0.015;
 
         // animating the background cubes
-        for(let i = 0; i < 350/quality; i++){
-            cubeArray[i].position.y += 0.03;
+        for(let i = 0; i < 600/(quality*2); i++){
 
             if(i%2 === 0){
                 cubeArray[i].rotation.x += 0.02;
+                cubeArray[i].position.y += 0.02;
             } else {
                 cubeArray[i].rotation.x -= 0.02;
+                cubeArray[i].position.y += 0.03;
             }
             
             if(cubeArray[i].position.y > 80){

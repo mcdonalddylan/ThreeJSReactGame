@@ -7,8 +7,6 @@ import { NavBarContainer } from './components/NavBarContainer';
 function App() {
   return (
     <>
-    {/* Nav Bar */}
-      <NavBarContainer />
       {/* Browser Router */}
       <BrowserRouter>
         <Switch>
@@ -20,6 +18,8 @@ function App() {
           </Route>
         </Switch>  
       </BrowserRouter>
+      {/* Nav Bar */}
+      <NavBarContainer />
     </>
   );
 }

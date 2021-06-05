@@ -15,12 +15,12 @@ export const NavBarContainer: React.FC<IProps> = (props:IProps) => {
     console.log(`quality: `, quality);
 
     return(
-        <div className="container" style={{ textAlign: "center", margin: "auto", position: "fixed"}}>
-            <div className="row justify-content-center" style={{ zIndex: 100 }}>
-                <div className="col-sm-3">
+        <div className="container position-fixed" style={{ textAlign: "center", margin: "auto", zIndex: 100 }}>
+            <div className="row justify-content-center" >
+                <div className="col-sm-3" >
                     <button onClick={()=>{
                         if(quality === 1){
-                            dispatch(setQuality(2));
+                            dispatch(setQuality(2.5));
                         } else {
                             dispatch(setQuality(1));
                         }
