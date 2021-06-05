@@ -12,7 +12,7 @@ export const NavBarContainer: React.FC<IProps> = (props:IProps) => {
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
     const dispatch = useDispatch();
-    console.log(`quality: `, quality);
+    //console.log(`quality: `, quality);
 
     return(
         <div className="container position-fixed" style={{ textAlign: "center", margin: "auto", zIndex: 100 }}>

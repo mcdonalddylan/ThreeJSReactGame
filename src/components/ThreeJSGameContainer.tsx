@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import * as THREE from "three";
+import { IState } from '..';
 
 interface IProps {
 
@@ -7,13 +9,27 @@ interface IProps {
 
 export const ThreeJSGameContainer: React.FC<IProps> = ( props: IProps ) => {
 
+    const quality: any = useSelector<IState>(state=>state.qualityState);
+
     // Three JS code is all below
     useEffect(() => {
         
         // Renderer setup
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
-        document.body.appendChild( renderer.domElement );
+        renderer.setPixelRatio( window.devicePixelRatio/quality );
+        
+        renderer.domElement.id = 'dom';
+        renderer.domElement.className = 'position-fixed';
+        if (document.body.contains( document.getElementById( 'dom' ) ) === false) {
+            document.body.append( renderer.domElement );
+        } else {
+            const dom = document.getElementById('dom');
+            if(dom !== null) {
+                document.body.removeChild( dom );
+                document.body.append( renderer.domElement );
+            } 
+        }
 
         // Camera setup
         let camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );

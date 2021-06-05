@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as THREE from "three";
 import { setupLights, setupObjects } from './HomePageFunctions';
 import '../components/HomePage.scss';
 import { useSelector } from 'react-redux';
 import { IState } from '..';
+import { WEBGL } from './WebGL';
 
 interface IProps {
 
@@ -12,14 +13,24 @@ interface IProps {
 export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
-    //console.log(`quality: `, quality);
+    const [refresh, setRefresh] = useState(false);
 
     useEffect(()=>{
+
+    if ( WEBGL.isWebGLAvailable() ) { 
 
         // Renderer setup
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight);
         renderer.setPixelRatio( window.devicePixelRatio/quality );
+
+        let mobileAspectRatio = false;
+        if(window.innerHeight > window.innerWidth) {
+            mobileAspectRatio = true;
+        } else {
+            mobileAspectRatio = false;
+        }
+        console.log('mobile AR?: ', mobileAspectRatio);
 
         renderer.domElement.id = 'dom';
         renderer.domElement.className = 'position-fixed';
@@ -32,6 +43,12 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                 document.body.append( renderer.domElement );
             } 
         }
+        
+        window.onresize = () => {
+            console.log('You just resized the window');
+            renderer.setSize( window.innerWidth, window.innerHeight);
+            setRefresh(!refresh);
+        };
 
         // Camera / Scene setup
         let scene = new THREE.Scene();
@@ -44,7 +61,12 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         setupLights( scene );
         
         // Object placement/animation/inputs
-        setupObjects( scene, renderer, camera, quality );
+        setupObjects( scene, renderer, camera, quality, mobileAspectRatio );
+    } else {
+        
+        const warning = WEBGL.getWebGLErrorMessage();
+        document.body.appendChild( warning );
+    }
 
     });
 
