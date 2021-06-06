@@ -1,2 +1,0 @@
-.qual-btn:after{top:50%;left:50%;padding:300%}.qual-btn{position:relative;border:0;border-radius:20px;color:hsla(0,0%,99.6%,.6);background-color:rgba(85,255,0,.06666666666666667);font-size:20px;padding:30px;transition:.3s}.qual-btn:hover{color:#fefefe;transition:.3s;background-color:rgba(85,255,0,.3333333333333333)}.qual-btn:after{content:"";position:absolute;background:#fefefe;border-radius:50%;opacity:0;transition:all .5s;top:0;left:0;padding:50%}.qual-btn:active:after{opacity:1;transition:0s;top:50%;left:50%;padding:0}
-/*# sourceMappingURL=main.fbb4d874.chunk.css.map */
