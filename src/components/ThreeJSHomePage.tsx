@@ -46,7 +46,6 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         window.onresize = () => {
             console.log('You just resized the window');
             renderer.setSize( window.innerWidth, window.innerHeight);
-            window.scrollTo(0,0);
             setRefresh(!refresh);
         };
 
