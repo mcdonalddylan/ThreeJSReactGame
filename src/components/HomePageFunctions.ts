@@ -70,28 +70,12 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
     const rectMat = new THREE.MeshBasicMaterial({
         color: 0x007700,
     });
-    const rectsVert: THREE.Mesh[] = [
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat),
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat),
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat),
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat),
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat),
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat),
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat),
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat),
-        new THREE.Mesh(rectGeo, rectMat), new THREE.Mesh(rectGeo, rectMat)
-    ];
-    const rectsHori: THREE.Mesh[] = [
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat),
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat),
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat),
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat),
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat),
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat),
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat),
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat),
-        new THREE.Mesh(rectGeo2, rectMat), new THREE.Mesh(rectGeo2, rectMat)
-    ];
+    let rectsVert: THREE.Mesh[] = [];
+    let rectsHori: THREE.Mesh[] = [];
+    for(let y = 0; y < 18; y++){
+        rectsVert.push(new THREE.Mesh(rectGeo, rectMat));
+        rectsHori.push(new THREE.Mesh(rectGeo2, rectMat));
+    }
     
     for(let k = 0; k < rectsVert.length; k++){
         rectsVert[k].scale.y = 300;
@@ -100,7 +84,7 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
         rectsVert[k].position.y = -480;
         scene.add(rectsVert[k]);
 
-        rectsHori[k].scale.x = 170;
+        rectsHori[k].scale.x = 180;
         rectsHori[k].position.x = -1500;
         rectsHori[k].position.z = -75;
         rectsHori[k].position.y = -110+(10*k);
@@ -138,7 +122,7 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
                 rectsVert[j].position.z = -75;
                 rectsVert[j].position.y = -480;
 
-                rectsHori[j].scale.x = 170;
+                rectsHori[j].scale.x = 180;
                 rectsHori[j].position.x = -1500;
                 rectsHori[j].position.z = -75;
                 rectsHori[j].position.y = -110+(10*j);
@@ -210,7 +194,7 @@ const scrollFadeAnimations = (currentScrollPos: number) => {
         if (second?.classList.contains('fade-in') === false){
             second?.classList.add('fade-in');
         }  
-    } else if( currentScrollPos < -700 && currentScrollPos >= -1100 ){
+    } else if( currentScrollPos < -700 && currentScrollPos >= -1050 ){
         second?.classList.remove('fade-in');
         if (second?.classList.contains('fade-out') === false){
             second?.classList.add('fade-out');
@@ -220,12 +204,12 @@ const scrollFadeAnimations = (currentScrollPos: number) => {
         if (third?.classList.contains('fade-out') === false){
             third?.classList.add('fade-out');
         }
-    } else if( currentScrollPos < -1100 && currentScrollPos >= -1300 ){
+    } else if( currentScrollPos < -1050 && currentScrollPos >= -1350 ){
         third?.classList.remove('fade-out');
         if (third?.classList.contains('fade-in') === false){
             third?.classList.add('fade-in');
         } 
-    } else if( currentScrollPos < -1300 && currentScrollPos >= -1650 ){
+    } else if( currentScrollPos < -1350 && currentScrollPos >= -1550 ){
         third?.classList.remove('fade-in');
         if (third?.classList.contains('fade-out') === false){
             third?.classList.add('fade-out');
@@ -235,7 +219,7 @@ const scrollFadeAnimations = (currentScrollPos: number) => {
         if (fourth?.classList.contains('fade-out') === false){
             fourth?.classList.add('fade-out');
         } 
-    } else if( currentScrollPos < -1650 && currentScrollPos >= -2000 ){
+    } else if( currentScrollPos < -1550 && currentScrollPos >= -2000 ){
         fourth?.classList.remove('fade-out');
         if (fourth?.classList.contains('fade-in') === false){
             fourth?.classList.add('fade-in');

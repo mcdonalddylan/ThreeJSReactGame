@@ -124,7 +124,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
             <div className="row justify-content-center">
                 <div className="col-sm-8 text-grid" id="second" >
-                    <a href='www.google.com' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
+                    <a href='web' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
                         Check out my web development work!
                     </a>
                 </div>
@@ -148,7 +148,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             
             <div className="row justify-content-center">
                 <div className="col-sm-8 text-grid" id="third" >
-                    <a href='www.google.com' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
+                    <a href='game' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
                         Check out my game development work!
                     </a>
                 </div>
@@ -172,7 +172,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
             <div className="row justify-content-center">
                 <div className="col-sm-8 text-grid" id="fourth" >
-                    <a href='www.google.com' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
+                    <a href='art' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
                         Check out my art!
                     </a>
                 </div>

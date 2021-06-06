@@ -10,7 +10,7 @@ function App() {
       {/* Browser Router */}
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' >
+          <Route path={process.env.PUBLIC_URL} >
             <ThreeJSHomePage />
           </Route>
           <Route path='/game' >
