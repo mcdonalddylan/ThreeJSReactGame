@@ -30,7 +30,6 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         } else {
             mobileAspectRatio = false;
         }
-        console.log('mobile AR?: ', mobileAspectRatio);
 
         renderer.domElement.id = 'dom';
         renderer.domElement.className = 'position-fixed';
@@ -47,6 +46,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         window.onresize = () => {
             console.log('You just resized the window');
             renderer.setSize( window.innerWidth, window.innerHeight);
+            window.scrollTo(0,0);
             setRefresh(!refresh);
         };
 
@@ -62,6 +62,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
         
         // Object placement/animation/inputs
         setupObjects( scene, renderer, camera, quality, mobileAspectRatio );
+
     } else {
         
         const warning = WEBGL.getWebGLErrorMessage();
@@ -79,7 +80,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <br></br>
             
             <div className="row justify-content-center">
-                <div className="col-sm-8 text-grid" >
+                <div className="col-sm-8 text-grid" id="first" >
                     <h1 style={{textAlign: "center", margin: "auto", fontSize: 50}}>
                         Dylan McDonald
                     </h1>
@@ -106,6 +107,77 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
             <br></br>
             <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <div className="row justify-content-center">
+                <div className="col-sm-8 text-grid" id="second" >
+                    <a href='www.google.com' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
+                        Check out my web development work!
+                    </a>
+                </div>
+            </div>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
+            <div className="row justify-content-center">
+                <div className="col-sm-8 text-grid" id="third" >
+                    <a href='www.google.com' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
+                        Check out my game development work!
+                    </a>
+                </div>
+            </div>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <div className="row justify-content-center">
+                <div className="col-sm-8 text-grid" id="fourth" >
+                    <a href='www.google.com' style={{textAlign: "center", margin: "auto", fontSize: 70}}>
+                        Check out my art!
+                    </a>
+                </div>
+            </div>
+
             <br></br>
             <br></br>
             <br></br>

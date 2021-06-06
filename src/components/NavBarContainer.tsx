@@ -20,8 +20,10 @@ export const NavBarContainer: React.FC<IProps> = (props:IProps) => {
                 <div className="col-sm-3" >
                     <button onClick={()=>{
                         if(quality === 1){
+                            window.scrollTo(0,0);
                             dispatch(setQuality(2.5));
                         } else {
+                            window.scrollTo(0,0);
                             dispatch(setQuality(1));
                         }
                     }} className="qual-btn" >Quality</button>
