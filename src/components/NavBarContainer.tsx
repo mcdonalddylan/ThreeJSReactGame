@@ -15,9 +15,9 @@ export const NavBarContainer: React.FC<IProps> = (props:IProps) => {
     console.log(process.env.PUBLIC_URL);
 
     return(
-        <div className="container position-fixed" style={{ textAlign: "center", margin: "auto", zIndex: 100 }}>
+        <div className="container position-fixed" style={{ left: '50%', transform: 'translate(-50%, 0)', zIndex: 10 }}>
             <div className="row justify-content-center" >
-                <div className="col-sm-3" >
+                <div className="col-sm-3 center-block" >
                     <button onClick={()=>{
                         if(quality === 1){
                             window.scrollTo(0,0);

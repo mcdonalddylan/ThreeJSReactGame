@@ -71,7 +71,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
     });
 
     return(
-        <div className="container" style={{transform: `translate(0%)`, position: "absolute", zIndex: 2 }}>
+        <div className="container position-absolute" style={{right: 0, left: "50%", transform: `translate(-50%)`, zIndex: 2 }}>
             <br></br>
             <br></br>
             <br></br>
@@ -79,7 +79,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <br></br>
             
             <div className="row justify-content-center">
-                <div className="col-sm-8 text-grid" id="first" >
+                <div className="col-sm-8 text-grid center-block" id="first" >
                     <h1 style={{textAlign: "center", margin: "auto", fontSize: 50}}>
                         Dylan McDonald
                     </h1>
