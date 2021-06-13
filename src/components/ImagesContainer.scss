@@ -1,0 +1,46 @@
+@import '../Colors.scss';
+
+.imgs {
+    border-radius: 8px;
+    border: 0;
+    display: inline-block;
+    height: 95px;
+    width: 95px;
+    margin: 2.5px;
+    overflow: hidden;
+    transition: 0.2s all;
+}
+
+.imgs:hover {
+    transition: 0.2s all;
+    transform: scale(1.2);
+    z-index: 11;
+}
+
+.imgs-shrink {
+    max-height: 200px;
+    top: 0;
+    left: 0;
+    transform: translate(-25%,-25%);
+}
+
+.img-container {
+    margin: 5px;
+    height: 200px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 21;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000088;
+}
+
+.img-overlay {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}

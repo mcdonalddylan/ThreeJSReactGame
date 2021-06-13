@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer, 
     camera: THREE.Camera, quality: any, mobileAspectRatio: boolean ) => {
@@ -24,22 +23,37 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
     let tempBox = new THREE.Mesh( boxGeo, boxMat );
     tempBox.position.set( boxXPos, -0.9, -5.5 );
 
-    let planeGeo = new THREE.PlaneGeometry( planeSize, planeSize, 1 );
-    let tempPlane = new THREE.Mesh( planeGeo, boxMat );
-    tempPlane.position.set( planeXPos, -0.9, -5.5 );
+    let fPlaneGeo = new THREE.PlaneGeometry( planeSize, planeSize, 1 );
+    let firstPlane = new THREE.Mesh( fPlaneGeo, boxMat );
+    firstPlane.position.set( planeXPos, -0.9, -5.5 );
+
+    let triGeo = new THREE.ConeGeometry( 0.6, 0.6 );
+    let triMesh = new THREE.Mesh(triGeo, boxMat);
+    triMesh.position.set( 0.8, -3.95, -5 );
+
+    let torGeo = new THREE.TorusGeometry( 0.2, 0.2 );
+    let torMesh = new THREE.Mesh(torGeo, boxMat);
+    torMesh.position.set( 8.5, -7.2, -3 );
+
+    let sphGeo = new THREE.SphereGeometry( 0.3, 5, 5 );
+    let sphMesh = new THREE.Mesh(sphGeo, boxMat);
+    sphMesh.position.set( 15.8, -10.25, -3.5 );
 
     scene.add( tempBox );
-    scene.add( tempPlane );
+    scene.add( firstPlane );
+    scene.add( triMesh );
+    scene.add( torMesh );
+    scene.add( sphMesh );
 
     // Input setup
     const moveCamera = () => {
 
         const currentScrollPos = document.body.getBoundingClientRect().top;
 
-        camera.rotation.y = currentScrollPos * -0.0018;
-        camera.position.z = currentScrollPos * -0.005;
+        camera.rotation.y = currentScrollPos * -0.0019;
+        camera.position.z = currentScrollPos * 0.004;
         camera.position.x = currentScrollPos * -0.01;
-        camera.position.y = currentScrollPos * 0.005;
+        camera.position.y = currentScrollPos * 0.006;
 
         scrollFadeAnimations(currentScrollPos);
     }
@@ -95,6 +109,7 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
     // Animation setup
     let acceleration = 1;
     const animate = () => {
+
         requestAnimationFrame( animate );
 
         tempBox.rotation.x += 0.01;
@@ -103,7 +118,7 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
         // animating the background grid rectangles
         for(let j = 0; j < rectsVert.length; j++){
             
-            if(rectsVert[j].position.y < 100){
+            if(rectsVert[j].position.y < 200){
                 rectsVert[j].scale.y -= 0.35;
                 rectsVert[j].position.y += 2;
 
@@ -112,7 +127,8 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
 
                 if(rectsHori[j].position.x > - 200){
                     acceleration -= 0.004;
-                } else if (acceleration <= 0.1){
+                }
+                if (acceleration <= 0.1){
                     acceleration = 0.1;
                 }
             } else {
@@ -167,7 +183,7 @@ export const setupLights = ( scene: THREE.Scene ) => {
 
 const scrollFadeAnimations = (currentScrollPos: number) => {
 
-    console.log(`current scroll position: `, currentScrollPos);
+    //console.log(`current scroll position: `, currentScrollPos);
 
     const first = document.getElementById('first');
     const second = document.getElementById('second');
