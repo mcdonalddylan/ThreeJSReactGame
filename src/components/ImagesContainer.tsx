@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { SyntheticEvent } from 'react';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setOverlay } from '../redux/imgActions';
 import './ImagesContainer.scss';
 
 interface IProps {
@@ -12,26 +14,12 @@ interface IProps {
 
 export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
 
-    const [imgGrow, setImgGrow] = useState(false);
-    const [overlayImgSrc, setOverlayImgSrc] = useState('');
-
-    useEffect(()=>{
-
-        console.log('imgGrow: ', imgGrow);
-        if(imgGrow){
-            document.body.style.position = 'relative';
-            document.body.style.overflowY = 'hidden';
-        } else {
-            document.body.style.position = 'static';
-            document.body.style.overflowY = 'scroll';
-        }
-    });
+    const dispatch = useDispatch();
 
     const overlayImage = (event: any) => {
 
         const image: HTMLImageElement = event.target;
-        setOverlayImgSrc(image.src);
-        setImgGrow(!imgGrow);
+        dispatch(setOverlay({canOverlay: true, src: image.src}));
     };
 
     return (
@@ -53,15 +41,6 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                     <img className='imgs-shrink' src={props.image4} onClick={overlayImage}/>
                 </div>
             </div>
-
-            {imgGrow ? 
-            <div className='overlay'>
-                <img alt='image' className='img-overlay' id='big-img'
-                src={overlayImgSrc} 
-                onClick={()=>setImgGrow(!imgGrow)}/>
-            </div> 
-            : 
-            <></>}
         </div>
     )
 }
