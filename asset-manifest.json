@@ -1,25 +1,33 @@
 {
   "files": {
-    "main.css": "/ThreeJSReactSite/static/css/main.ef3ffbfa.chunk.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.2ecbdcf7.chunk.js",
-    "main.js.map": "/ThreeJSReactSite/static/js/main.2ecbdcf7.chunk.js.map",
-    "runtime-main.js": "/ThreeJSReactSite/static/js/runtime-main.8c411675.js",
-    "runtime-main.js.map": "/ThreeJSReactSite/static/js/runtime-main.8c411675.js.map",
+    "main.css": "/ThreeJSReactSite/static/css/main.53e52184.chunk.css",
+    "main.js": "/ThreeJSReactSite/static/js/main.4777c84f.chunk.js",
+    "main.js.map": "/ThreeJSReactSite/static/js/main.4777c84f.chunk.js.map",
+    "runtime-main.js": "/ThreeJSReactSite/static/js/runtime-main.55df3f01.js",
+    "runtime-main.js.map": "/ThreeJSReactSite/static/js/runtime-main.55df3f01.js.map",
     "static/css/2.4f8976c6.chunk.css": "/ThreeJSReactSite/static/css/2.4f8976c6.chunk.css",
-    "static/js/2.6e31b57c.chunk.js": "/ThreeJSReactSite/static/js/2.6e31b57c.chunk.js",
-    "static/js/2.6e31b57c.chunk.js.map": "/ThreeJSReactSite/static/js/2.6e31b57c.chunk.js.map",
-    "static/js/3.9c45f616.chunk.js": "/ThreeJSReactSite/static/js/3.9c45f616.chunk.js",
-    "static/js/3.9c45f616.chunk.js.map": "/ThreeJSReactSite/static/js/3.9c45f616.chunk.js.map",
+    "static/js/2.22b453a4.chunk.js": "/ThreeJSReactSite/static/js/2.22b453a4.chunk.js",
+    "static/js/2.22b453a4.chunk.js.map": "/ThreeJSReactSite/static/js/2.22b453a4.chunk.js.map",
+    "static/js/3.786fdcb3.chunk.js": "/ThreeJSReactSite/static/js/3.786fdcb3.chunk.js",
+    "static/js/3.786fdcb3.chunk.js.map": "/ThreeJSReactSite/static/js/3.786fdcb3.chunk.js.map",
     "index.html": "/ThreeJSReactSite/index.html",
     "static/css/2.4f8976c6.chunk.css.map": "/ThreeJSReactSite/static/css/2.4f8976c6.chunk.css.map",
-    "static/css/main.ef3ffbfa.chunk.css.map": "/ThreeJSReactSite/static/css/main.ef3ffbfa.chunk.css.map",
-    "static/js/2.6e31b57c.chunk.js.LICENSE.txt": "/ThreeJSReactSite/static/js/2.6e31b57c.chunk.js.LICENSE.txt"
+    "static/css/main.53e52184.chunk.css.map": "/ThreeJSReactSite/static/css/main.53e52184.chunk.css.map",
+    "static/js/2.22b453a4.chunk.js.LICENSE.txt": "/ThreeJSReactSite/static/js/2.22b453a4.chunk.js.LICENSE.txt",
+    "static/media/FoodGenerator2.9233a511.jpg": "/ThreeJSReactSite/static/media/FoodGenerator2.9233a511.jpg",
+    "static/media/emailLogo.295ca668.svg": "/ThreeJSReactSite/static/media/emailLogo.295ca668.svg",
+    "static/media/foodar1.a3675904.jpg": "/ThreeJSReactSite/static/media/foodar1.a3675904.jpg",
+    "static/media/githubLogo.68d37403.svg": "/ThreeJSReactSite/static/media/githubLogo.68d37403.svg",
+    "static/media/mochiCircle6.e3e56cfe.jpg": "/ThreeJSReactSite/static/media/mochiCircle6.e3e56cfe.jpg",
+    "static/media/push-up2.0_2.03c0fbbf.jpg": "/ThreeJSReactSite/static/media/push-up2.0_2.03c0fbbf.jpg",
+    "static/media/resumeLogo.8a8abea7.svg": "/ThreeJSReactSite/static/media/resumeLogo.8a8abea7.svg",
+    "static/media/tieLogo.44bc0bf1.svg": "/ThreeJSReactSite/static/media/tieLogo.44bc0bf1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8c411675.js",
+    "static/js/runtime-main.55df3f01.js",
     "static/css/2.4f8976c6.chunk.css",
-    "static/js/2.6e31b57c.chunk.js",
-    "static/css/main.ef3ffbfa.chunk.css",
-    "static/js/main.2ecbdcf7.chunk.js"
+    "static/js/2.22b453a4.chunk.js",
+    "static/css/main.53e52184.chunk.css",
+    "static/js/main.4777c84f.chunk.js"
   ]
 }
