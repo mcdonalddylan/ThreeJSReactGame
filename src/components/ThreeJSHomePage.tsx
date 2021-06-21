@@ -15,6 +15,7 @@ import webImg1 from '../assets/web images/push-up2.0_2.jpg';
 import webImg2 from '../assets/web images/FoodGenerator2.jpg';
 import webImg3 from '../assets/web images/mochiCircle6.jpg';
 import webImg4 from '../assets/web images/foodar1.jpg';
+import { Redirect } from 'react-router-dom';
 
 interface IProps {
 
@@ -24,9 +25,13 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
     const [refresh, setRefresh] = useState(false);
+    const [webRedirect, setWebRedirect] = useState(false);
+    const [gameRedirect, setGameRedirect] = useState(false);
+    const [artRedirect, setArtRedirect] = useState(false);
 
     useEffect(()=>{
 
+    console.log(webRedirect);
     if ( WEBGL.isWebGLAvailable() ) { 
 
         // Renderer setup
@@ -170,7 +175,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
             <div className="row justify-content-center text-grid fade-out wobble" id="second" onClick={wobbleToggle}>
                 <div className="col-sm-8 my-auto" >
-                    <a href='/web' className="larger-link">
+                    <a className="larger-link" onClick={()=>setWebRedirect(true)}>
                         Check out my web development work!
                     </a>
                 </div>
@@ -202,7 +207,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             
             <div className="row justify-content-center text-grid fade-out wobble" id="third" onClick={wobbleToggle}>
                 <div className="col-sm-8" >
-                    <a href='game' className="larger-link">
+                    <a className="larger-link" onClick={()=>setGameRedirect(true)}>
                         Check out my game development work!
                     </a>
                 </div>
@@ -229,7 +234,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
             <div className="row justify-content-center text-grid fade-out wobble" id="fourth" onClick={wobbleToggle}>
                 <div className="col-sm-8" >
-                    <a href='art' className="larger-link">
+                    <a className="larger-link" onClick={()=>setArtRedirect(true)}>
                         Check out my art!
                     </a>
                 </div>
@@ -268,6 +273,9 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <br></br>
             <br></br>
             <br></br>
+            {webRedirect ? <Redirect to='/web' /> : <></>}
+            {gameRedirect ? <Redirect to='/game' /> : <></>}
+            {artRedirect ? <Redirect to='/art' /> : <></>}
         </div>
     );
 
