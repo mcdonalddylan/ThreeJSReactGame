@@ -6,6 +6,7 @@ import * as THREE from 'three';
 import { IState } from '..';
 import { setupLights } from './HomePageFunctions';
 import { WEBGL } from './WebGL';
+import fontJson from '../assets/fonts/LieraSans-Bold-msdf.json';
 
 export const ThreeJSErrorPage: React.FC = () => {
     
@@ -15,7 +16,7 @@ export const ThreeJSErrorPage: React.FC = () => {
     useEffect(()=>{
         if (WEBGL.isWebGLAvailable()){
 
-            // Renderer setup
+        // Renderer setup
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight);
         renderer.setPixelRatio( window.devicePixelRatio/quality );
@@ -52,24 +53,28 @@ export const ThreeJSErrorPage: React.FC = () => {
         // Light setup
         setupLights( scene );
 
-        const errorText = new THREE.FontLoader().load('/examples/fonts/helvetiker_regular.typeface.json', font=>{
-            const textGeo = new THREE.TextGeometry('ERROR: Page not found', {
-                font: font,
-                size: 80,
-                height: 5,
-                curveSegments: Math.floor(3/quality)
-            });
-            textGeo.center();
+        let textMesh: THREE.Mesh | undefined;
+        const loader = new THREE.FontLoader();
+        let font = loader.parse(fontJson);
+        let textGeo = new THREE.TextGeometry('ERROR PAGE', {
+            font: font,
+            size: 80,
+            height: 5,
+            curveSegments: Math.floor(3/quality)
+        });
+    
+        const basicMat = new THREE.MeshPhongMaterial({color: 0x00ff00});
+        textMesh = new THREE.Mesh(textGeo, basicMat);
+        //textMesh.rotation.x = 340;
+        scene.add( textMesh );
 
+        // Render function babyyyyy
+        renderer.render( scene, camera );
 
-            const basicMat = new THREE.MeshPhongMaterial({color: 0x00ff00});
-            let textMesh = new THREE.Mesh(textGeo, basicMat);
-            textMesh.rotation.x = 340;
-            scene.add( textMesh );
+        const animate = () => {
+            requestAnimationFrame( animate );
 
-            const animate = () => {
-                requestAnimationFrame( animate );
-
+            if (textMesh !== undefined){
                 console.log(textMesh.rotation.x%360);
                 console.log(textMesh.rotation.x);
                 if (textMesh.rotation.x >= 350 ){
@@ -77,13 +82,11 @@ export const ThreeJSErrorPage: React.FC = () => {
                 } else {
                     textMesh.rotation.x += 1;
                 }
-
-                // Render function babyyyyy
-                renderer.render( scene, camera );
             }
 
-            animate();
-        });
+            renderer.render( scene, camera );
+        }
+        //animate();
 
         } else {
             const warning = WEBGL.getWebGLErrorMessage();
@@ -92,8 +95,7 @@ export const ThreeJSErrorPage: React.FC = () => {
     })
     
     return(
-        <>
-
-        </>
+        <div style={{margin: "0 auto", display: "block"}}>
+        </div>
     )
 }

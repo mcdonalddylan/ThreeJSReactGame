@@ -12,7 +12,6 @@ export const NavBarContainer: React.FC<IProps> = (props:IProps) => {
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
     const dispatch = useDispatch();
-    console.log(process.env.PUBLIC_URL);
 
     return(
         <div className="container-fluid nav-container">

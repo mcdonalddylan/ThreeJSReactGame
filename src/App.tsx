@@ -29,10 +29,10 @@ function App() {
     {/* Hash Router (So that you can navigate on github pages) */}
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route path='/' component={ThreeJSHomePage} />
-          <Route path='/web' component={ThreeJSGameContainer} />
-          <Route path='/game' component={ThreeJSGameContainer} />
-          <Route path='/art' component={ThreeJSGameContainer} />
+          <Route exact path='/' component={ThreeJSHomePage} />
+          <Route exact path='/web' component={ThreeJSGameContainer} />
+          <Route exact path='/game' component={ThreeJSGameContainer} />
+          <Route exact path='/art' component={ThreeJSGameContainer} />
           {/* Error Page */}
           <Route component={ThreeJSErrorPage} /> 
         </Switch>  
