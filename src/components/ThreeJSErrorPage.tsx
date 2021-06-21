@@ -2,7 +2,7 @@ import { request } from 'https';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import THREE from 'three';
+import * as THREE from 'three';
 import { IState } from '..';
 import { setupLights } from './HomePageFunctions';
 import { WEBGL } from './WebGL';
