@@ -3,6 +3,10 @@
   "homepage": "https://mcdonalddylan.github.io/ThreeJSReactSite",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcdonalddylan/ThreeJSReactSite.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",

@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+Sitemap: https://github.com/mcdonalddylan/ThreeJSReactSite/blob/main/public/sitemap.txt

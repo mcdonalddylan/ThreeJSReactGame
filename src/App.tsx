@@ -25,11 +25,9 @@ function App() {
   return (
     <>
       {/* Browser Router */}
-      <BrowserRouter basename='/ThreeJSReactSite'>
+      <BrowserRouter>
         <Switch>
-          <Route path={process.env.PUBLIC_URL} >
-            <ThreeJSHomePage />
-          </Route>
+          <Route path={process.env.PUBLIC_URL} component={ThreeJSHomePage} />
           <Route path={`${process.env.PUBLIC_URL}/web`} component={ThreeJSGameContainer} />
           <Route path={`${process.env.PUBLIC_URL}/game`} >
             <ThreeJSGameContainer />
