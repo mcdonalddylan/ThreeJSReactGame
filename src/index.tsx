@@ -8,6 +8,7 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { IImageState, imgReducer } from './redux/imgReducer';
+import { Router } from 'react-router-dom';
 
 export interface IState {
   qualityState: number,

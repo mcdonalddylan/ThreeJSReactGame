@@ -1,11 +1,13 @@
 import { ThreeJSGameContainer } from '../src/components/ThreeJSGameContainer';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 import { ThreeJSHomePage } from './components/ThreeJSHomePage';
 import { NavBarContainer } from './components/NavBarContainer';
 import { useDispatch, useSelector } from 'react-redux';
 import { IState } from '.';
 import { setOverlay } from './redux/imgActions';
 import { useEffect } from 'react';
+import { NOTFOUND } from 'dns';
+import { ThreeJSErrorPage } from './components/ThreeJSErrorPage';
 
 function App() {
 
@@ -24,19 +26,17 @@ function App() {
 
   return (
     <>
-      {/* Browser Router */}
-      <BrowserRouter>
+    {/* Hash Router (So that you can navigate on github pages) */}
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route path={process.env.PUBLIC_URL} component={ThreeJSHomePage} />
-          <Route path={`${process.env.PUBLIC_URL}/web`} component={ThreeJSGameContainer} />
-          <Route path={`${process.env.PUBLIC_URL}/game`} >
-            <ThreeJSGameContainer />
-          </Route>
-          <Route path={`${process.env.PUBLIC_URL}/art`} >
-            <ThreeJSGameContainer />
-          </Route>
+          <Route path='/' component={ThreeJSHomePage} />
+          <Route path='/web' component={ThreeJSGameContainer} />
+          <Route path='/game' component={ThreeJSGameContainer} />
+          <Route path='/art' component={ThreeJSGameContainer} />
+          {/* Error Page */}
+          <Route component={ThreeJSErrorPage} /> 
         </Switch>  
-      </BrowserRouter>
+      </HashRouter>
       {/* Nav Bar */}
       <NavBarContainer />
 
