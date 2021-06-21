@@ -170,7 +170,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
             <div className="row justify-content-center text-grid fade-out wobble" id="second" onClick={wobbleToggle}>
                 <div className="col-sm-8 my-auto" >
-                    <a href='web' className="larger-link">
+                    <a href='/web' className="larger-link">
                         Check out my web development work!
                     </a>
                 </div>

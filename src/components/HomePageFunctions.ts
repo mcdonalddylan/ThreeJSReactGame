@@ -118,7 +118,7 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
         // animating the background grid rectangles
         for(let j = 0; j < rectsVert.length; j++){
             
-            if(rectsVert[j].position.y < 200){
+            if(rectsVert[j].position.y < 275){
                 rectsVert[j].scale.y -= 0.35;
                 rectsVert[j].position.y += 2;
 
