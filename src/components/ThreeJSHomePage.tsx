@@ -181,10 +181,8 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                 </div>
                 <div className="col-sm-4" >
                     <ImagesContainer
-                        image1={webImg1}
-                        image2={webImg2}
-                        image3={webImg3}
-                        image4={webImg4}
+                        images={[webImg1, webImg2, webImg3, webImg4]}
+                        redirectString={'/web'}
                     />
                 </div>
             </div>

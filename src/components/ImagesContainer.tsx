@@ -1,46 +1,48 @@
 import React, { useState } from 'react';
-import { SyntheticEvent } from 'react';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { setOverlay } from '../redux/imgActions';
+import { Redirect } from 'react-router-dom';
 import './ImagesContainer.scss';
 
 interface IProps {
-    image1: string,
-    image2: string,
-    image3: string,
-    image4: string
+    images: string[],
+    redirectString: string
 }
 
 export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
 
-    const dispatch = useDispatch();
-
-    const overlayImage = (event: any) => {
-
-        const image: HTMLImageElement = event.target;
-        dispatch(setOverlay({canOverlay: true, src: image.src}));
-    };
+    const [redirect, setRedirect] = useState(false);
 
     return (
-        <div className="img-container">
+        <div className="imgs-container">
             <div className="row justify-content-center">
-                <div className="col-sm-4 text-center imgs">
-                    <img className='imgs-shrink' src={props.image1} onClick={overlayImage}/>
-                </div>
-                <div className='col-sm-4 text-center imgs'>
-                    <img className='imgs-shrink' src={props.image2} onClick={overlayImage}/>
+                <div className="">
+                    <div className="img-container">
+                        <div className='img'>
+                            {props.images.map((imgSrc, index)=>{
+                                console.log(imgSrc);
+                                return (index%2 === 0 ?
+                                    <img key={index} className='img-inner' style={{
+                                        animationName: 'imageMoveDown',
+                                        animationDelay: `${index*5}s`,
+                                        animationIterationCount: 'infinite',
+                                        animationDuration: '5s',
+                                        zIndex: index+1
+                                    }}
+                                    src={imgSrc} onClick={()=>setRedirect(true)}/>
+                                :
+                                    <img key={index} className='img-inner' style={{
+                                        animationName: 'imageMoveUp',
+                                        animationDelay: `${index*5}s`,
+                                        animationIterationCount: 'infinite',
+                                        animationDuration: '5s',
+                                        zIndex: index+1
+                                    }}
+                                    src={imgSrc} onClick={()=>setRedirect(true)}/>)
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div className="row justify-content-center">
-                <div className="col-sm-4 imgs">
-                    <img className='imgs-shrink' src={props.image3} onClick={overlayImage}/>
-                </div>
-                <div className='col-sm-4 imgs'>
-                    <img className='imgs-shrink' src={props.image4} onClick={overlayImage}/>
-                </div>
-            </div>
+            {redirect ? <Redirect to={props.redirectString}/> : <></>}
         </div>
     )
-}
+};

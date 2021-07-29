@@ -1,48 +1,63 @@
 @import '../Colors.scss';
 
-.imgs {
-    border-radius: 8px;
-    border: 0;
-    display: inline-block;
-    height: 95px;
-    width: 95px;
-    margin: 2.5px;
-    overflow: hidden;
-    transition: 0.2s all;
-}
-
-.imgs:hover {
-    transition: 0.2s all;
-    transform: scale(1.2);
-    z-index: 11;
-}
-
-.imgs-shrink {
-    max-height: 200px;
-    top: 0;
-    left: 0;
-    transform: translate(-25%,-25%);
-}
-
-.img-container {
+.imgs-container {
     margin: 5px;
     height: 200px;
 }
 
-.overlay {
-    position: fixed;
+.img-container {
     top: 0;
     left: 0;
-    z-index: 21;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000000aa;
+    border-radius: 8px;
+    border: 1px $green solid;
+    display: inline-block;
+    max-height: 200px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.2s all;
 }
 
-.img-overlay {
+.img {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    transition: .2s all;
+}
+
+.img:hover {
+    transform: scale(1.1);
+    transition: .2s all;
+}
+
+.img1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 90vh;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    transition: .2s all;
+    width: 100%;
+}
+
+@keyframes imageMoveDown {
+    0% {transform: translate(0,0);opacity: 1;}
+    95% {opacity: 1;}
+    100% {transform: translate(0,-5%);opacity: 0;}
+}
+
+.img2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    transition: .2s all;
+    width: 100%;
+}
+
+@keyframes imageMoveUp {
+    0% {transform: translate(0,0);opacity: 1;}
+    95% {opacity: 1;}
+    100% {transform: translate(0,5%);opacity: 0;}
 }

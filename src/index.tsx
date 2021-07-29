@@ -7,12 +7,10 @@ import { qualityReducer } from './redux/navReducers';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { IImageState, imgReducer } from './redux/imgReducer';
 import { Router } from 'react-router-dom';
 
 export interface IState {
   qualityState: number,
-  imageState: IImageState
 }
 
 const a: any = window;
@@ -22,7 +20,6 @@ const composeEnhancer =
 
 export const state = combineReducers<IState>({
   qualityState: qualityReducer,
-  imageState: imgReducer
 });
 
 const store = createStore(
