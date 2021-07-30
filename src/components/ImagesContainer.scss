@@ -30,7 +30,7 @@
     transition: .2s all;
 }
 
-.img1 {
+.img-inner1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -41,9 +41,8 @@
 }
 
 @keyframes imageMoveDown {
-    0% {transform: translate(0,0);opacity: 1;}
-    95% {opacity: 1;}
-    100% {transform: translate(0,-5%);opacity: 0;}
+    0% {transform: translate(0,0);}
+    100% {transform: translate(0,-5%);}
 }
 
 // .img2 {

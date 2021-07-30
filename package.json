@@ -39,7 +39,7 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:coverage": "npm run test --coverage --watchAll",
+    "test:coverage": "nyc npm run test --coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
