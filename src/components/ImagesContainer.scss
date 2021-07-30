@@ -46,18 +46,19 @@
     100% {transform: translate(0,-5%);opacity: 0;}
 }
 
-.img2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    object-position: center;
-    transition: .2s all;
-    width: 100%;
-}
+// .img2 {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     object-fit: cover;
+//     object-position: center;
+//     transition: .2s all;
+//     width: 100%;
+//     z-index: 10;
+// }
 
-@keyframes imageMoveUp {
-    0% {transform: translate(0,0);opacity: 1;}
-    95% {opacity: 1;}
-    100% {transform: translate(0,5%);opacity: 0;}
-}
+// @keyframes imageMoveUp {
+//     0% {transform: translate(0,0);opacity: 1;}
+//     95% {opacity: 1;}
+//     100% {transform: translate(0,5%);opacity: 0;}
+// }

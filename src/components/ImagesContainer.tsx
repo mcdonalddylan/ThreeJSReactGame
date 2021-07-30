@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import './ImagesContainer.scss';
 
@@ -11,6 +12,14 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
 
     const [redirect, setRedirect] = useState(false);
 
+    useEffect(()=>{
+        setInterval(()=>{
+            props.images.forEach((img, ind) => {
+                const currentImg = document.getElementById(`img${ind}`);
+            })
+        },3500);
+    });
+
     return (
         <div className="imgs-container">
             <div className="row justify-content-center">
@@ -20,7 +29,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                             {props.images.map((imgSrc, index)=>{
                                 console.log(imgSrc);
                                 return (index%2 === 0 ?
-                                    <img key={index} className='img-inner' style={{
+                                    <img key={index} id={`img${index}`} className='img-inner' style={{
                                         animationName: 'imageMoveDown',
                                         animationDelay: `${index*5}s`,
                                         animationIterationCount: 'infinite',
@@ -29,7 +38,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                     }}
                                     src={imgSrc} onClick={()=>setRedirect(true)}/>
                                 :
-                                    <img key={index} className='img-inner' style={{
+                                    <img key={index} id={`img${index}`} className='img-inner' style={{
                                         animationName: 'imageMoveUp',
                                         animationDelay: `${index*5}s`,
                                         animationIterationCount: 'infinite',
