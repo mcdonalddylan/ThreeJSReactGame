@@ -1,7 +1,7 @@
 import { ThreeJSGameContainer } from '../src/components/ThreeJSGameContainer';
 import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 import { ThreeJSHomePage } from './components/ThreeJSHomePage';
-import { NavBarContainer } from './components/NavBarContainer';
+import { NavBarContainerWithRouter } from './components/NavBarContainer';
 import { ThreeJSErrorPage } from './components/ThreeJSErrorPage';
 
 function App() {
@@ -17,10 +17,12 @@ function App() {
           <Route exact path='/art' component={ThreeJSGameContainer} />
           {/* Error Page */}
           <Route component={ThreeJSErrorPage} /> 
-        </Switch>  
+        </Switch>
+        
+        {/* Nav Bar */}
+        <NavBarContainerWithRouter />
       </HashRouter>
-      {/* Nav Bar */}
-      <NavBarContainer />
+      
     </>
   );
 }

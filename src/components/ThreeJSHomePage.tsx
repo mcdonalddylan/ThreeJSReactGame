@@ -99,7 +99,6 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                 container.classList.add('wobble');
             }
         }
-        
     }
 
     return(
@@ -174,9 +173,9 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <br></br>
 
             <div className="row justify-content-center text-grid fade-out wobble" id="second" onClick={wobbleToggle}>
-                <div className="col-sm-8 my-auto" >
+                <div className="col-sm-8 my-auto text-center" >
                     <a className="larger-link" onClick={()=>setWebRedirect(true)}>
-                        Check out my web development work!
+                        Link: Web development work!
                     </a>
                 </div>
                 <div className="col-sm-4" >
@@ -204,13 +203,13 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <br></br>
             
             <div className="row justify-content-center text-grid fade-out wobble" id="third" onClick={wobbleToggle}>
-                <div className="col-sm-8" >
+                <div className="col-sm-8 my-auto text-center" >
                     <a className="larger-link" onClick={()=>setGameRedirect(true)}>
-                        Check out my game development work!
+                        Link: Game development work!
                     </a>
                 </div>
                 <div className="col-sm-4" >
-                    <img alt='web photos'></img>
+                    <img alt='game photos'></img>
                 </div>
             </div>
 
@@ -231,13 +230,13 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <br></br>
 
             <div className="row justify-content-center text-grid fade-out wobble" id="fourth" onClick={wobbleToggle}>
-                <div className="col-sm-8" >
+                <div className="col-sm-8 my-auto text-center" >
                     <a className="larger-link" onClick={()=>setArtRedirect(true)}>
-                        Check out my art!
+                        Link: Artwork!
                     </a>
                 </div>
                 <div className="col-sm-4" >
-                    <img alt='web photos'></img>
+                    <img alt='art photos'></img>
                 </div>
             </div>
 
