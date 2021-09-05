@@ -26,12 +26,21 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
         window.open(imageSrc, '_target');
     }
 
+    const toggleContent = (event: any) => {
+
+        const element = event.target;
+        if (element.tagName !== 'IMG' && element.tagName !== 'A'){
+            setShowContent(!showContent);
+        }
+    }
+
     return(
         <div className={`work-container ${showContent ? 'expanded' : ''}`} style={{
                 backgroundColor: showContent ? props.bgColor : `${props.bgColor}dd`,
                 border: `2px solid ${props.color}`,
                 boxShadow: `0px 0px 15px ${props.color}`
             }}
+            onClick={toggleContent}
         >
             <div className='row justify-content-center'>
                 <div className='col-sm-2'>
@@ -46,7 +55,6 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                 </div>
                 <div
                     className='col-sm-2'
-                    onClick={()=>setShowContent(!showContent)}
                     style={{
                         textAlign: 'center',
                         transform: showContent ? 'rotate(180deg)' : ''
