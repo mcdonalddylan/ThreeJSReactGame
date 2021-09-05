@@ -3,6 +3,7 @@ import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 import { ThreeJSHomePage } from './components/ThreeJSHomePage';
 import { NavBarContainerWithRouter } from './components/NavBarContainer';
 import { ThreeJSErrorPage } from './components/ThreeJSErrorPage';
+import { ThreeJSWebPage } from './components/ThreeJSWebPage';
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
       <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path='/' component={ThreeJSHomePage} />
-          <Route exact path='/web' component={ThreeJSGameContainer} />
+          <Route exact path='/web' component={ThreeJSWebPage} />
           <Route exact path='/game' component={ThreeJSGameContainer} />
           <Route exact path='/art' component={ThreeJSGameContainer} />
           {/* Error Page */}

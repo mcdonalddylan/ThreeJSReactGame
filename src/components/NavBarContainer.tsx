@@ -4,11 +4,12 @@ import { setQuality } from '../redux/navActions';
 import '../components/NavBarContainer.scss';
 import { IState } from '..';
 import { WEBGL } from './WebGL';
-import { Redirect, withRouter } from 'react-router-dom';
+import { Redirect, RouteComponentProps, withRouter } from 'react-router-dom';
+import { ReactComponentElement } from 'react';
 
 export const NavBarContainerWithRouter = withRouter(props => <NavBarContainer {...props} />); //Allows the navBarContainer to access the current route path
 
-export const NavBarContainer: React.FC = (props: any) => {
+export const NavBarContainer: React.FC<React.PropsWithChildren<RouteComponentProps>> = (props: React.PropsWithChildren<RouteComponentProps>) => {
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
     const [ redirectToHome, setRedirectToHome ] = useState(false);
@@ -23,7 +24,6 @@ export const NavBarContainer: React.FC = (props: any) => {
                 setRedirectToHome(false);
             }, 10);
         }
-       
     }
 
     return(
