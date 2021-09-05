@@ -1,8 +1,10 @@
+@import '../Colors.scss';
+
 .work-container {
     min-height: 100px;
     border-radius: 30px;
     padding: 20px 30px;
-    margin: 20px 10px;
+    margin: 30px 10px;
     transition: 0.2s all;
 }
 
@@ -19,4 +21,9 @@
 .work-img {
     width: 50px;
     margin: auto;
+}
+
+.work-link:hover {
+    color: $orange;
+    transition: 0.1s;
 }

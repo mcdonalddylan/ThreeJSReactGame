@@ -9,6 +9,10 @@ import { WEBGL } from './WebGL';
 import fontJson from '../assets/fonts/LieraSans-Bold-msdf.json';
 import chevWeb from '../assets/chevron svgs/chevWeb.svg';
 import { WorkContainer } from './WorkContainer';
+import webImg1 from '../assets/web images/push-up2.0_2.jpg';
+import webImg2 from '../assets/web images/FoodGenerator2.jpg';
+import webImg3 from '../assets/web images/mochiCircle6.jpg';
+import webImg4 from '../assets/web images/foodar1.jpg';
 
 export const ThreeJSWebPage: React.FC = () => {
     
@@ -60,14 +64,22 @@ export const ThreeJSWebPage: React.FC = () => {
             color: 0x156289,
         });
         let webMesh = new THREE.Mesh( webGeo, webMat );
-        webMesh.position.set( 0, -3, 5 );
+
+        let meshZPos = -2;
+        if (mobileAspectRatio){
+            meshZPos = -3;
+        } else {
+            meshZPos = -2;
+        }
+
+        webMesh.position.set( 0, -0.1, meshZPos );
         scene.add( webMesh );
 
         const rotateObject = () => {
 
             const currentScrollPos = document.body.getBoundingClientRect().top;
     
-            webMesh.rotation.x = currentScrollPos * 0.1;
+            webMesh.rotation.x = currentScrollPos * 0.015;
         }
     
         document.body.onscroll = rotateObject;
@@ -79,12 +91,13 @@ export const ThreeJSWebPage: React.FC = () => {
             requestAnimationFrame( animate );
 
             if (webMesh !== undefined){
-                console.log(webMesh.rotation.x%360);
-                console.log(webMesh.rotation.x);
-                if (webMesh.rotation.x >= 350 ){
-                    webMesh.rotation.x += 0.1;
+                console.log(webMesh.rotation.y%360);
+                console.log(webMesh.rotation.y);
+                if (webMesh.rotation.y >= 359 ){
+                    webMesh.rotation.y = 0;
+                    webMesh.rotation.y += 0.003;
                 } else {
-                    webMesh.rotation.x += 1;
+                    webMesh.rotation.y += 0.003;
                 }
             }
 
@@ -99,7 +112,7 @@ export const ThreeJSWebPage: React.FC = () => {
     })
     
     return(
-        <div className='container'>
+        <div className='container position-absolute' style={{right: 0, left: "50%", transform: `translate(-50%)`, zIndex: 2 }}>
             <br></br>
             <br></br>
             <br></br>
@@ -123,10 +136,78 @@ export const ThreeJSWebPage: React.FC = () => {
                 bgColor={'#062432'}
                 year='2020'
                 title='Client Engagement Portal'
+                contentLinks={
+                    [
+                        {
+                            linkText: 'Github front end',
+                            linkUrl: ''
+                        },
+                        {
+                            linkText: 'Github back end',
+                            linkUrl: ''
+                        }
+                    ]}
                 content={(
-                    <p style={{color: 'white'}}>This project suuuucks dude. Like don't even look at it jesus.</p>
+                    <>
+                        <p style={{color: 'white'}}>
+                            Revature enterprise level project.
+                        </p>
+                        <br></br>
+                        <p style={{color: 'white'}}>
+                            My Role:
+                        </p>
+                        <ul>
+                            <li style={{color: 'white'}}>
+                                Do cool stuff
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Continue to do cool stuff
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Excite others
+                            </li>
+                        </ul>
+                    </>
+                )}
+                contentImgs={[
+                    webImg1,
+                    webImg2,
+                    webImg3,
+                    webImg4
+                ]}
+            />
+
+            <WorkContainer
+                chevronImgSrc={chevWeb}
+                color={'#22b5ff'}
+                bgColor={'#062432'}
+                year='2020'
+                title='Mochi Circle'
+                content={(
+                    <p style={{color: 'white'}}>Revature training project with the boys. check out this link</p>
                 )}
             />
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             
         </div>
     )
