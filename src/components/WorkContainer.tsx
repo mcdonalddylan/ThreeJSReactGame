@@ -27,7 +27,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
     }
 
     return(
-        <div className='work-container' style={{
+        <div className={`work-container ${showContent ? 'expanded' : ''}`} style={{
                 backgroundColor: showContent ? props.bgColor : `${props.bgColor}dd`,
                 border: `2px solid ${props.color}`,
                 boxShadow: `0px 0px 15px ${props.color}`

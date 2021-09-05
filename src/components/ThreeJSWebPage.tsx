@@ -105,6 +105,9 @@ export const ThreeJSWebPage: React.FC = () => {
         }
         animate();
 
+        //set to top of page when first entering page
+        window.scrollTo(0,0);
+
         } else {
             const warning = WEBGL.getWebGLErrorMessage();
             document.body.appendChild( warning );
