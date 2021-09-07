@@ -79,7 +79,7 @@ export const ThreeJSWebPage: React.FC = () => {
 
             const currentScrollPos = document.body.getBoundingClientRect().top;
     
-            webMesh.rotation.x = currentScrollPos * 0.015;
+            webMesh.rotation.x = currentScrollPos * 0.01;
         }
     
         document.body.onscroll = rotateObject;

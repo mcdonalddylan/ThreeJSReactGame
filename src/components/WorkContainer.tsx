@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react"
+import React, { ReactElement, SyntheticEvent, useState } from "react"
 import './WorkContainer.scss';
 
 interface IContentLink {
@@ -28,9 +28,17 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
 
     const toggleContent = (event: any) => {
 
-        const element = event.target;
-        if (element.tagName !== 'IMG' && element.tagName !== 'A'){
-            setShowContent(!showContent);
+        const element: HTMLElement = event.target;
+        // Will toggle content if not a link and not an image (exception for chevron img)
+        if (element.tagName !== 'A'){
+            if(element.tagName === 'IMG'){
+                if(element.id === 'chev'){
+                    setShowContent(!showContent);
+                }
+            } else {
+                setShowContent(!showContent);
+            }
+            
         }
     }
 
@@ -60,7 +68,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                         transform: showContent ? 'rotate(180deg)' : ''
                     }}
                 >
-                    <img className='work-img' src={props.chevronImgSrc} alt='chevron svg'/>
+                    <img className='work-img' id='chev' src={props.chevronImgSrc} alt='chevron svg'/>
                 </div>
             </div>
             {showContent ?
