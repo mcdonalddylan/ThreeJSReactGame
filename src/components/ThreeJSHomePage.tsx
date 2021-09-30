@@ -209,7 +209,10 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                     </a>
                 </div>
                 <div className="col-sm-4" >
-                    <img alt='game photos'></img>
+                    <ImagesContainer
+                        images={[webImg1, webImg2, webImg3]}
+                        redirectString={'/game'}
+                    />
                 </div>
             </div>
 

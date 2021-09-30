@@ -23,9 +23,17 @@
     text-align: center;
 }
 
+.work-img-div {
+    transition: 0.3s all ease;
+}
+
 .work-img {
     width: 50px;
     margin: auto;
+}
+
+.work-img-zoom {
+    cursor: zoom-in;
 }
 
 .work-link {

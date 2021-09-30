@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import './ImagesContainer.scss';
-import './HomePage.scss';
+import './HomePage.scss'; //needed for fading in and out
 
 interface IProps {
     images: string[],
@@ -12,37 +12,10 @@ interface IProps {
 export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
 
     const [redirect, setRedirect] = useState(false);
-    const IMAGE_LOOP_TIMING_SECONDS = 3;
+    const isFourImages = props.images.length === 4;
 
-    const loopImages = () => {
-        let counter = 0;
-        const run = setInterval(()=>{
-            console.log(counter);
-            if (counter === 0){
-                const previousImage = document.getElementById(`img${props.images.length-1}`);
-                if(previousImage) previousImage.style.display = 'none';
-                const currentImage = document.getElementById(`img${counter}`);
-                if (currentImage) currentImage.style.display = 'block';
-
-                counter++;
-            } else if (counter < props.images.length){
-
-                const previousImage = document.getElementById(`img${counter-1}`);
-                if(previousImage) previousImage.style.display = 'none';
-                const currentImage = document.getElementById(`img${counter}`);
-                if (currentImage) currentImage.style.display = 'block';
-
-                counter++;
-            } else {
-                clearInterval(run);
-            }
-        },IMAGE_LOOP_TIMING_SECONDS*1000);
-        counter = 0;
-    }
-
-    useEffect(()=>{
-        loopImages();
-    });
+    //TODO: Animate using javascript setInterval since Css animation won't sync with eachother.
+    // The fade-in and fade-out classes can be re-used from homepage.scss.
 
     return (
         <div className="imgs-container">
@@ -50,40 +23,50 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                 <div className="">
                     <div className="img-container">
                         <div className='img'>
-                            {props.images.map((imgSrc, index)=>{
-                                console.log(imgSrc);
-                                return (
-                                    <img key={index} id={`img${index}`} className='img-inner' style={{
-                                        animationName: 'imageMoveDown',
-                                        animationTimingFunction: 'ease',
-                                        animationIterationCount: 'infinite',
-                                        animationDuration: `${IMAGE_LOOP_TIMING_SECONDS}s`,
-                                        zIndex: index+1
-                                    }}
-                                    src={imgSrc} onClick={()=>setRedirect(true)}/>
-                                )
-                                // return (index%2 === 0 ?
-                                //     <div className='img-display' id={`display${index}`}>
-                                //         <img key={index} id={`img${index}`} className='img-inner' style={{
-                                //             animationName: 'imageMoveDown',
-                                //             animationDelay: `${index*5}s`,
-                                //             animationTimingFunction: 'ease',
-                                //             animationIterationCount: 'infinite',
-                                //             animationDuration: '3s',
-                                //             zIndex: index+1
-                                //         }}
-                                //         src={imgSrc} onClick={()=>setRedirect(true)}/>
-                                //     </div>
-                                // :
-                                //     <img key={index} id={`img${index}`} className='img-inner' style={{
-                                //         animationName: 'imageMoveUp',
-                                //         animationDelay: `${index*5}s`,
-                                //         animationIterationCount: 'infinite',
-                                //         animationDuration: '5s',
-                                //         zIndex: index+1
-                                //     }}
-                                //     src={imgSrc} onClick={()=>setRedirect(true)}/>)
-                            })}
+                            {isFourImages ? (
+                                <>
+                                    <img
+                                        id={`img1`}
+                                        className='img-inner img-ani'
+                                        style={{
+                                            //place additional sources here
+                                        }}
+                                        src={props.images[0]}
+                                        onClick={()=>setRedirect(true)}
+                                    />
+                                    <img
+                                        id={`img2`}
+                                        className='img-inner img-ani'
+                                        style={{
+                                            //place additional sources here
+                                        }}
+                                        src={props.images[1]}
+                                        onClick={()=>setRedirect(true)}
+                                    />
+                                    <img
+                                        id={`img3`}
+                                        className='img-inner img-ani'
+                                        style={{
+                                            //place additional sources here
+                                            display: 'none'
+                                        }}
+                                        src={props.images[2]}
+                                        onClick={()=>setRedirect(true)}
+                                    />
+                                    <img
+                                        id={`img4`}
+                                        className='img-inner img-ani'
+                                        style={{
+                                            //place additional sources here
+                                            display: 'none'
+                                        }}
+                                        src={props.images[3]}
+                                        onClick={()=>setRedirect(true)}
+                                    />
+                                </>
+                            ) : (
+                                <h1>ERROR: Need to pass exactly 4 images into this container.</h1>
+                            )}
                         </div>
                     </div>
                 </div>

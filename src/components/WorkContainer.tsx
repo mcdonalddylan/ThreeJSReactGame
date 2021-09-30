@@ -51,10 +51,10 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
             onClick={toggleContent}
         >
             <div className='row justify-content-center'>
-                <div className='col-sm-2'>
-                    <h1 className='work-year-text' style={{color: props.color}}>
+                <div className='col-sm-2 align-self-center'>
+                    <h2 className='work-year-text' style={{color: props.color}}>
                         {props.year}
-                    </h1>
+                    </h2>
                 </div>
                 <div className='col-sm-8'>
                     <h1 className='work-title-text' style={{color: props.color}}>
@@ -62,7 +62,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                     </h1>
                 </div>
                 <div
-                    className='col-sm-2'
+                    className='col-sm-2 work-img-div'
                     style={{
                         textAlign: 'center',
                         transform: showContent ? 'rotate(180deg)' : ''
@@ -112,6 +112,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                         src={imgSrc}
                                         alt={`${props.title}Img${index}`}
                                         style={{overflow: 'hidden', width: '100%'}}
+                                        className='work-img-zoom'
                                     />
                                 </div>
                             )
