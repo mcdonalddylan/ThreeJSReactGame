@@ -9,6 +9,12 @@
     transition: 0.4s all ease;
 }
 
+.content-container {
+    padding: 30px !important;
+    border-radius: 25px;
+    border: 0;
+}
+
 .expanded {
     max-height: 2000px;
 }

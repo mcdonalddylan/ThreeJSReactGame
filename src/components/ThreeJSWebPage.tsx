@@ -13,6 +13,7 @@ import webImg1 from '../assets/web images/push-up2.0_2.jpg';
 import webImg2 from '../assets/web images/FoodGenerator2.jpg';
 import webImg3 from '../assets/web images/mochiCircle6.jpg';
 import webImg4 from '../assets/web images/foodar1.jpg';
+import './HomePage.scss';
 
 export const ThreeJSWebPage: React.FC = () => {
     
@@ -116,11 +117,19 @@ export const ThreeJSWebPage: React.FC = () => {
     
     return(
         <div className='container position-absolute' style={{right: 0, left: "50%", transform: `translate(-50%)`, zIndex: 2 }}>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            
+            <div className='row justify-content-center'>
+                <div className='col-12-xm'>
+                    <h1 className='page-title'
+                        style={{
+                            color: '#22b5ff',
+                            textShadow: `0 0 4px ${'#22b5ff'}`
+                        }}
+                    >
+                        Web Projects:
+                    </h1>
+                </div>
+            </div>
 
             <WorkContainer
                 chevronImgSrc={chevWeb}
@@ -137,39 +146,91 @@ export const ThreeJSWebPage: React.FC = () => {
                 chevronImgSrc={chevWeb}
                 color={'#22b5ff'}
                 bgColor={'#062432'}
+                year='2021'
+                title='Push Up App'
+                contentLinks={[
+                    {
+                        linkText: 'Github Link',
+                        linkUrl: 'https://github.com/mcdonalddylan/PushUpReactApp'
+                    }
+                ]}
+                content={(
+                    <>
+                        <p style={{color: 'white'}}>This is a web application to encourage those of us who are on our computers for hours on end, to do some push ups every so often. More detailed information about the project itself can be in the github link above.</p>
+                        <br></br>
+                        <p style={{color: 'white'}}>This is my first solo project that I’ve worked on in a few months. As much as I enjoy React and front-end development in general, it’s nice to get back into Spring and get some back-end work again. I mostly created this app just to keep my skills fresh, but I do genuinely think it’s a very useful tool for a lot of us out there. I just can’t wait to get a little further with it so that it can finally be deployed.</p>
+                    </>
+                )}
+                contentImgs={[
+                    webImg4,
+                    webImg2,
+                    webImg3,
+                    webImg1
+                ]}
+            />
+
+            <WorkContainer
+                chevronImgSrc={chevWeb}
+                color={'#22b5ff'}
+                bgColor={'#062432'}
                 year='2020'
                 title='Client Engagement Portal'
                 contentLinks={
                     [
                         {
                             linkText: 'Github front end',
-                            linkUrl: ''
+                            linkUrl: 'https://github.com/revaturelabs/client-engagement-portal-front'
                         },
                         {
                             linkText: 'Github back end',
-                            linkUrl: ''
+                            linkUrl: 'https://github.com/revaturelabs/client-engagement-portal-front'
                         }
                     ]}
                 content={(
                     <>
                         <p style={{color: 'white'}}>
-                            Revature enterprise level project.
+                            This is a web application to map batches of Revature associates with client who may be interesting in hiring them. The photos above are markups/wireframes I created for each page I was responsible for. More detailed information about the project itself can be in the github links above. My responsibilities were the following:
                         </p>
                         <br></br>
                         <p style={{color: 'white'}}>
-                            My Role:
+                            My contributions:
                         </p>
                         <ul>
                             <li style={{color: 'white'}}>
-                                Do cool stuff
+                                As one of the Style Captains I kept the SCSS consistent throughout the front end.
                             </li>
                             <li style={{color: 'white'}}>
-                                Continue to do cool stuff
+                                Drew mock ups for each of the client pages.
                             </li>
                             <li style={{color: 'white'}}>
-                                Excite others
+                                Created the logo for this application as an .svg file.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Encrypted the database url, username, and password on the back end using Jasypt.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Created the “batch cards” which represent the individual batches tied to a client.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Implemented a “batchstate” using the Flux design pattern to temporarily store batch data in the store.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Gathered data from our mock-up database to populate the “batch cards” I created.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Allowed information about a specific batch populate the fields of our “batch view” page.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Tested my front end React components using Enzyme and Jest.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Kept track of the application’s progress using GitHub’s “projects” tab and Asana.
                             </li>
                         </ul>
+                        <br></br>
+                        <p style={{color: 'white'}}>
+                            This project, like all of them really, was a great learning experience. While I was very focused on the front-end in my mochi circle project, this project let me go wild. I became very familiar with React, typescript, and git by the end of it. While communication wasn’t as strong as it was was working in a smaller team, using githubs “projects” management board system and Asana were very helpful.
+                        </p>
                     </>
                 )}
                 contentImgs={[
@@ -186,9 +247,29 @@ export const ThreeJSWebPage: React.FC = () => {
                 bgColor={'#062432'}
                 year='2020'
                 title='Mochi Circle'
+                contentLinks={[
+                    {
+                        linkText: 'Click Here to Download The Source Files V0.2',
+                        linkUrl: 'https://drive.google.com/file/d/1x4x53Fq6nlY-qvrqi8WRR84CyqXKEkse/view'
+                    },
+                    {
+                        linkText: 'Click Here to View Code Sample',
+                        linkUrl: '/'
+                    }
+                ]}
                 content={(
-                    <p style={{color: 'white'}}>Revature training project with the boys. check out this link</p>
+                    <>
+                        <p style={{color: 'white'}}>
+                            An online food delivery application I worked on for the company Revature. I designed and programmed each of the web pages on the site. While it’s still in the early stages, the request page will properly calculate your order amount. 
+                        </p>
+                    </>
                 )}
+                contentImgs={[
+                    webImg2,
+                    webImg1,
+                    webImg3,
+                    webImg4
+                ]}
             />
 
             <br></br>
