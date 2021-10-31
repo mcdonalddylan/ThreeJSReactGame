@@ -9,11 +9,55 @@ import { WEBGL } from './WebGL';
 import fontJson from '../assets/fonts/LieraSans-Bold-msdf.json';
 import chevWeb from '../assets/chevron svgs/chevWeb.svg';
 import { WorkContainer } from './WorkContainer';
-import webImg1 from '../assets/web images/push-up2.0_2.jpg';
-import webImg2 from '../assets/web images/FoodGenerator2.jpg';
-import webImg3 from '../assets/web images/mochiCircle6.jpg';
-import webImg4 from '../assets/web images/foodar1.jpg';
 import './HomePage.scss';
+
+import mochiImg1 from '../assets/web images/mochiCircle/mochiCircle1.jpg';
+import mochiImg2 from '../assets/web images/mochiCircle/mochiCircle2.jpg';
+import mochiImg3 from '../assets/web images/mochiCircle/mochiCircle3.jpg';
+import mochiImg4 from '../assets/web images/mochiCircle/mochiCircle4.jpg';
+import mochiImg5 from '../assets/web images/mochiCircle/mochiCircle5.jpg';
+import mochiImg6 from '../assets/web images/mochiCircle/mochiCircle6.jpg';
+import mochiImg7 from '../assets/web images/mochiCircle/mochiCircle7.jpg';
+import mochiImg8 from '../assets/web images/mochiCircle/mochiCircle8.jpg';
+import mochiImg9 from '../assets/web images/mochiCircle/mochiCircle9.jpg';
+import mochiImg10 from '../assets/web images/mochiCircle/mochiCircle10.jpg';
+import mochiImg11 from '../assets/web images/mochiCircle/mochiCircle11.jpg';
+import mochiImg12 from '../assets/web images/mochiCircle/mochiCircle12.jpg';
+import mochiImg13 from '../assets/web images/mochiCircle/mochiCircle13.jpg';
+import mochiImg14 from '../assets/web images/mochiCircle/mochiCircle14.jpg';
+import mochiImg15 from '../assets/web images/mochiCircle/mochiCircle15.jpg';
+import mochiImg16 from '../assets/web images/mochiCircle/mochiCircle16.jpg';
+import mochiImg17 from '../assets/web images/mochiCircle/mochiCircle17.jpg';
+import mochiImg18 from '../assets/web images/mochiCircle/mochiCircle18.jpg';
+import mochiImg19 from '../assets/web images/mochiCircle/mochiCircle19.jpg';
+import mochiImg20 from '../assets/web images/mochiCircle/mochiCircle20.jpg';
+import mochiImg21 from '../assets/web images/mochiCircle/mochiCircle21.jpg';
+import mochiImg22 from '../assets/web images/mochiCircle/mochiCircle22.jpg';
+import mochiImg23 from '../assets/web images/mochiCircle/mochiWalkthrough1.jpg';
+import mochiImg24 from '../assets/web images/mochiCircle/mochiWalkthrough2.jpg';
+import mochiImg25 from '../assets/web images/mochiCircle/mochiWalkthrough3.jpg';
+import mochiImg26 from '../assets/web images/mochiCircle/mochiWalkthrough4.jpg';
+import mochiImg27 from '../assets/web images/mochiCircle/mochiWalkthrough5.jpg';
+import mochiImg28 from '../assets/web images/mochiCircle/mochiWalkthrough6.jpg';
+
+import pushImg1 from '../assets/web images/pushUp/push-up1.jpg';
+import pushImg2 from '../assets/web images/pushUp/push-up1-5.jpg';
+import pushImg3 from '../assets/web images/pushUp/push-up2.jpg';
+import pushImg4 from '../assets/web images/pushUp/push-up2-5.jpg';
+import pushImg5 from '../assets/web images/pushUp/push-up3.jpg';
+import pushImg6 from '../assets/web images/pushUp/push-up4.jpg';
+import pushImg7 from '../assets/web images/pushUp/push-up5.jpg';
+import pushImg8 from '../assets/web images/pushUp/push-up6.jpg';
+import pushImg9 from '../assets/web images/pushUp/push-up7.jpg';
+import pushImg10 from '../assets/web images/pushUp/push-up8.jpg';
+import pushImg11 from '../assets/web images/pushUp/push-up9.jpg';
+import pushImg12 from '../assets/web images/pushUp/push-up10.jpg';
+
+import clientImg1 from '../assets/web images/clientEngage/client1.jpg';
+import clientImg2 from '../assets/web images/clientEngage/client2.jpg';
+import clientImg3 from '../assets/web images/clientEngage/client3.jpg';
+import clientImg4 from '../assets/web images/clientEngage/client4.jpg';
+import clientImg5 from '../assets/web images/clientEngage/client5.jpg';
 
 export const ThreeJSWebPage: React.FC = () => {
     
@@ -92,8 +136,8 @@ export const ThreeJSWebPage: React.FC = () => {
             requestAnimationFrame( animate );
 
             if (webMesh !== undefined){
-                console.log(webMesh.rotation.y%360);
-                console.log(webMesh.rotation.y);
+                //console.log(webMesh.rotation.y%360);
+                //console.log(webMesh.rotation.y);
                 if (webMesh.rotation.y >= 359 ){
                     webMesh.rotation.y = 0;
                     webMesh.rotation.y += 0.003;
@@ -138,7 +182,23 @@ export const ThreeJSWebPage: React.FC = () => {
                 year='2021'
                 title='Bam 2.0'
                 content={(
-                    <p style={{color: 'white'}}>HCSC project.</p>
+                    <>
+                        <p style={{color: 'white'}}>Blue Cross Blue Shield project I'm currently working on.</p>
+                        <br></br>
+                        <p style={{color: 'white'}}>My contributions:</p>
+                        <ul>
+                            <li style={{color: 'white'}}>
+                                Create system for uploading and downloading attachments on messages.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Add a message threading feature to allow users to view previous reply messages.
+                            </li>
+                            <li style={{color: 'white'}}>
+                                Create dynamic form which allows the user to schedule an appointment with a nurse health advocate.
+                            </li>
+                        </ul>
+                    </>
+
                 )}
             />
 
@@ -162,10 +222,18 @@ export const ThreeJSWebPage: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    webImg4,
-                    webImg2,
-                    webImg3,
-                    webImg1
+                    pushImg3,
+                    pushImg2,
+                    pushImg1,
+                    pushImg4,
+                    pushImg5,
+                    pushImg6,
+                    pushImg7,
+                    pushImg8,
+                    pushImg9,
+                    pushImg10,
+                    pushImg11,
+                    pushImg12
                 ]}
             />
 
@@ -234,10 +302,11 @@ export const ThreeJSWebPage: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    webImg1,
-                    webImg2,
-                    webImg3,
-                    webImg4
+                    clientImg3,
+                    clientImg2,
+                    clientImg1,
+                    clientImg4,
+                    clientImg5,
                 ]}
             />
 
@@ -265,10 +334,34 @@ export const ThreeJSWebPage: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    webImg2,
-                    webImg1,
-                    webImg3,
-                    webImg4
+                    mochiImg1,
+                    mochiImg2,
+                    mochiImg3,
+                    mochiImg4,
+                    mochiImg5,
+                    mochiImg6,
+                    mochiImg7,
+                    mochiImg8,
+                    mochiImg9,
+                    mochiImg10,
+                    mochiImg11,
+                    mochiImg12,
+                    mochiImg13,
+                    mochiImg14,
+                    mochiImg15,
+                    mochiImg16,
+                    mochiImg17,
+                    mochiImg18,
+                    mochiImg19,
+                    mochiImg20,
+                    mochiImg21,
+                    mochiImg22,
+                    mochiImg23,
+                    mochiImg24,
+                    mochiImg25,
+                    mochiImg26,
+                    mochiImg27,
+                    mochiImg28
                 ]}
             />
 

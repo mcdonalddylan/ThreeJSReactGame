@@ -1,7 +1,9 @@
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer, 
     camera: THREE.Camera, quality: any, mobileAspectRatio: boolean ) => {
+    const loader = new GLTFLoader();
 
     // Changes size and position of objects depending on if using mobile device or not
     let boxXPos = 0, planeXPos = 0, boxSize = 0, planeSize = 0;
@@ -35,15 +37,28 @@ export const setupObjects = ( scene: THREE.Scene, renderer: THREE.Renderer,
     let torMesh = new THREE.Mesh(torGeo, boxMat);
     torMesh.position.set( 8.5, -7.2, -3 );
 
-    let sphGeo = new THREE.SphereGeometry( 0.3, 5, 5 );
-    let sphMesh = new THREE.Mesh(sphGeo, boxMat);
-    sphMesh.position.set( 15.8, -10.25, -3.5 );
+    let artMesh;
+    loader.load('assets/models/art_ani.glb', (glb) => {
+        artMesh = glb.scene;
+        artMesh.traverse((obj) => {
+            console.log('object names: ', obj.name);
+            if (obj.name === '') {
+                //TODO: change material
+            }
+        });
+        //artMesh.position.set( 15.8, -10.25, -3.5 );
+        artMesh.position.set( 0,0,0 );
+        scene.add( artMesh );
+    });
+    // let sphGeo = new THREE.SphereGeometry( 0.3, 5, 5 );
+    // let sphMesh = new THREE.Mesh(sphGeo, boxMat);
+    // sphMesh.position.set( 15.8, -10.25, -3.5 );
 
     scene.add( tempBox );
     scene.add( firstPlane );
     scene.add( triMesh );
     scene.add( torMesh );
-    scene.add( sphMesh );
+    //scene.add( sphMesh );
 
     // Input setup
     const moveCamera = () => {

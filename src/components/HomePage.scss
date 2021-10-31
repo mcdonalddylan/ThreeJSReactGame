@@ -14,14 +14,20 @@
     text-align: center;
     margin: auto;
     font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 .main-sub {
     color: $gray;
     margin: auto;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
 .main-hr {
@@ -31,17 +37,38 @@
     width: 80%;
 }
 
+//Web version of link text
 .larger-link {
     vertical-align: center;
     font-size: 45px;
+    font-weight: 100;
+    margin: 20px;
     text-align: center;
     color: $white;
+    text-shadow: 0 0 5px black;
     padding-bottom: 4px;
     border-bottom-style: solid;
     border-bottom-width: 3.1px;
     width: fit-content;
     text-decoration: none;
 }
+
+@media screen and (min-width: 500px) {
+    .larger-link {
+        vertical-align: center;
+        font-size: 80px;
+        font-weight: 100;
+        text-align: center;
+        color: $white;
+        text-shadow: 0 0 5px black;
+        padding-bottom: 4px;
+        border-bottom-style: solid;
+        border-bottom-width: 3.1px;
+        width: fit-content;
+        text-decoration: none;
+    }
+}
+
 
 .larger-link:hover {
     color: $orange;

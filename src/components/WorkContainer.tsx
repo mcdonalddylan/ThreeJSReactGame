@@ -51,40 +51,20 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                 }}
                 onClick={toggleContent}
             >
-                <div style={{
+                <div className='content-image-bg' 
+                    style={{
                         backgroundImage: props.contentImgs ? `url(${props.contentImgs[0]})` : '',
-                        backgroundSize: '110%',
-                        backgroundPositionY: 'bottom',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        bottom: 0,
-                        right: 0,
-                        margin: -20,
-                        opacity: showContent ? 0.9 : 0.7,
-                        transition: '0.4s all ease'
+                        opacity: showContent ? 0.9 : 0.8,
                     }}
                 >
-                    <div style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            right: 0,
-                            bottom: 0,
-                            margin: -20,
-                            backgroundColor: props.contentImgs && !showContent ? `${props.bgColor}ee` : `${props.bgColor}ee`,
-                            backgroundSize: '110%',
-                            zIndex: 1,
-                            transition: '0.4s all ease'
+                    <div className='content-image-tint'
+                        style={{
+                            backgroundColor: `${props.bgColor}dd`
                         }}
                     >
                     </div>
                 </div>
-                <div style={{
-                        position: 'relative',
-                        zIndex: 2
-                    }}
-                >
+                <div className='work-content' >
                     <div className='row justify-content-center'>
                         <div className='col-sm-2 align-self-center'>
                             <h2 className='work-year-text' style={{color: props.color}}>
@@ -92,7 +72,12 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                             </h2>
                         </div>
                         <div className='col-sm-8'>
-                            <h1 className='work-title-text' style={{color: props.color}}>
+                            <h1 className='work-title-text'
+                                style={{
+                                    color: showContent ? 'white' : props.color,
+                                    textShadow: showContent ? `0 0 8px ${'black'}` : ''
+                                }}
+                            >
                                 {props.title}
                             </h1>
                         </div>
@@ -143,7 +128,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                     {props.content}
                                 </div>
                             </div>
-                            <div className='row justify-content-center' style={{marginTop: 15}}>
+                            <div className='row justify-content-center' style={{marginTop: 20}}>
                             {props.contentImgs ?
                                 props.contentImgs.map((imgSrc, index)=>{
                                     return (

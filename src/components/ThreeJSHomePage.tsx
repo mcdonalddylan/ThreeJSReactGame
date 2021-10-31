@@ -11,10 +11,10 @@ import linLogo from '../assets/logo svgs/tieLogo.svg';
 import emaLogo from '../assets/logo svgs/emailLogo.svg';
 import gitLogo from '../assets/logo svgs/githubLogo.svg';
 
-import webImg1 from '../assets/web images/push-up2.0_2.jpg';
-import webImg2 from '../assets/web images/FoodGenerator2.jpg';
-import webImg3 from '../assets/web images/mochiCircle6.jpg';
-import webImg4 from '../assets/web images/foodar1.jpg';
+import webImg1 from '../assets/web images/pushUp/push-up1.jpg';
+import webImg2 from '../assets/web images/mochiCircle/mochiCircle6.jpg';
+import webImg3 from '../assets/web images/clientEngage/client1.jpg';
+import webImg4 from '../assets/web images/mochiCircle/mochiCircle1.jpg';
 import { Redirect } from 'react-router-dom';
 
 interface IProps {
@@ -175,7 +175,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <div className="row justify-content-center text-grid fade-out wobble" id="second" onClick={wobbleToggle}>
                 <div className="col-sm-8 my-auto text-center" >
                     <a className="larger-link" onClick={()=>setWebRedirect(true)}>
-                        Link: Web development work!
+                        Web Projects
                     </a>
                 </div>
                 <div className="col-sm-4" >
@@ -205,7 +205,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <div className="row justify-content-center text-grid fade-out wobble" id="third" onClick={wobbleToggle}>
                 <div className="col-sm-8 my-auto text-center" >
                     <a className="larger-link" onClick={()=>setGameRedirect(true)}>
-                        Link: Game development work!
+                        Game Projects
                     </a>
                 </div>
                 <div className="col-sm-4" >
@@ -235,11 +235,14 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             <div className="row justify-content-center text-grid fade-out wobble" id="fourth" onClick={wobbleToggle}>
                 <div className="col-sm-8 my-auto text-center" >
                     <a className="larger-link" onClick={()=>setArtRedirect(true)}>
-                        Link: Artwork!
+                        Art Projects
                     </a>
                 </div>
                 <div className="col-sm-4" >
-                    <img alt='art photos'></img>
+                    <ImagesContainer
+                        images={[webImg1, webImg2, webImg3]}
+                        redirectString={'/art'}
+                    />
                 </div>
             </div>
 
