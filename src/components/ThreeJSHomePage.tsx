@@ -31,59 +31,58 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
 
     useEffect(()=>{
 
-    console.log(webRedirect);
-    if ( WEBGL.isWebGLAvailable() ) { 
+        if ( WEBGL.isWebGLAvailable() ) { 
 
-        // Renderer setup
-        let renderer = new THREE.WebGLRenderer();
-        renderer.setSize( window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio( window.devicePixelRatio/quality );
-
-        let mobileAspectRatio = false;
-        if(window.innerHeight > window.innerWidth) {
-            mobileAspectRatio = true;
-        } else {
-            mobileAspectRatio = false;
-        }
-
-        renderer.domElement.id = 'dom';
-        renderer.domElement.className = 'position-fixed';
-        if (document.body.contains( document.getElementById( 'dom' ) ) === false) {
-            document.body.append( renderer.domElement );
-        } else {
-            const dom = document.getElementById('dom');
-            if(dom !== null) {
-                document.body.removeChild( dom );
-                document.body.append( renderer.domElement );
-            } 
-        }
-        
-        window.onresize = () => {
-            //console.log('You just resized the window');
+            // Renderer setup
+            let renderer = new THREE.WebGLRenderer();
             renderer.setSize( window.innerWidth, window.innerHeight);
-            setRefresh(!refresh);
-        };
+            renderer.setPixelRatio( window.devicePixelRatio/quality );
 
-        // Camera / Scene setup
-        let scene = new THREE.Scene();
-        let camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 0.1, 1000);
+            let mobileAspectRatio = false;
+            if(window.innerHeight > window.innerWidth) {
+                mobileAspectRatio = true;
+            } else {
+                mobileAspectRatio = false;
+            }
 
-        // Render function babyyyyy
-        renderer.render( scene, camera );
+            renderer.domElement.id = 'dom';
+            renderer.domElement.className = 'position-fixed';
+            if (document.body.contains( document.getElementById( 'dom' ) ) === false) {
+                document.body.append( renderer.domElement );
+            } else {
+                const dom = document.getElementById('dom');
+                if(dom !== null) {
+                    document.body.removeChild( dom );
+                    document.body.append( renderer.domElement );
+                } 
+            }
+            
+            window.onresize = () => {
+                //console.log('You just resized the window');
+                renderer.setSize( window.innerWidth, window.innerHeight);
+                setRefresh(!refresh);
+            };
 
-        // Light setup
-        setupLights( scene );
-        
-        // Object placement/animation/inputs
-        setupObjects( scene, renderer, camera, quality, mobileAspectRatio );
+            // Camera / Scene setup
+            let scene = new THREE.Scene();
+            let camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 0.1, 1000);
 
-    } else {
-        
-        const warning = WEBGL.getWebGLErrorMessage();
-        document.body.appendChild( warning );
-    }
+            // Render function babyyyyy
+            renderer.render( scene, camera );
 
-    });
+            // Light setup
+            setupLights( scene );
+            
+            // Object placement/animation/inputs
+            setupObjects( scene, renderer, camera, quality, mobileAspectRatio );
+
+        } else {
+            
+            const warning = WEBGL.getWebGLErrorMessage();
+            document.body.appendChild( warning );
+        }
+
+    },[refresh, quality]);
 
     const wobbleToggle = (event: any) => {
         const element: HTMLCanvasElement = event.target;
