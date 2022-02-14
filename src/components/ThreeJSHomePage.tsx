@@ -13,8 +13,19 @@ import gitLogo from '../assets/logo svgs/githubLogo.svg';
 
 import webImg1 from '../assets/web images/pushUp/push-up1.jpg';
 import webImg2 from '../assets/web images/mochiCircle/mochiCircle6.jpg';
-import webImg3 from '../assets/web images/clientEngage/client1.jpg';
+import webImg3 from '../assets/web images/clientEngage/client3.jpg';
 import webImg4 from '../assets/web images/mochiCircle/mochiCircle1.jpg';
+
+import gameImg1 from '../assets/game images/balloon/screenshot02.jpg';
+import gameImg2 from '../assets/game images/coolTitle/cooltitlescreen05.jpg';
+import gameImg3 from '../assets/game images/square/avoidrect03.jpg';
+import gameImg4 from '../assets/game images/taffyPilot/taffy-pilot-in-dick-land-menu.gif';
+
+import artImg1 from '../assets/art images/characterDesigns/TP Character Model Sheet.jpg';
+import artImg2 from '../assets/art images/creatureDesigns/Dragon.jpg';
+import artImg3 from '../assets/art images/other/GoodOlBoiV4.jpg';
+import artImg4 from '../assets/art images/realArt/PrideCharcoal.jpg';
+
 import { Redirect } from 'react-router-dom';
 
 interface IProps {
@@ -209,7 +220,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                 </div>
                 <div className="col-sm-4" >
                     <ImagesContainer
-                        images={[webImg1, webImg2, webImg3]}
+                        images={[gameImg1, gameImg2, gameImg3, gameImg4]}
                         redirectString={'/game'}
                     />
                 </div>
@@ -239,7 +250,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                 </div>
                 <div className="col-sm-4" >
                     <ImagesContainer
-                        images={[webImg1, webImg2, webImg3]}
+                        images={[artImg1, artImg2, artImg3, artImg4]}
                         redirectString={'/art'}
                     />
                 </div>

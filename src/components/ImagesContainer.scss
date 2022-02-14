@@ -8,13 +8,25 @@
 .img-container {
     top: 0;
     left: 0;
-    border-radius: 8px;
+    border-radius: 15px;
     border: 1px $green solid;
     display: inline-block;
     min-height: 200px;
     width: 100%;
     overflow: hidden;
     transition: 0.2s all;
+}
+
+.img-fade-in {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+}
+
+.img-fade-out {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.4s, opacity 0.4s ease-out;
 }
 
 .img {
@@ -26,24 +38,39 @@
 }
 
 .img:hover {
-    transform: scale(1.1);
+    transform: scale(110%) translateX(-20px);
     transition: .2s all;
 }
 
 .img-inner {
     position: absolute;
-    left: 0;
+    top: -30px;
+    left: -20px;
+    max-width: 450px;
+    vertical-align: middle;
+    text-align: center;
 }
 
-.img-ani {
-    animation-name: image1;
-    animation-duration: 5s;
+.img-up-ani {
+    animation-name: imageUp;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+.img-down-ani {
+    animation-name: imageDown;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
 }
 
 @keyframes imageUp {
-    0% {transform: translate(0,0);}
+    0% {transform: translate(0,-4%);}
     
-    100% {transform: translate(0,-5%);}
+    100% {transform: translate(0,0);}
+}
+
+@keyframes imageDown {
+    0% {transform: translate(0, 4%);}
+    
+    100% {transform: translate(0,0);}
 }
