@@ -14,7 +14,9 @@ interface IProps {
     title: string,
     contentLinks?: IContentLink[],
     content?: ReactElement,
-    contentImgs?: string[]
+    contentImgs?: string[],
+    isGame?: boolean,
+    playAbility?: 'Nope' | 'Download' | 'Playable'
 }
 
 export const WorkContainer: React.FC<IProps> = (props: IProps) => {
@@ -71,7 +73,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 {props.year}
                             </h2>
                         </div>
-                        <div className='col-sm-8'>
+                        <div className={`${props.isGame ? 'col-sm-6' : 'col-sm-8'}`}>
                             <h1 className='work-title-text'
                                 style={{
                                     color: showContent ? 'white' : props.color,
@@ -81,6 +83,22 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 {props.title}
                             </h1>
                         </div>
+                        {props.isGame && props.playAbility &&
+                            <div
+                                className='col-sm-2'
+                                style={{
+                                    textAlign: 'center'
+                                }}
+                            >
+                                <p style={{color: props.color, margin: 0}} >Playable?</p>
+                                <p style={{
+                                    color: props.playAbility === 'Playable' ? 'lime' : props.playAbility === 'Download' ? 'yellow' : 'red',
+                                    fontWeight: 800,
+                                    margin: 0,
+                                    textShadow: '0 0 10px black'
+                                }}>{props.playAbility}</p>
+                            </div>
+                        }
                         <div
                             className='col-sm-2 work-img-div'
                             style={{
@@ -144,7 +162,6 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 }) :
                                 null}
                             </div>
-                            
                         </> :
                         null}
                 </div>

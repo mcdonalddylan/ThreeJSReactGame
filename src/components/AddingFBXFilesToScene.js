@@ -4,48 +4,54 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 import artGeo from '../assets/models/art_ani.fbx';
 
-export const addingFBXFilesToHomeScene = (scene, renderer, camera, greenMat) => {
+export const addingWebFBXFile = (scene, renderer, camera, material, animate) => {
+    let fbxObject = {};
+    let webGroup;
+    let webMixer;
 
     const loader = new FBXLoader();
 
-    // Load the scene groups of models, anmiations, etc from .fbx files
-    let artGroup;
-    let artMixer;
     loader.load(artGeo, (fbx) => {
 
-        artGroup = fbx;
+        webGroup = fbx;
 
-        artGroup.traverse((obj) => {
+        webGroup.traverse((obj) => {
             if (obj.name === 'Cube' || obj.name === 'Cylinder') {
-                obj.material = greenMat;
+                obj.material = material;
             }
         });
 
-        artGroup.scale.setScalar(0.0009);
-        // artGroup.position.set( 19, -12.25, -3 );
-        artGroup.position.set(0,0,-5);
-        artGroup.rotation.set( 0, 1, 0 );
+        webGroup.scale.set( 0.003, 0.003, 0.003 );
+        new THREE.Box3().setFromObject( webGroup ).getCenter( webGroup.position ).multiplyScalar( -1 ); 
+        webGroup.position.set( 0, -2, -5 );
 
-        artMixer = new THREE.AnimationMixer(artGroup);
-        if (artGroup.animations.length > 0) {
-            artMixer.clipAction( artGroup.animations[0] ).play();
+        webMixer = new THREE.AnimationMixer(webGroup);
+        if (webGroup.animations.length > 0) {
+            webMixer.clipAction( webGroup.animations[0] ).play();
         };
-        console.log('artMixer animation inside: ', artMixer.getRoot());
 
-        scene.add( artGroup );
-        // scene.children.forEach((sceneObj, ind) => {
-        //     console.log(ind, ': ', sceneObj);
-        // });
+        scene.add( webGroup );
 
         renderer.render( scene, camera );
+        fbxObject.webGroup = webGroup;
+        fbxObject.webMixer = webMixer;
+    
+        animate(fbxObject);
+
+        console.log('fbxObject', fbxObject);
+        const rotateObject = () => {
+
+            const currentScrollPos = document.body.getBoundingClientRect().top;
+    
+            if (fbxObject) {
+                fbxObject.webGroup.rotation.x = currentScrollPos * 0.01;
+            }
+        }
+        document.body.onscroll = rotateObject;
+
     }, () => {},
     (error) => {
-        console.log('***', error, '***');
+        console.error('***', error, '***');
     });
-
-    return {
-        artMixer,
-        artGroup
-    };
 
 }

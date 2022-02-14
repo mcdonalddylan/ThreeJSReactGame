@@ -88,7 +88,7 @@ export const setupObjects = ( scene, renderer,
         animate(fbxObjects);
     }, () => {},
     (error) => {
-        console.log('***', error, '***');
+        console.error('***', error, '***');
     });
     //==================================================================================================
 
