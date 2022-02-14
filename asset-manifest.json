@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/ThreeJSReactSite/static/css/main.df9e577c.chunk.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.04c65736.chunk.js",
-    "main.js.map": "/ThreeJSReactSite/static/js/main.04c65736.chunk.js.map",
+    "main.js": "/ThreeJSReactSite/static/js/main.ef46a781.chunk.js",
+    "main.js.map": "/ThreeJSReactSite/static/js/main.ef46a781.chunk.js.map",
     "runtime-main.js": "/ThreeJSReactSite/static/js/runtime-main.739f8fab.js",
     "runtime-main.js.map": "/ThreeJSReactSite/static/js/runtime-main.739f8fab.js.map",
     "static/css/2.4f8976c6.chunk.css": "/ThreeJSReactSite/static/css/2.4f8976c6.chunk.css",
-    "static/js/2.5c12e9eb.chunk.js": "/ThreeJSReactSite/static/js/2.5c12e9eb.chunk.js",
-    "static/js/2.5c12e9eb.chunk.js.map": "/ThreeJSReactSite/static/js/2.5c12e9eb.chunk.js.map",
+    "static/js/2.673528fa.chunk.js": "/ThreeJSReactSite/static/js/2.673528fa.chunk.js",
+    "static/js/2.673528fa.chunk.js.map": "/ThreeJSReactSite/static/js/2.673528fa.chunk.js.map",
     "static/js/3.e8809426.chunk.js": "/ThreeJSReactSite/static/js/3.e8809426.chunk.js",
     "static/js/3.e8809426.chunk.js.map": "/ThreeJSReactSite/static/js/3.e8809426.chunk.js.map",
     "index.html": "/ThreeJSReactSite/index.html",
     "static/css/2.4f8976c6.chunk.css.map": "/ThreeJSReactSite/static/css/2.4f8976c6.chunk.css.map",
     "static/css/main.df9e577c.chunk.css.map": "/ThreeJSReactSite/static/css/main.df9e577c.chunk.css.map",
-    "static/js/2.5c12e9eb.chunk.js.LICENSE.txt": "/ThreeJSReactSite/static/js/2.5c12e9eb.chunk.js.LICENSE.txt",
+    "static/js/2.673528fa.chunk.js.LICENSE.txt": "/ThreeJSReactSite/static/js/2.673528fa.chunk.js.LICENSE.txt",
     "static/media/Dragon.7f7d4120.jpg": "/ThreeJSReactSite/static/media/Dragon.7f7d4120.jpg",
     "static/media/GoodOlBoiV4.c36dc559.jpg": "/ThreeJSReactSite/static/media/GoodOlBoiV4.c36dc559.jpg",
     "static/media/PrideCharcoal.08596c9c.jpg": "/ThreeJSReactSite/static/media/PrideCharcoal.08596c9c.jpg",
@@ -66,15 +66,20 @@
     "static/media/push-up8.b4981e00.jpg": "/ThreeJSReactSite/static/media/push-up8.b4981e00.jpg",
     "static/media/push-up9.f9dd0f7d.jpg": "/ThreeJSReactSite/static/media/push-up9.f9dd0f7d.jpg",
     "static/media/resumeLogo.8a8abea7.svg": "/ThreeJSReactSite/static/media/resumeLogo.8a8abea7.svg",
+    "static/media/screenshot01.5e25aa3f.jpg": "/ThreeJSReactSite/static/media/screenshot01.5e25aa3f.jpg",
     "static/media/screenshot02.3f9ac95f.jpg": "/ThreeJSReactSite/static/media/screenshot02.3f9ac95f.jpg",
+    "static/media/screenshot03.4d470e88.jpg": "/ThreeJSReactSite/static/media/screenshot03.4d470e88.jpg",
+    "static/media/screenshot04.452b5a06.jpg": "/ThreeJSReactSite/static/media/screenshot04.452b5a06.jpg",
+    "static/media/screenshot05.51610124.jpg": "/ThreeJSReactSite/static/media/screenshot05.51610124.jpg",
+    "static/media/screenshot06.c6835d89.jpg": "/ThreeJSReactSite/static/media/screenshot06.c6835d89.jpg",
     "static/media/taffy-pilot-in-dick-land-menu.de1031f3.gif": "/ThreeJSReactSite/static/media/taffy-pilot-in-dick-land-menu.de1031f3.gif",
     "static/media/tieLogo.44bc0bf1.svg": "/ThreeJSReactSite/static/media/tieLogo.44bc0bf1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.739f8fab.js",
     "static/css/2.4f8976c6.chunk.css",
-    "static/js/2.5c12e9eb.chunk.js",
+    "static/js/2.673528fa.chunk.js",
     "static/css/main.df9e577c.chunk.css",
-    "static/js/main.04c65736.chunk.js"
+    "static/js/main.ef46a781.chunk.js"
   ]
 }
