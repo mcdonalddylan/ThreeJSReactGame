@@ -5,6 +5,7 @@ import { NavBarContainerWithRouter } from './components/NavBarContainer';
 import { ThreeJSErrorPage } from './components/ThreeJSErrorPage';
 import { ThreeJSWebPage } from './components/ThreeJSWebPage';
 import { ThreeJGamePage } from './components/ThreeJSGamePage';
+import { ThreeJSArtPage } from './components/ThreeJSArtPage';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
           <Route exact path='/' component={ThreeJSHomePage} />
           <Route exact path='/web' component={ThreeJSWebPage} />
           <Route exact path='/game' component={ThreeJGamePage} />
-          <Route exact path='/art' component={ThreeJSGameContainer} />
+          <Route exact path='/art' component={ThreeJSArtPage} />
           {/* Error Page */}
           <Route component={ThreeJSErrorPage} /> 
         </Switch>

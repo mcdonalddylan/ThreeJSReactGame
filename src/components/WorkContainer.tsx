@@ -15,7 +15,6 @@ interface IProps {
     contentLinks?: IContentLink[],
     content?: ReactElement,
     contentImgs?: string[],
-    isGame?: boolean,
     playAbility?: 'Nope' | 'Download' | 'Playable'
 }
 
@@ -25,7 +24,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
 
     const viewImg = (imageSrc: string) => {
         
-        window.open(imageSrc, '_target');
+        window.open(imageSrc, '_blank');
     }
 
     const toggleContent = (event: any) => {
@@ -40,7 +39,6 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
             } else {
                 setShowContent(!showContent);
             }
-            
         }
     }
 
@@ -73,7 +71,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 {props.year}
                             </h2>
                         </div>
-                        <div className={`${props.isGame ? 'col-sm-6' : 'col-sm-8'}`}>
+                        <div className={`${props.playAbility ? 'col-sm-6' : 'col-sm-8'}`}>
                             <h1 className='work-title-text'
                                 style={{
                                     color: showContent ? 'white' : props.color,
@@ -83,7 +81,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 {props.title}
                             </h1>
                         </div>
-                        {props.isGame && props.playAbility &&
+                        {props.playAbility &&
                             <div
                                 className='col-sm-2'
                                 style={{

@@ -61,6 +61,10 @@ import { addingWebFBXFile } from './AddingFBXFilesToScene';
 
 export const ThreeJSWebPage: React.FC = () => {
     
+    // Colors
+    const mainColor = '#7dd5f5';
+    const bgColor = '#062432';
+
     const quality: any = useSelector<IState>(state=>state.qualityState);
     const [refresh, setRefresh] = useState(false);
     
@@ -92,7 +96,6 @@ export const ThreeJSWebPage: React.FC = () => {
         }
         
         window.onresize = () => {
-            //console.log('You just resized the window');
             renderer.setSize( window.innerWidth, window.innerHeight);
             setRefresh(!refresh);
         };
@@ -103,23 +106,6 @@ export const ThreeJSWebPage: React.FC = () => {
 
         // Light setup
         setupLights( scene );
-
-        // let webGeo = new THREE.BoxGeometry( 1, 1, 1 );
-        
-        // let webMesh = new THREE.Mesh( webGeo, webMat );
-
-        // let meshZPos = -2;
-        // if (mobileAspectRatio){
-        //     meshZPos = -3;
-        // } else {
-        //     meshZPos = -2;
-        // }
-
-        // webMesh.position.set( 0, -0.1, meshZPos );
-        // scene.add( webMesh );
-
-        // Render function babyyyyy
-        //renderer.render( scene, camera );
 
         const clock = new THREE.Clock;
         const animate = (fbxObject?: any) => {
@@ -142,7 +128,7 @@ export const ThreeJSWebPage: React.FC = () => {
         
         //let fbxObject: any;
         let webMat = new THREE.MeshPhongMaterial({
-            color: 0x156289,
+            color: bgColor,
         });
         addingWebFBXFile(scene, renderer, camera, webMat, animate);
 
@@ -162,8 +148,8 @@ export const ThreeJSWebPage: React.FC = () => {
                 <div className='col-12-xm'>
                     <h1 className='page-title'
                         style={{
-                            color: '#22b5ff',
-                            textShadow: `0 0 4px ${'#22b5ff'}`
+                            color: mainColor,
+                            textShadow: `0 0 4px ${mainColor}`
                         }}
                     >
                         Web Projects:
@@ -173,8 +159,8 @@ export const ThreeJSWebPage: React.FC = () => {
 
             <WorkContainer
                 chevronImgSrc={chevWeb}
-                color={'#22b5ff'}
-                bgColor={'#062432'}
+                color={mainColor}
+                bgColor={bgColor}
                 year='2021'
                 title='Bam 2.0'
                 content={(
@@ -200,8 +186,8 @@ export const ThreeJSWebPage: React.FC = () => {
 
             <WorkContainer
                 chevronImgSrc={chevWeb}
-                color={'#22b5ff'}
-                bgColor={'#062432'}
+                color={mainColor}
+                bgColor={bgColor}
                 year='2021'
                 title='Push Up App'
                 contentLinks={[
@@ -235,8 +221,8 @@ export const ThreeJSWebPage: React.FC = () => {
 
             <WorkContainer
                 chevronImgSrc={chevWeb}
-                color={'#22b5ff'}
-                bgColor={'#062432'}
+                color={mainColor}
+                bgColor={bgColor}
                 year='2020'
                 title='Client Engagement Portal'
                 contentLinks={
@@ -308,8 +294,8 @@ export const ThreeJSWebPage: React.FC = () => {
 
             <WorkContainer
                 chevronImgSrc={chevWeb}
-                color={'#22b5ff'}
-                bgColor={'#062432'}
+                color={mainColor}
+                bgColor={bgColor}
                 year='2020'
                 title='Mochi Circle'
                 contentLinks={[

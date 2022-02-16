@@ -59,11 +59,11 @@ import tafPdf from '../assets/game images/taffyPilot/taffy-pilot-in-dl-gdd-dylan
 
 import { addingWebFBXFile } from './AddingFBXFilesToScene';
 
-export const ThreeJGamePage: React.FC = () => {
+export const ThreeJSArtPage: React.FC = () => {
     
     // Colors
-    const mainColor = '#f27e8c';
-    const bgColor = '#301c1e';
+    const mainColor = '#e8ed47';
+    const bgColor = '#5a5c27';
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
     const [refresh, setRefresh] = useState(false);
@@ -152,7 +152,7 @@ export const ThreeJGamePage: React.FC = () => {
                             textShadow: `0 0 4px ${mainColor}`
                         }}
                     >
-                        Game Projects:
+                        Art Projects:
                     </h1>
                 </div>
             </div>
