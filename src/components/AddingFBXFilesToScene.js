@@ -38,7 +38,6 @@ export const addingWebFBXFile = (scene, renderer, camera, material, animate) => 
     
         animate(fbxObject);
 
-        console.log('fbxObject', fbxObject);
         const rotateObject = () => {
 
             const currentScrollPos = document.body.getBoundingClientRect().top;

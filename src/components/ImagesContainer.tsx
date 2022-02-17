@@ -6,6 +6,7 @@ import './ImagesContainer.scss';
 interface IProps {
     images: string[],
     redirectString: string,
+    animationCycle?: number,
     animationSpeed?: 1 | 1.5 | 2 | 3
 }
 
@@ -13,7 +14,6 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
 
     const [redirect, setRedirect] = useState(false);
     const isFourImages: boolean = props.images.length === 4;
-    let animationCycle = 0;
     let animationSpeed = props.animationSpeed;
 
     if (!animationSpeed) {
@@ -21,42 +21,35 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
     }
 
     useEffect(() => {
-        if (isFourImages) {
-            setInterval(() => {
-                animationCycle = (animationCycle + 1) % 4;
-        
-                const img1Element = document.getElementById(`${props.redirectString}img1`);
-                const img2Element = document.getElementById(`${props.redirectString}img2`);
-                const img3Element = document.getElementById(`${props.redirectString}img3`);
-                const img4Element = document.getElementById(`${props.redirectString}img4`);
-        
-                if (animationCycle === 0) {
-                    img1Element?.classList.remove('img-up-ani');
-                    img1Element?.classList.replace('img-fade-in', 'img-fade-out');
-                    img2Element?.classList.replace('img-fade-out', 'img-fade-in');
-                    img2Element?.classList.add('img-down-ani');
-                } else if (animationCycle === 1) {
-                    img2Element?.classList.remove('img-down-ani');
-                    img2Element?.classList.replace('img-fade-in', 'img-fade-out');
-                    img3Element?.classList.replace('img-fade-out', 'img-fade-in');
-                    img3Element?.classList.add('img-up-ani');
-                } else if (animationCycle === 2) {
-                    img3Element?.classList.remove('img-up-ani');
-                    img3Element?.classList.replace('img-fade-in', 'img-fade-out');
-                    img4Element?.classList.replace('img-fade-out', 'img-fade-in');
-                    img4Element?.classList.add('img-down-ani');
-                } else if (animationCycle === 3) {
-                    img4Element?.classList.remove('img-down-ani');
-                    img4Element?.classList.replace('img-fade-in', 'img-fade-out');
-                    img1Element?.classList.replace('img-fade-out', 'img-fade-in');
-                    img1Element?.classList.add('img-up-ani');
-                }
-            }, (animationSpeed as number)*1000);
+        if (isFourImages && props.animationCycle) {
+            const img1Element = document.getElementById(`${props.redirectString}img1`);
+            const img2Element = document.getElementById(`${props.redirectString}img2`);
+            const img3Element = document.getElementById(`${props.redirectString}img3`);
+            const img4Element = document.getElementById(`${props.redirectString}img4`);
+    
+            if (props.animationCycle === 1) {
+                img1Element?.classList.remove('img-up-ani');
+                img1Element?.classList.replace('img-fade-in', 'img-fade-out');
+                img2Element?.classList.replace('img-fade-out', 'img-fade-in');
+                img2Element?.classList.add('img-down-ani');
+            } else if (props.animationCycle === 2) {
+                img2Element?.classList.remove('img-down-ani');
+                img2Element?.classList.replace('img-fade-in', 'img-fade-out');
+                img3Element?.classList.replace('img-fade-out', 'img-fade-in');
+                img3Element?.classList.add('img-up-ani');
+            } else if (props.animationCycle === 3) {
+                img3Element?.classList.remove('img-up-ani');
+                img3Element?.classList.replace('img-fade-in', 'img-fade-out');
+                img4Element?.classList.replace('img-fade-out', 'img-fade-in');
+                img4Element?.classList.add('img-down-ani');
+            } else if (props.animationCycle === 4) {
+                img4Element?.classList.remove('img-down-ani');
+                img4Element?.classList.replace('img-fade-in', 'img-fade-out');
+                img1Element?.classList.replace('img-fade-out', 'img-fade-in');
+                img1Element?.classList.add('img-up-ani');
+            }
         }
-    }, []);
-
-    //TODO: Animate using javascript setInterval since Css animation won't sync with eachother.
-    // The fade-in and fade-out classes can be re-used from homepage.scss.
+    }, [props.animationCycle]);
 
     return (
         <div className="imgs-container">

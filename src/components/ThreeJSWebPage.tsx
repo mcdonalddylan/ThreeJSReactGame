@@ -57,6 +57,7 @@ import clientImg2 from '../assets/web images/clientEngage/client2.jpg';
 import clientImg3 from '../assets/web images/clientEngage/client3.jpg';
 import clientImg4 from '../assets/web images/clientEngage/client4.jpg';
 import clientImg5 from '../assets/web images/clientEngage/client5.jpg';
+
 import { addingWebFBXFile } from './AddingFBXFilesToScene';
 
 export const ThreeJSWebPage: React.FC = () => {

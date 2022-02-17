@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import * as THREE from "three";
 import { setupLights, setupObjects } from './HomePageFunctions';
 import '../components/HomePage.scss';
@@ -21,7 +21,7 @@ import gameImg2 from '../assets/game images/coolTitle/cooltitlescreen05.jpg';
 import gameImg3 from '../assets/game images/square/avoidrect03.jpg';
 import gameImg4 from '../assets/game images/taffyPilot/taffy-pilot-in-dick-land-menu.gif';
 
-import artImg1 from '../assets/art images/characterDesigns/TP Character Model Sheet.jpg';
+import artImg1 from '../assets/art images/characterDesigns/TP_Character_Model_Sheet.jpg';
 import artImg2 from '../assets/art images/creatureDesigns/Dragon.jpg';
 import artImg3 from '../assets/art images/other/GoodOlBoiV4.jpg';
 import artImg4 from '../assets/art images/realArt/PrideCharcoal.jpg';
@@ -39,7 +39,26 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
     const [webRedirect, setWebRedirect] = useState(false);
     const [gameRedirect, setGameRedirect] = useState(false);
     const [artRedirect, setArtRedirect] = useState(false);
+    const [isMobileAspectRatio, setIsMobileAspectRatio] = useState(false);
 
+    const [animationCycle, setAnimationCycle] = useState(1);
+    const IMAGES_ANIMATION_SPEED = 2;
+    let animationTimerId: any = undefined;
+    useEffect(() => {
+        if (!animationTimerId) {
+            animationTimerId = setInterval(() => {
+                setAnimationCycle(currentAnimationCycle => {
+                    if((currentAnimationCycle + 1) % 5 === 0){
+                        return 1;
+                    } else {
+                        return (currentAnimationCycle + 1) % 5;
+                    }
+                });
+            }, IMAGES_ANIMATION_SPEED*1000);
+        }
+        return () => clearInterval(animationTimerId);
+    }, []);
+    
     useEffect(()=>{
 
         if ( WEBGL.isWebGLAvailable() ) { 
@@ -49,11 +68,10 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             renderer.setSize( window.innerWidth, window.innerHeight);
             renderer.setPixelRatio( window.devicePixelRatio/quality );
 
-            let mobileAspectRatio = false;
-            if(window.innerHeight > window.innerWidth) {
-                mobileAspectRatio = true;
-            } else {
-                mobileAspectRatio = false;
+            if(window.innerHeight > window.innerWidth && !isMobileAspectRatio) {
+                setIsMobileAspectRatio(true);
+            } else if (window.innerHeight <= window.innerWidth && isMobileAspectRatio) {
+                setIsMobileAspectRatio(false);
             }
 
             renderer.domElement.id = 'dom';
@@ -85,7 +103,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             setupLights( scene );
             
             // Object placement/animation/inputs
-            setupObjects( scene, renderer, camera, quality, mobileAspectRatio );
+            setupObjects( scene, renderer, camera, quality, isMobileAspectRatio );
 
         } else {
             
@@ -93,7 +111,7 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
             document.body.appendChild( warning );
         }
 
-    },[refresh, quality]);
+    },[refresh, quality, isMobileAspectRatio]);
 
     const wobbleToggle = (event: any) => {
         const element: HTMLCanvasElement = event.target;
@@ -165,22 +183,41 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                 </div>
             </div>
 
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            {isMobileAspectRatio ?
+            <>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </>
+            :
+            <>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </>
+            }
+            
 
             <div className="row justify-content-center text-grid fade-out wobble" id="second" onClick={wobbleToggle}>
                 <div className="col-sm-8 my-auto text-center" >
@@ -192,25 +229,44 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                     <ImagesContainer
                         images={[webImg1, webImg2, webImg3, webImg4]}
                         redirectString={'/web'}
+                        animationCycle={animationCycle}
+                        animationSpeed={IMAGES_ANIMATION_SPEED}
                     />
                 </div>
             </div>
 
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            {isMobileAspectRatio ?
+            <>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </>
+            :
+            <>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </>
+            }
+
             
             <div className="row justify-content-center text-grid fade-out wobble" id="third" onClick={wobbleToggle}>
                 <div className="col-sm-8 my-auto text-center" >
@@ -222,25 +278,50 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                     <ImagesContainer
                         images={[gameImg1, gameImg2, gameImg3, gameImg4]}
                         redirectString={'/game'}
+                        animationCycle={animationCycle}
+                        animationSpeed={IMAGES_ANIMATION_SPEED}
                     />
                 </div>
             </div>
 
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            {isMobileAspectRatio ?
+            <>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </>
+            :
+            <>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </>
+            }
 
             <div className="row justify-content-center text-grid fade-out wobble" id="fourth" onClick={wobbleToggle}>
                 <div className="col-sm-8 my-auto text-center" >
@@ -252,6 +333,8 @@ export const ThreeJSHomePage: React.FC<IProps> = ( props: IProps ) => {
                     <ImagesContainer
                         images={[artImg1, artImg2, artImg3, artImg4]}
                         redirectString={'/art'}
+                        animationCycle={animationCycle}
+                        animationSpeed={IMAGES_ANIMATION_SPEED}
                     />
                 </div>
             </div>

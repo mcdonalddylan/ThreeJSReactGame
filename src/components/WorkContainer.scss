@@ -79,3 +79,29 @@
     color: $orange;
     transition: 0.1s;
 }
+
+// /* width */
+// ::-webkit-scrollbar {
+//     width: 10px;
+    
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//     background: none;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//     border-radius: 5px;
+//     background: #888888;
+//     border-right: 4px #5a5c27 solid;
+//     background-clip: padding-box;
+//     filter: saturate(0.4);
+//     -webkit-filter: saturate(0.4);
+// }
+
+// /* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #444444;
+// }

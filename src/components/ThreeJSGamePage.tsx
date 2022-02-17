@@ -177,7 +177,8 @@ export const ThreeJGamePage: React.FC = () => {
                     <>
                         <p style={{color: 'white'}}>
                             This is a boss-battle driven third-person shooter game made using the Godot game engine. 
-                            This game was submitted to the Mech Jam II game jam on October 6th 2021.</p>
+                            This game was submitted to the Mech Jam II game jam on October 6th 2021.
+                        </p>
                         <br></br>
                         <p style={{color: 'white'}}>
                             My contributions:
@@ -196,13 +197,13 @@ export const ThreeJGamePage: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    eraseImg1,
+                    eraseImg7,
                     eraseImg2,
                     eraseImg3,
                     eraseImg4,
                     eraseImg5,
                     eraseImg6,
-                    eraseImg7
+                    eraseImg1
                 ]}
                 playAbility='Download'
             />
@@ -386,12 +387,12 @@ export const ThreeJGamePage: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    recImg1,
+                    recImg6,
                     recImg2,
                     recImg3,
                     recImg4,
                     recImg5,
-                    recImg6,
+                    recImg1,
                     recImg7
                 ]}
                 playAbility='Download'
