@@ -1,31 +1,32 @@
-import { ThreeJSGameContainer } from '../src/components/ThreeJSGameContainer';
-import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
-import { ThreeJSHomePage } from './components/ThreeJSHomePage';
-import { NavBarContainerWithRouter } from './components/NavBarContainer';
-import { ThreeJSErrorPage } from './components/ThreeJSErrorPage';
-import { ThreeJSWebPage } from './components/ThreeJSWebPage';
-import { ThreeJGamePage } from './components/ThreeJSGamePage';
-import { ThreeJSArtPage } from './components/ThreeJSArtPage';
+//import { GameContentContainer } from './components/GameContentContainer/GameContentContainer';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import { HomePageContainer } from './components/HomePageContainer/HomePageContainer';
+import { NavBarContainer } from './components/NavBarContainer/NavBarContainer';
+import { ErrorPageContainer } from './components/ErrorPageContainer/ErrorPageContainer';
+import { WebPageContainer } from './components/WebPageContainer/WebPageContainer';
+import { GamePageContainer } from './components/GamePageContainer/GamePageContainer';
+import { ArtPageContainer } from './components/ArtPageContainer/ArtPageContainer';
 
-function App() {
+export const App = () => {
 
   return (
     <>
     {/* Hash Router (So that you can navigate on github pages) */}
-      <HashRouter basename={process.env.PUBLIC_URL}>
-        <Switch>
-          <Route exact path='/' component={ThreeJSHomePage} />
-          <Route exact path='/web' component={ThreeJSWebPage} />
-          <Route exact path='/game' component={ThreeJGamePage} />
-          <Route exact path='/art' component={ThreeJSArtPage} />
+      <HashRouter
+        basename={'/'}
+      >
+        <Routes>
+          <Route path='/' element={<HomePageContainer />} />
+          <Route path='/web' element={<WebPageContainer />} />
+          <Route path='/game' element={<GamePageContainer />} />
+          <Route path='/art' element={<ArtPageContainer />} />
           {/* Error Page */}
-          <Route component={ThreeJSErrorPage} /> 
-        </Switch>
+          <Route path='/*' element={<ErrorPageContainer />} />
+        </Routes>
         
         {/* Nav Bar */}
-        <NavBarContainerWithRouter />
+        <NavBarContainer />
       </HashRouter>
-      
     </>
   );
 }
