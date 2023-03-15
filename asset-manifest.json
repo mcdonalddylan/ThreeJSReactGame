@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ThreeJSReactSite/static/css/main.3d3809be.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.9ec50515.js",
+    "main.css": "/ThreeJSReactSite/static/css/main.59e8d18f.css",
+    "main.js": "/ThreeJSReactSite/static/js/main.7b7fe250.js",
     "static/js/787.348ddb5b.chunk.js": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js",
     "static/media/IMG_1024_edited.jpg": "/ThreeJSReactSite/static/media/IMG_1024_edited.b4e4a70a4d97e05640aa.jpg",
     "static/media/model_sheet_final_v2.jpg": "/ThreeJSReactSite/static/media/model_sheet_final_v2.b67aa911f9d77e7f460d.jpg",
@@ -111,12 +111,12 @@
     "static/media/emailLogo.svg": "/ThreeJSReactSite/static/media/emailLogo.295ca66842df8dd33d44825c3f54e4c7.svg",
     "static/media/tieLogo.svg": "/ThreeJSReactSite/static/media/tieLogo.44bc0bf1c499d899993dce5a1a81c93f.svg",
     "static/media/chevWeb.svg": "/ThreeJSReactSite/static/media/chevWeb.785a81c5c5f61394cecc3ca783b6eba6.svg",
-    "main.3d3809be.css.map": "/ThreeJSReactSite/static/css/main.3d3809be.css.map",
-    "main.9ec50515.js.map": "/ThreeJSReactSite/static/js/main.9ec50515.js.map",
+    "main.59e8d18f.css.map": "/ThreeJSReactSite/static/css/main.59e8d18f.css.map",
+    "main.7b7fe250.js.map": "/ThreeJSReactSite/static/js/main.7b7fe250.js.map",
     "787.348ddb5b.chunk.js.map": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d3809be.css",
-    "static/js/main.9ec50515.js"
+    "static/css/main.59e8d18f.css",
+    "static/js/main.7b7fe250.js"
   ]
 }
