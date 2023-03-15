@@ -1,4 +1,3 @@
-//import { GameContentContainer } from './components/GameContentContainer/GameContentContainer';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { HomePageContainer } from './components/HomePageContainer/HomePageContainer';
 import { NavBarContainer } from './components/NavBarContainer/NavBarContainer';

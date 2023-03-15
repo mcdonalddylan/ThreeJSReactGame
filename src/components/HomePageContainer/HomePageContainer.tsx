@@ -138,7 +138,7 @@ export const HomePageContainer: React.FC = () => {
                     </h3>
                     <div className="row justify-content-center" style={{margin: "auto", textAlign: "center"}}>
                         <div className="col-sm-3">
-                            <a href='https://dylandavidmcdonald.files.wordpress.com/2020/01/dylan-mcd-game-developer-resume-2.pdf' 
+                            <a href='https://drive.google.com/file/d/1V94dxoOiaAv2I0Fa8BB3xNZc9XROQxB9/view?usp=sharing'
                             className="main-link" target='_blank'>
                                 Resume 
                             </a>
