@@ -171,22 +171,25 @@ export const GamePageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             This game is a heavily movement and platforming-focused 2.5D Metroidvania game.
                             Movement mechanics inspired by Super Smash Brothers Melee.
                         </p>
                         <br></br>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             Goals with project:
                         </p>
                         <ul>
-                            <li style={{ color: 'white' }}>
+                            <li>
+                                Move Unity progress over to UE5
+                            </li>
+                            <li>
                                 Complete a vertical slice
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Create an webGL and Android version
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 TBD
                             </li>
                         </ul>
@@ -213,15 +216,15 @@ export const GamePageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             Considering how simple the original "Avoid the Rectangles" game was, I figured it'd be a good way to learn game development using three.js.
                         </p>
                         <br></br>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             Goals with project:
                         </p>
                         <ul>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Complete a vertical slice just for fun :)
                             </li>
                         </ul>
@@ -248,22 +251,22 @@ export const GamePageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             This is a boss-battle driven third-person shooter game made using the Godot game engine.
                             This game was submitted to the Mech Jam II game jam on October 6th 2021.
                         </p>
                         <br></br>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             My contributions:
                         </p>
                         <ul>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 The UI art, programming, animations.
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Fixed bugs with AI and character movement.
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Created scene manager script for transitions between levels.
                             </li>
                         </ul>
@@ -295,34 +298,34 @@ export const GamePageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             {'The '}
                             <a href='https://itch.io/jam/2-buttons-jam-2019'>2-Button itchio game jam</a>
                             {' '}heavily inspired this game.
                             Unfortunately I was finishing up my last semester of college while that jam was going on,
                             but that didn’t stop me from cooking up ideas.</p>
                         <br></br>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             My contributions:
                         </p>
                         <ul>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Character customization.
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Level transitions.
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Configurable video settings menu.
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Singletons (game manager).
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Enemy Ai, etc.
                             </li>
                         </ul>
-                        <p style={{ color: 'white' }}>
+                        <p >
                             Almost one month after graduating I finally release version 1.0.
                             My goal here was to see if I could create a simple but fun-to-play game with a complete story mode,
                             all within one month.
@@ -361,14 +364,14 @@ export const GamePageContainer: React.FC = () => {
                     ]}
                 content={(
                     <>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             A Unity Engine VR game whereby the player must save the world; one tree hug at a time.
                             Not every tree consents to being hugged however.
                             Fortunately in this bizarre game you can fire a “money-shot” at nasty objects that may be bothering the tree.
                             Ahhhh, if only the solution to climate change were actually this easy. That’d be nice.
                         </p>
                         <br></br>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             This was my big senior project and the first VR game I had ever made.
                             There were many hurdles to overcome and countless bugs I had to fix by the end of the semester.
                             That said, the version you can download now is technically feature complete.
@@ -405,7 +408,7 @@ export const GamePageContainer: React.FC = () => {
                     ]}
                 content={(
                     <>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             This was the 2nd game that I coded entirely using Java using the
                             {' '}<a href='https://processing.org/'>Processing sketch program</a>.
                             The objective in this game is to form a long video-game title by collecting as many “cool” words as possible.
@@ -416,7 +419,7 @@ export const GamePageContainer: React.FC = () => {
                             Otherwise you’ll get a much higher score by collecting either 7 or 8 words (depends on the length).
                         </p>
                         <br></br>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             I had a lot of fun making this game, but I gotta say that Processing 3.0+ is a program that is definitely not designed to handle 3D games.
                             It was very challenging to optimize the performance.
                         </p>
@@ -448,7 +451,7 @@ export const GamePageContainer: React.FC = () => {
                     ]}
                 content={(
                     <>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             This game was coded entirely using Java within the
                             {' '}<a href='https://processing.org/'>Processing sketch program</a>.
                             Originally it was an assignment for my Art and Code class, however the version you can download now is a far more complete version with lots of hidden features.
@@ -485,23 +488,23 @@ export const GamePageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             An Unreal Engine 4 3D platformer where the you control a pudgy little guy who’s been trapped in a virtual world based around crappy social media games.
                             His goal is to escape this hell by popping dick-shaped balloons that are scattered around 5 different wacky worlds.
                             For more information, feel free to check out the game design document.
                         </p>
                         <br></br>
-                        <p style={{ color: 'white' }}>
+                        <p>
                             My contributions:
                         </p>
                         <ul>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Using the “Blueprint” system to create a polished main menu.
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Using C++ to both animate and control the playable character.
                             </li>
-                            <li style={{ color: 'white' }}>
+                            <li>
                                 Creation of a ton of 3D player animations and other 3D assets.
                             </li>
                         </ul>

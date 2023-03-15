@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { HomePageContainer } from './components/HomePageContainer/HomePageContainer';
 import { NavBarContainer } from './components/NavBarContainer/NavBarContainer';
@@ -8,6 +9,11 @@ import { ArtPageContainer } from './components/ArtPageContainer/ArtPageContainer
 
 export const App = () => {
 
+  useEffect(() => {
+    // Should display the environment only once upon starting the app
+    console.log('Current environment: ', process.env.REACT_APP_TEST_SECRET);
+  }, []);
+  
   return (
     <>
     {/* Hash Router (So that you can navigate on github pages) */}

@@ -31,7 +31,8 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
         const element: HTMLElement = event.target;
         // Will toggle content if not a link and not an image (exception for chevron img)
         if (element.tagName !== 'A'){
-            if(element.tagName === 'IMG'){
+            if(element.tagName === 'IMG' || element.tagName === 'P' ||
+            element.tagName === 'LI'){
                 if(element.id === 'chev'){
                     setShowContent(!showContent);
                 }

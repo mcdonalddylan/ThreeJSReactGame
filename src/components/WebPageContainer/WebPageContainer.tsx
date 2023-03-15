@@ -162,25 +162,34 @@ export const WebPageContainer: React.FC = () => {
                 chevronImgSrc={chevWeb}
                 color={mainColor}
                 bgColor={bgColor}
-                year='2021'
+                year='2021+'
                 title='Bam 2.0'
                 content={(
                     <>
-                        <p style={{color: 'white'}}>
-                            Enterprise-level project I'm currently working on. 
-                            I am a full-stack developer within an internal team of 16 other developers.
+                        <p>
+                            Enterprise-level project I'm currently contributing to. 
+                            I am one of two dev specialists within an internal team of 6 other developers.
                         </p>
                         <br></br>
-                        <p style={{color: 'white'}}>My contributions:</p>
+                        <p>My contributions:</p>
                         <ul>
-                            <li style={{color: 'white'}}>
-                                Create system for uploading and downloading attachments on messages.
+                            <li>
+                                Created a system for uploading and downloading attachments on messages.
                             </li>
-                            <li style={{color: 'white'}}>
-                                Add a message threading feature to allow users to view previous reply messages.
+                            <li>
+                                Added a message threading feature to allow users to view previous reply messages.
                             </li>
-                            <li style={{color: 'white'}}>
-                                Create dynamic form which allows the user to schedule an appointment with a nurse health advocate.
+                            <li>
+                                Refactored our four support pages to use micro-front-end architecture with the single-spa-react library.
+                            </li>
+                            <li>
+                                Deployed all four of our UI pages and all seven of our support APIs to each test environment using Jenkins and UCD. I've also deployed to the production environment using Pivotal Cloud Foundry and the Concourse CLI.
+                            </li>
+                            <li>
+                                Implemented a dynamic form which allows the user to schedule an appointment with a nurse health advocate.
+                            </li>
+                            <li>
+                                Added loadtime-weaving to our APIs with AspectJ and Spring AOP for more effecient logging.
                             </li>
                         </ul>
                     </>
@@ -202,9 +211,9 @@ export const WebPageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p style={{color: 'white'}}>This is a web application to encourage those of us who are on our computers for hours on end, to do some push ups every so often. More detailed information about the project itself can be in the github link above.</p>
+                        <p>This is a web application to encourage those of us who are on our computers for hours on end, to do some push ups every so often. More detailed information about the project itself can be in the github link above.</p>
                         <br></br>
-                        <p style={{color: 'white'}}>This is my first solo project that I’ve worked on in a few months. As much as I enjoy React and front-end development in general, it’s nice to get back into Spring and get some back-end work again. I mostly created this app just to keep my skills fresh, but I do genuinely think it’s a very useful tool for a lot of us out there. I just can’t wait to get a little further with it so that it can finally be deployed.</p>
+                        <p>This is my first solo project that I’ve worked on in a few months. As much as I enjoy React and front-end development in general, it’s nice to get back into Spring and get some back-end work again. I mostly created this app just to keep my skills fresh, but I do genuinely think it’s a very useful tool for a lot of us out there. I just can’t wait to get a little further with it so that it can finally be deployed.</p>
                     </>
                 )}
                 contentImgs={[
@@ -242,47 +251,47 @@ export const WebPageContainer: React.FC = () => {
                     ]}
                 content={(
                     <>
-                        <p style={{color: 'white'}}>
+                        <p>
                             This is a web application to map batches of Revature associates with client who may be interesting in hiring them. The photos above are markups/wireframes I created for each page I was responsible for. More detailed information about the project itself can be in the github links above. My responsibilities were the following:
                         </p>
                         <br></br>
-                        <p style={{color: 'white'}}>
+                        <p>
                             My contributions:
                         </p>
                         <ul>
-                            <li style={{color: 'white'}}>
+                            <li>
                                 As one of the Style Captains I kept the SCSS consistent throughout the front end.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li>
                                 Drew mock ups for each of the client pages.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li>
                                 Created the logo for this application as an .svg file.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li>
                                 Encrypted the database url, username, and password on the back end using Jasypt.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li >
                                 Created the “batch cards” which represent the individual batches tied to a client.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li >
                                 Implemented a “batchstate” using the Flux design pattern to temporarily store batch data in the store.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li >
                                 Gathered data from our mock-up database to populate the “batch cards” I created.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li >
                                 Allowed information about a specific batch populate the fields of our “batch view” page.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li >
                                 Tested my front end React components using Enzyme and Jest.
                             </li>
-                            <li style={{color: 'white'}}>
+                            <li >
                                 Kept track of the application’s progress using GitHub’s “projects” tab and Asana.
                             </li>
                         </ul>
                         <br></br>
-                        <p style={{color: 'white'}}>
+                        <p>
                             This project, like all of them really, was a great learning experience. While I was very focused on the front-end in my mochi circle project, this project let me go wild. I became very familiar with React, typescript, and git by the end of it. While communication wasn’t as strong as it was was working in a smaller team, using githubs “projects” management board system and Asana were very helpful.
                         </p>
                     </>
@@ -314,7 +323,7 @@ export const WebPageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p style={{color: 'white'}}>
+                        <p>
                             An online food delivery application I worked on for the company Revature. I designed and programmed each of the web pages on the site. While it’s still in the early stages, the request page will properly calculate your order amount. 
                         </p>
                     </>

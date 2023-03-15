@@ -20,6 +20,14 @@
     border: 1px solid white;
 }
 
+li, p {
+    color: white;
+}
+
+li:nth-child(even) {
+    color: lightgray; 
+}
+
 .content-image-bg {
     background-size: 110%;
     background-position-y: bottom;
