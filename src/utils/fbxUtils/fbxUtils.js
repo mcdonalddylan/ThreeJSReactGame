@@ -4,7 +4,7 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 import artGeo from '../../assets/models/art_ani.fbx';
 
-export const addingWebFBXFile = (scene, renderer, camera, material, animate, acceleration, direction) => {
+export const addingWebFBXFile = (scene, renderer, camera, material, animate) => {
 
     let fbxObject = {};
     let webGroup;
@@ -24,7 +24,8 @@ export const addingWebFBXFile = (scene, renderer, camera, material, animate, acc
 
         webGroup.scale.set( 0.003, 0.003, 0.003 );
         new THREE.Box3().setFromObject( webGroup ).getCenter( webGroup.position ).multiplyScalar( -1 ); 
-        webGroup.position.set( 0, -2, -5 );
+        webGroup.position.set( 0, -1.5, -4 );
+        webGroup.rotation.set(-0.4, 0, 0);
 
         webMixer = new THREE.AnimationMixer(webGroup);
         if (webGroup.animations.length > 0) {
@@ -37,7 +38,7 @@ export const addingWebFBXFile = (scene, renderer, camera, material, animate, acc
         fbxObject.webGroup = webGroup;
         fbxObject.webMixer = webMixer;
 
-        animate(fbxObject, acceleration, direction);
+        animate(fbxObject);
         
     }, () => {},
     (error) => {

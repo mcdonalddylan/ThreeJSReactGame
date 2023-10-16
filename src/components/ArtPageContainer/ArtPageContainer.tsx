@@ -43,14 +43,14 @@ export const ArtPageContainer: React.FC = () => {
     const [isMobileAspectRatio, setIsMobileAspectRatio] = useState(false);
 
     useEffect(()=>{
-        if (WEBGL.isWebGLAvailable()){
+        if (WEBGL.isWebGLAvailable()) {
 
         // Renderer setup
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight);
         renderer.setPixelRatio( window.devicePixelRatio/quality );
 
-        if(window.innerHeight > window.innerWidth && !isMobileAspectRatio) {
+        if (window.innerHeight > window.innerWidth && !isMobileAspectRatio) {
             setIsMobileAspectRatio(true);
         } else if (window.innerHeight <= window.innerWidth && isMobileAspectRatio) {
             setIsMobileAspectRatio(false);
@@ -80,63 +80,51 @@ export const ArtPageContainer: React.FC = () => {
         // Light setup
         setupHomePageLights( scene );
 
+        // Animating the background 3D model when scrolling up and down
         const clock = new THREE.Clock;
-        const initialSpeed = 1;
-        let acceleration: number = 0;
-        let direction: number = 1;
-        const animate = (fbxObject: any, acceleration: number, direction: number) => {
+        let direction = 1;
+        let speed = 0;
+        const animate = (fbxObject?: any) => {
             if (fbxObject) {
                 const delta = clock.getDelta();
                 fbxObject.webMixer.update(delta);
-
-                if (acceleration != null && direction != null) {
-                    acceleration -= 0.0005;
-                    if (acceleration < 0) {
-                        acceleration = 0;
-                    }
-                    fbxObject.webGroup.rotation.x += direction * acceleration;
-                    console.log('direction ', direction, ' acceleration ', acceleration, ' speed ', direction * acceleration);
-                }
+                const acceleration = -0.0005;
 
                 if (fbxObject.webGroup.rotation.y >= 359 ){
-                    fbxObject.webGroup.rotation.y = 0;
-                    fbxObject.webGroup.rotation.y += 0.003;
-                } else {
-                    fbxObject.webGroup.rotation.y += 0.003;
+                    fbxObject.webGroup.rotation.y = 0;  
                 }
+
+                speed += acceleration;
+                if (speed <= 0) {
+                    speed = 0;
+                }
+                fbxObject.webGroup.rotation.y += 0.003 + (speed * direction);
             }
+
             renderer.render( scene, camera );
 
-            console.log('before function on at page container: ', typeof acceleration, ' ', typeof direction );
-            requestAnimationFrame(() => animate(fbxObject, acceleration, direction));
+            requestAnimationFrame(() => animate(fbxObject));
         }
 
-        let oldScrollY = document.body.getBoundingClientRect().top;
-        const rotateObject = (acceleration: number, direction: number) => {
-            console.error('Rotate object called!');
-            const currentScrollPos = document.body.getBoundingClientRect().top;
-            if (oldScrollY !== currentScrollPos && oldScrollY < currentScrollPos) { // currently scrolling downward
-                console.error('scrolling downward!');
-                direction = -1;
-                acceleration += 0.003;
-            } else if (oldScrollY !== currentScrollPos && oldScrollY > currentScrollPos) { // currently scrolling upward
-                //console.error('scrolling UPward!');
+        let oldScrollY = window.scrollY;
+        const rotateObject = () => {
+            speed += 0.003;
+            if(oldScrollY < window.scrollY){
                 direction = 1;
-                acceleration += 0.003;
+            } else {
+                direction = -1;
             }
+            oldScrollY = window.scrollY;
         }
-        const temp = () => {
-            rotateObject(acceleration, direction);
-        };
-        window.onscroll = temp;
+        window.onscroll = rotateObject;
         
-        //let fbxObject: any;
+        // Adding the art pallet 3D model to the page background
         let webMat = new THREE.MeshPhongMaterial({
             color: bgColor,
         });
-        addingWebFBXFile(scene, renderer, camera, webMat, animate, acceleration, direction);
+        addingWebFBXFile(scene, renderer, camera, webMat, animate);
 
-        //set to top of page when first entering page
+        // Set to top of page when first entering page
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         } else {
