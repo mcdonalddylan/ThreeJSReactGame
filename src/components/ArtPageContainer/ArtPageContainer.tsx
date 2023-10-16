@@ -84,6 +84,7 @@ export const ArtPageContainer: React.FC = () => {
         const clock = new THREE.Clock;
         let direction = 1;
         let speed = 0;
+        const INITIAL_SPEED = 0.003;
         const animate = (fbxObject?: any) => {
             if (fbxObject) {
                 const delta = clock.getDelta();
@@ -98,7 +99,7 @@ export const ArtPageContainer: React.FC = () => {
                 if (speed <= 0) {
                     speed = 0;
                 }
-                fbxObject.webGroup.rotation.y += 0.003 + (speed * direction);
+                fbxObject.webGroup.rotation.y += (INITIAL_SPEED * direction) + (speed * direction);
             }
 
             renderer.render( scene, camera );

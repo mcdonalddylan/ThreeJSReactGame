@@ -102,13 +102,13 @@
 .fade-in {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.005s ease-in;
+    transition: opacity 0.25s ease-in !important;
 }
 
 .fade-out {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s 0.005s, opacity 0.005s ease-out;
+    transition: visibility 0s 0.25s, opacity 0.25s ease-out !important;
 }
 
 .wobble {
