@@ -2,9 +2,9 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
-import artGeo from '../../assets/models/art_ani.fbx';
+import artGeo from '../../assets/models/artPallete.fbx';
 
-export const addingWebFBXFile = (scene, renderer, camera, material, animate) => {
+export const addingWebFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
 
     let fbxObject = {};
     let webGroup;
@@ -17,14 +17,17 @@ export const addingWebFBXFile = (scene, renderer, camera, material, animate) => 
         webGroup = fbx;
 
         webGroup.traverse((obj) => {
-            if (obj.name === 'Cube' || obj.name === 'Cylinder') {
+            if (obj.name.includes('Paint')) {
+                obj.material = shinyMaterial;
+            }
+            else {
                 obj.material = material;
             }
         });
 
         webGroup.scale.set( 0.003, 0.003, 0.003 );
         new THREE.Box3().setFromObject( webGroup ).getCenter( webGroup.position ).multiplyScalar( -1 ); 
-        webGroup.position.set( 0, -1.5, -4 );
+        webGroup.position.set( 0, 0, -2 );
         webGroup.rotation.set(-0.4, 0, 0);
 
         webMixer = new THREE.AnimationMixer(webGroup);

@@ -91,15 +91,15 @@ export const ArtPageContainer: React.FC = () => {
                 fbxObject.webMixer.update(delta);
                 const acceleration = -0.0005;
 
-                if (fbxObject.webGroup.rotation.y >= 359 ){
-                    fbxObject.webGroup.rotation.y = 0;  
+                if (fbxObject.webGroup.rotation.x >= 359 ){
+                    fbxObject.webGroup.rotation.x = 0;  
                 }
 
                 speed += acceleration;
                 if (speed <= 0) {
                     speed = 0;
                 }
-                fbxObject.webGroup.rotation.y += (INITIAL_SPEED * direction) + (speed * direction);
+                fbxObject.webGroup.rotation.x += (INITIAL_SPEED * direction) + (speed * direction);
             }
 
             renderer.render( scene, camera );
@@ -122,8 +122,15 @@ export const ArtPageContainer: React.FC = () => {
         // Adding the art pallet 3D model to the page background
         let webMat = new THREE.MeshPhongMaterial({
             color: bgColor,
+            shininess: 0,
+            reflectivity: 0
         });
-        addingWebFBXFile(scene, renderer, camera, webMat, animate);
+        let webShinyMat = new THREE.MeshPhongMaterial({
+            color: bgColor,
+            shininess: 100,
+            reflectivity: 1
+        });
+        addingWebFBXFile(scene, renderer, camera, webMat, webShinyMat, animate);
 
         // Set to top of page when first entering page
         window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -4,7 +4,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Clock } from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
-import artGeo from '../../assets/models/art_ani.fbx';
+import artGeo from '../../assets/models/artPallete.fbx';
 
 export const setupHomePageObjects = ( scene, renderer, 
     camera, quality, mobileAspectRatio) => {
@@ -25,6 +25,13 @@ export const setupHomePageObjects = ( scene, renderer,
     let boxGeo = new THREE.BoxGeometry( boxSize, boxSize, boxSize );
     let greenMat = new THREE.MeshPhongMaterial({
         color: 0x44ff22,
+        shininess: 0,
+        reflectivity: 0
+    });
+    let shinyGreenMat = new THREE.MeshPhongMaterial({
+        color: 0x44ff22,
+        shininess: 100,
+        reflectivity: 1
     });
     let tempBox = new THREE.Mesh( boxGeo, greenMat );
     tempBox.position.set( boxXPos, -0.9, -5.5 );
@@ -49,7 +56,6 @@ export const setupHomePageObjects = ( scene, renderer,
     scene.add( firstPlane );
     scene.add( triMesh );
     scene.add( torMesh );
-    //scene.add( sphMesh );
 
     let fbxObjects = {};
     //==============================
@@ -65,13 +71,16 @@ export const setupHomePageObjects = ( scene, renderer,
         artGroup = fbx;
 
         artGroup.traverse((obj) => {
-            if (obj.name === 'Cube' || obj.name === 'Cylinder') {
+            if (obj.name.includes('Paint')) {
+                obj.material = shinyGreenMat;
+            }
+            else {
                 obj.material = greenMat;
             }
         });
 
         artGroup.scale.setScalar(0.0009);
-        artGroup.position.set( 19, -12.25, -3 );
+        artGroup.position.set( 18.5, -11, -5 );
         artGroup.rotation.set( 0, 1, 0 );
 
         artMixer = new THREE.AnimationMixer(artGroup);
