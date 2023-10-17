@@ -57,7 +57,7 @@ import tafImg2 from '../../assets/gameImages/taffyPilot/taffy-pilot-in-dick-land
 import tafImg3 from '../../assets/gameImages/taffyPilot/taffy-pilot-in-dick-land-menu.gif';
 import tafPdf from '../../assets/gameImages/taffyPilot/taffy-pilot-in-dl-gdd-dylan-mcdonald.pdf';
 
-import { addingWebFBXFile } from '../../utils/fbxUtils/fbxUtils';
+import { addingGameFBXFile } from '../../utils/fbxUtils/fbxUtils';
 
 export const GamePageContainer: React.FC = () => {
 
@@ -107,30 +107,61 @@ export const GamePageContainer: React.FC = () => {
             // Light setup
             setupHomePageLights(scene);
 
+            // Animating the background 3D model when scrolling up and down
             const clock = new THREE.Clock;
+            let direction = 1;
+            let speed = 0;
+            const INITIAL_SPEED = 0.003;
             const animate = (fbxObject?: any) => {
                 if (fbxObject) {
                     const delta = clock.getDelta();
-                    fbxObject.webMixer.update(delta);
+                    fbxObject.fbxMixer.update(delta);
+                    const acceleration = -0.0005;
 
-                    if (fbxObject.webGroup.rotation.y >= 359) {
-                        fbxObject.webGroup.rotation.y = 0;
-                        fbxObject.webGroup.rotation.y += 0.003;
-                    } else {
-                        fbxObject.webGroup.rotation.y += 0.003;
+                    if (fbxObject.fbxGroup.rotation.x >= 359 ){
+                        fbxObject.fbxGroup.rotation.x = 0;  
                     }
+
+                    speed += acceleration;
+                    if (speed <= 0) {
+                        speed = 0;
+                    }
+                    fbxObject.fbxGroup.rotation.x += (INITIAL_SPEED * direction) + (speed * direction);
                 }
 
-                renderer.render(scene, camera);
+                renderer.render( scene, camera );
 
                 requestAnimationFrame(() => animate(fbxObject));
             }
 
-            //let fbxObject: any;
-            let webMat = new THREE.MeshPhongMaterial({
+            let oldScrollY = window.scrollY;
+            const rotateObject = () => {
+                speed += 0.003;
+                if (speed > 0.3) {
+                    speed = 0.3;
+                }
+                
+                if(oldScrollY < window.scrollY){
+                    direction = 1;
+                } else {
+                    direction = -1;
+                }
+                oldScrollY = window.scrollY;
+            }
+            window.onscroll = rotateObject;
+
+            // Adding the game contoller 3D model to the page background
+            let gameMat = new THREE.MeshPhongMaterial({
                 color: bgColor,
+                shininess: 0,
+                reflectivity: 0
             });
-            addingWebFBXFile(scene, renderer, camera, webMat, animate);
+            let gameShinyMat = new THREE.MeshPhongMaterial({
+                color: bgColor,
+                shininess: 100,
+                reflectivity: 1
+            });
+            addingGameFBXFile(scene, renderer, camera, gameMat, gameShinyMat, animate);
 
             //set to top of page when first entering page
             window.scrollTo(0, 0);

@@ -1,10 +1,13 @@
 import * as THREE from "three";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Clock } from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 import artGeo from '../../assets/models/artPallete.fbx';
+import gameGeo from '../../assets/models/genericController.fbx';
+import webGeo from '../../assets/models/webAbstract.fbx';
+
+import frontImg from '../../assets/profileImages/front.jpg';
+import backImg from '../../assets/profileImages/back.jpg';
 
 export const setupHomePageObjects = ( scene, renderer, 
     camera, quality, mobileAspectRatio) => {
@@ -28,49 +31,49 @@ export const setupHomePageObjects = ( scene, renderer,
         shininess: 0,
         reflectivity: 0
     });
+    let whiteMat = new THREE.MeshPhongMaterial({
+        color: 0xffffff,
+        shininess: 0,
+        reflectivity: 0
+    });
     let shinyGreenMat = new THREE.MeshPhongMaterial({
         color: 0x44ff22,
         shininess: 100,
         reflectivity: 1
     });
+    const frontPhotoTexture = new THREE.TextureLoader().load(frontImg);
+    const backPhotoTexture = new THREE.TextureLoader().load(backImg);  
+    const frontPhotoMat = new THREE.MeshBasicMaterial( { map: frontPhotoTexture } );
+    const backPhotoMat = new THREE.MeshBasicMaterial( { map: backPhotoTexture } );
     let tempBox = new THREE.Mesh( boxGeo, greenMat );
     tempBox.position.set( boxXPos, -0.9, -5.5 );
 
-    let fPlaneGeo = new THREE.PlaneGeometry( planeSize, planeSize, 1 );
-    let firstPlane = new THREE.Mesh( fPlaneGeo, greenMat );
-    firstPlane.position.set( planeXPos, -0.9, -5.5 );
+    let planeGeo = new THREE.PlaneGeometry( planeSize, planeSize, 1 );
+    let frontPhotoPlane = new THREE.Mesh( planeGeo, frontPhotoMat );
+    frontPhotoPlane.position.set( planeXPos, -0.9, -5.5 );
+    frontPhotoPlane.rotation.y = 0;
 
-    let triGeo = new THREE.ConeGeometry( 0.6, 0.6 );
-    let triMesh = new THREE.Mesh(triGeo, greenMat);
-    triMesh.position.set( 0.8, -3.95, -5 );
+    let backPhotoPlane = new THREE.Mesh( planeGeo, backPhotoMat );
+    backPhotoPlane.position.set( planeXPos, -0.9, -5.5 );
+    backPhotoPlane.rotateY(Math.PI);
 
-    let torGeo = new THREE.TorusGeometry( 0.2, 0.2 );
-    let torMesh = new THREE.Mesh(torGeo, greenMat);
-    torMesh.position.set( 8.5, -7.2, -3 );
+    scene.add( tempBox, frontPhotoPlane, backPhotoPlane );
 
-    let sphGeo = new THREE.SphereGeometry( 0.3, 5, 5 );
-    let sphMesh = new THREE.Mesh(sphGeo, greenMat);
-    sphMesh.position.set( 15.8, -10.25, -3.5 );
-
-    scene.add( tempBox );
-    scene.add( firstPlane );
-    scene.add( triMesh );
-    scene.add( torMesh );
-
-    let fbxObjects = {};
     //==============================
     // Adding FBX files to project
     //==============================
-    const loader = new FBXLoader();
 
     // Load the scene groups of models, anmiations, etc from .fbx files
-    let artGroup;
-    let artMixer;
+    const loader = new FBXLoader();
+    const fbxObjects = {};
+
+    // +++++++++++++
+    // ART 3D Model
+    // +++++++++++++
     loader.load(artGeo, (fbx) => {
+        const fbxGroup = fbx;
 
-        artGroup = fbx;
-
-        artGroup.traverse((obj) => {
+        fbxGroup.traverse((obj) => {
             if (obj.name.includes('Paint')) {
                 obj.material = shinyGreenMat;
             }
@@ -79,20 +82,92 @@ export const setupHomePageObjects = ( scene, renderer,
             }
         });
 
-        artGroup.scale.setScalar(0.0009);
-        artGroup.position.set( 18.5, -11, -5 );
-        artGroup.rotation.set( 0, 1, 0 );
+        fbxGroup.scale.setScalar(0.0009);
+        fbxGroup.position.set( 18.5, -11, -5 );
+        fbxGroup.rotation.set( 0, 1, 0 );
 
-        artMixer = new THREE.AnimationMixer(artGroup);
-        if (artGroup.animations.length > 0) {
-            artMixer.clipAction( artGroup.animations[0] ).play();
+        const fbxMixer = new THREE.AnimationMixer(fbxGroup);
+        if (fbxGroup.animations.length > 0) {
+            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
         };
 
-        scene.add( artGroup );
+        scene.add( fbxGroup );
 
         renderer.render( scene, camera );
-        fbxObjects.artGroup = artGroup;
-        fbxObjects.artMixer = artMixer;
+        fbxObjects.artGroup = fbxGroup;
+        fbxObjects.artMixer = fbxMixer;
+    
+        animate(fbxObjects);
+    }, () => {},
+    (error) => {
+        console.error('***', error, '***');
+    });
+
+    // +++++++++++++
+    // GAME 3D Model
+    // +++++++++++++
+    loader.load(gameGeo, (fbx) => {
+        const fbxGroup = fbx;
+
+        fbxGroup.traverse((obj) => {
+            if (obj.name.includes('Button') || obj.name === 'DPad' || obj.name === 'Cable') {
+                obj.material = shinyGreenMat;
+            }
+            else {
+                obj.material = greenMat;
+            }
+        });
+
+        fbxGroup.scale.setScalar(0.0009);
+        fbxGroup.position.set( 8.5, -7.2, -3 );
+        fbxGroup.rotation.set( 0, 1, 0 );
+
+        let fbxMixer = new THREE.AnimationMixer(fbxGroup);
+        if (fbxGroup.animations.length > 0) {
+            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+        };
+
+        scene.add( fbxGroup );
+
+        renderer.render( scene, camera );
+        fbxObjects.gameGroup = fbxGroup;
+        fbxObjects.gameMixer = fbxMixer;
+    
+        animate(fbxObjects);
+    }, () => {},
+    (error) => {
+        console.error('***', error, '***');
+    });
+
+    // +++++++++++++
+    // WEB 3D Model
+    // +++++++++++++
+    loader.load(webGeo, (fbx) => {
+        const fbxGroup = fbx;
+
+        fbxGroup.traverse((obj) => {
+            if (obj.name === 'Cursor') {
+                obj.material = whiteMat;
+            }
+            else {
+                obj.material = shinyGreenMat;
+            }
+        });
+
+        fbxGroup.scale.setScalar(0.0025);
+        fbxGroup.position.set( 0.8, -3.95, -5 );
+        fbxGroup.rotation.set( 0, 1, 0 );
+
+        let fbxMixer = new THREE.AnimationMixer(fbxGroup);
+        if (fbxGroup.animations.length > 0) {
+            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+        };
+
+        scene.add( fbxGroup );
+
+        renderer.render( scene, camera );
+        fbxObjects.webGroup = fbxGroup;
+        fbxObjects.webMixer = fbxMixer;
     
         animate(fbxObjects);
     }, () => {},
@@ -113,7 +188,6 @@ export const setupHomePageObjects = ( scene, renderer,
 
         scrollFadeAnimations(currentScrollPos);
     }
-
     document.body.onscroll = moveCamera;
 
     // Adding a bunch of random green cubes everywhere
@@ -162,8 +236,6 @@ export const setupHomePageObjects = ( scene, renderer,
         scene.add(rectsHori[k]);
     }
 
-    //const controls = new OrbitControls(camera, renderer.domElement);
-
     //+++++++++++++++++++++++++
     // Animation setup
     //+++++++++++++++++++++++++
@@ -179,7 +251,15 @@ export const setupHomePageObjects = ( scene, renderer,
         if (fbxObjects) {
             fbxObjects.artMixer.update(delta);
             fbxObjects.artGroup.rotation.y += 0.005;
+            fbxObjects.gameMixer.update(delta);
+            fbxObjects.gameGroup.rotation.y += 0.005;
+            fbxObjects.webMixer.update(delta);
+            fbxObjects.webGroup.rotation.y += 0.005;
         };
+
+        // animating the photo plane
+        frontPhotoPlane.rotation.y += 0.005;
+        backPhotoPlane.rotation.y -= 0.005;
 
         // animating the background grid rectangles
         for(let j = 0; j < rectsVert.length; j++){
@@ -227,8 +307,6 @@ export const setupHomePageObjects = ( scene, renderer,
             }
         }
 
-        //controls.update();
-
         renderer.render( scene, camera );
 
         requestAnimationFrame(() => animate(fbxObjects));
@@ -244,15 +322,12 @@ export const setupHomePageLights = ( scene ) => {
 
     // Directional light helper (temp af)
     const helpDirLight = new THREE.DirectionalLightHelper( dirLight );
-    //scene.add( helpDirLight );
 
     let hemiLight = new THREE.HemisphereLight(0xffffff, 0x232323, 1);
     scene.add( hemiLight );
 }
 
 const scrollFadeAnimations = ( currentScrollPos ) => {
-
-    //console.log(`current scroll position: `, currentScrollPos);
 
     const first = document.getElementById('first');
     const second = document.getElementById('second');

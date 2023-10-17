@@ -30,7 +30,7 @@ import inkImg8 from '../../assets/artImages/creatureDesigns/Mech.jpg';
 import inkImg9 from '../../assets/artImages/creatureDesigns/Plant Monster.jpg';
 import inkImg10 from '../../assets/artImages/creatureDesigns/Siren.jpg';
 
-import { addingWebFBXFile } from '../../utils/fbxUtils/fbxUtils';
+import { addingArtFBXFile } from '../../utils/fbxUtils/fbxUtils';
 
 export const ArtPageContainer: React.FC = () => {
     
@@ -88,18 +88,18 @@ export const ArtPageContainer: React.FC = () => {
         const animate = (fbxObject?: any) => {
             if (fbxObject) {
                 const delta = clock.getDelta();
-                fbxObject.webMixer.update(delta);
+                fbxObject.fbxMixer.update(delta);
                 const acceleration = -0.0005;
 
-                if (fbxObject.webGroup.rotation.x >= 359 ){
-                    fbxObject.webGroup.rotation.x = 0;  
+                if (fbxObject.fbxGroup.rotation.x >= 359 ){
+                    fbxObject.fbxGroup.rotation.x = 0;  
                 }
 
                 speed += acceleration;
                 if (speed <= 0) {
                     speed = 0;
                 }
-                fbxObject.webGroup.rotation.x += (INITIAL_SPEED * direction) + (speed * direction);
+                fbxObject.fbxGroup.rotation.x += (INITIAL_SPEED * direction) + (speed * direction);
             }
 
             renderer.render( scene, camera );
@@ -110,6 +110,10 @@ export const ArtPageContainer: React.FC = () => {
         let oldScrollY = window.scrollY;
         const rotateObject = () => {
             speed += 0.003;
+            if (speed > 0.3) {
+                speed = 0.3;
+            }
+
             if(oldScrollY < window.scrollY){
                 direction = 1;
             } else {
@@ -120,17 +124,17 @@ export const ArtPageContainer: React.FC = () => {
         window.onscroll = rotateObject;
         
         // Adding the art pallet 3D model to the page background
-        let webMat = new THREE.MeshPhongMaterial({
+        let artMat = new THREE.MeshPhongMaterial({
             color: bgColor,
             shininess: 0,
             reflectivity: 0
         });
-        let webShinyMat = new THREE.MeshPhongMaterial({
+        let artShinyMat = new THREE.MeshPhongMaterial({
             color: bgColor,
             shininess: 100,
             reflectivity: 1
         });
-        addingWebFBXFile(scene, renderer, camera, webMat, webShinyMat, animate);
+        addingArtFBXFile(scene, renderer, camera, artMat, artShinyMat, animate);
 
         // Set to top of page when first entering page
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -139,7 +143,7 @@ export const ArtPageContainer: React.FC = () => {
             const warning = WEBGL.getWebGLErrorMessage();
             document.body.appendChild( warning );
         }
-    }, [refresh, isMobileAspectRatio]);
+    }, [refresh, isMobileAspectRatio, quality]);
     
     return(
         <div className='container position-absolute' style={{right: 0, left: "50%", transform: `translate(-50%)`, zIndex: 2 }}>

@@ -3,20 +3,22 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 import artGeo from '../../assets/models/artPallete.fbx';
+import gameGeo from '../../assets/models/genericController.fbx';
+import webGeo from '../../assets/models/webAbstract.fbx';
 
-export const addingWebFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
+export const addingArtFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
 
     let fbxObject = {};
-    let webGroup;
-    let webMixer;
+    let fbxGroup;
+    let fbxMixer;
 
     const loader = new FBXLoader();
 
     loader.load(artGeo, (fbx) => {
 
-        webGroup = fbx;
+        fbxGroup = fbx;
 
-        webGroup.traverse((obj) => {
+        fbxGroup.traverse((obj) => {
             if (obj.name.includes('Paint')) {
                 obj.material = shinyMaterial;
             }
@@ -25,21 +27,101 @@ export const addingWebFBXFile = (scene, renderer, camera, material, shinyMateria
             }
         });
 
-        webGroup.scale.set( 0.003, 0.003, 0.003 );
-        new THREE.Box3().setFromObject( webGroup ).getCenter( webGroup.position ).multiplyScalar( -1 ); 
-        webGroup.position.set( 0, 0, -2 );
-        webGroup.rotation.set(-0.4, 0, 0);
+        fbxGroup.scale.set( 0.003, 0.003, 0.003 );
+        new THREE.Box3().setFromObject( fbxGroup ).getCenter( fbxGroup.position ).multiplyScalar( -1 ); 
+        fbxGroup.position.set( 0, 0, -2 );
+        fbxGroup.rotation.set(-0.4, 0, 0);
 
-        webMixer = new THREE.AnimationMixer(webGroup);
-        if (webGroup.animations.length > 0) {
-            webMixer.clipAction( webGroup.animations[0] ).play();
+        fbxMixer = new THREE.AnimationMixer(fbxGroup);
+        if (fbxGroup.animations.length > 0) {
+            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
         };
 
-        scene.add( webGroup );
+        scene.add( fbxGroup );
 
         renderer.render( scene, camera );
-        fbxObject.webGroup = webGroup;
-        fbxObject.webMixer = webMixer;
+        fbxObject.fbxGroup = fbxGroup;
+        fbxObject.fbxMixer = fbxMixer;
+
+        animate(fbxObject);
+        
+    }, () => {},
+    (error) => {
+        console.error('***', error, '***');
+    });
+}
+
+export const addingGameFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
+
+    const loader = new FBXLoader();
+
+    loader.load(gameGeo, (fbx) => {
+        const fbxObject = {};
+        const fbxGroup = fbx;
+
+        fbxGroup.traverse((obj) => {
+            if (obj.name.includes('Button') || obj.name === 'DPad' || obj.name === 'Cable') {
+                obj.material = shinyMaterial;
+            }
+            else {
+                obj.material = material;
+            }
+        });
+
+        fbxGroup.scale.set( 0.003, 0.003, 0.003 );
+        new THREE.Box3().setFromObject( fbxGroup ).getCenter( fbxGroup.position ).multiplyScalar( -1 ); 
+        fbxGroup.position.set( 0, 0, -2.5 );
+
+        const fbxMixer = new THREE.AnimationMixer(fbxGroup);
+        if (fbxGroup.animations.length > 0) {
+            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+        };
+
+        scene.add( fbxGroup );
+
+        renderer.render( scene, camera );
+        fbxObject.fbxGroup = fbxGroup;
+        fbxObject.fbxMixer = fbxMixer;
+
+        animate(fbxObject);
+        
+    }, () => {},
+    (error) => {
+        console.error('***', error, '***');
+    });
+}
+
+export const addingWebFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
+
+    const loader = new FBXLoader();
+
+    loader.load(webGeo, (fbx) => {
+        const fbxObject = {};
+        const fbxGroup = fbx;
+
+        fbxGroup.traverse((obj) => {
+            if (obj.name === 'Cursor') {
+                obj.material = material;
+            }
+            else {
+                obj.material = shinyMaterial;
+            }
+        });
+
+        fbxGroup.scale.set( 0.0035, 0.0035, 0.0035 );
+        new THREE.Box3().setFromObject( fbxGroup ).getCenter( fbxGroup.position ).multiplyScalar( -1 ); 
+        fbxGroup.position.set( 0, 0, -2 );
+
+        const fbxMixer = new THREE.AnimationMixer(fbxGroup);
+        if (fbxGroup.animations.length > 0) {
+            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+        };
+
+        scene.add( fbxGroup );
+
+        renderer.render( scene, camera );
+        fbxObject.fbxGroup = fbxGroup;
+        fbxObject.fbxMixer = fbxMixer;
 
         animate(fbxObject);
         
