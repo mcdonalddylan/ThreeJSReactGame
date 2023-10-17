@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ThreeJSReactSite/static/css/main.b9f74804.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.5643c0ab.js",
+    "main.js": "/ThreeJSReactSite/static/js/main.a9bc8cc0.js",
     "static/js/787.348ddb5b.chunk.js": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js",
     "static/media/IMG_1024_edited.jpg": "/ThreeJSReactSite/static/media/IMG_1024_edited.b4e4a70a4d97e05640aa.jpg",
     "static/media/model_sheet_final_v2.jpg": "/ThreeJSReactSite/static/media/model_sheet_final_v2.b67aa911f9d77e7f460d.jpg",
@@ -9,6 +9,7 @@
     "static/media/IMG_0996_edited.jpg": "/ThreeJSReactSite/static/media/IMG_0996_edited.38d29b1327c06240ae85.jpg",
     "static/media/taffy-pilot-in-dick-land-in-game.gif": "/ThreeJSReactSite/static/media/taffy-pilot-in-dick-land-in-game.7a5c7b89654bf3b60c0c.gif",
     "static/media/PrideCharcoal.jpg": "/ThreeJSReactSite/static/media/PrideCharcoal.08596c9c20349bb6dbcd.jpg",
+    "static/media/front.jpg": "/ThreeJSReactSite/static/media/front.51e3dec6e1d5ba825412.jpg",
     "static/media/taffy-pilot-in-dl-gdd-dylan-mcdonald.pdf": "/ThreeJSReactSite/static/media/taffy-pilot-in-dl-gdd-dylan-mcdonald.735beb8aebe0e7750729.pdf",
     "static/media/gRc+xB.gif": "/ThreeJSReactSite/static/media/gRc+xB.93a4685e0a77417d9d96.gif",
     "static/media/goodpic03-1.png": "/ThreeJSReactSite/static/media/goodpic03-1.61bc18bc2c967b4ba1d7.png",
@@ -18,6 +19,7 @@
     "static/media/tree-hugging-sim-gdd-dylan-mcdonald_version3.pdf": "/ThreeJSReactSite/static/media/tree-hugging-sim-gdd-dylan-mcdonald_version3.db38bf43a96983b9e07d.pdf",
     "static/media/TP_Character_Model_Sheet.jpg": "/ThreeJSReactSite/static/media/TP_Character_Model_Sheet.a24c605f4156fd1cb069.jpg",
     "static/media/goodpic02-1.png": "/ThreeJSReactSite/static/media/goodpic02-1.e0f3f39af0b1ac284710.png",
+    "static/media/back.jpg": "/ThreeJSReactSite/static/media/back.4feba986a9940c580479.jpg",
     "static/media/taffy-pilot-menu-concept.png": "/ThreeJSReactSite/static/media/taffy-pilot-menu-concept.6fa23066c9db72bbc119.png",
     "static/media/B_V_rP.png": "/ThreeJSReactSite/static/media/B_V_rP.3783a0670d4cb822f988.png",
     "static/media/X+eiQQ.png": "/ThreeJSReactSite/static/media/X+eiQQ.675657d130148ec5fa4b.png",
@@ -83,13 +85,15 @@
     "static/media/client5.jpg": "/ThreeJSReactSite/static/media/client5.b845b5e380f486b01e84.jpg",
     "static/media/mochiWalkthrough3.jpg": "/ThreeJSReactSite/static/media/mochiWalkthrough3.15bd85a41e8e453de989.jpg",
     "static/media/push-up1-5.jpg": "/ThreeJSReactSite/static/media/push-up1-5.03c0fbbfbd7267ef6c33.jpg",
+    "static/media/artPallete.fbx": "/ThreeJSReactSite/static/media/artPallete.fa2e7f140dc10a3c8fba.fbx",
     "static/media/push-up3.jpg": "/ThreeJSReactSite/static/media/push-up3.13f122de4a792330a773.jpg",
-    "static/media/artPallete.fbx": "/ThreeJSReactSite/static/media/artPallete.de2025409ea00031b076.fbx",
     "static/media/client4.jpg": "/ThreeJSReactSite/static/media/client4.a89b2dbe85467e0d87c0.jpg",
     "static/media/mochiCircle15.jpg": "/ThreeJSReactSite/static/media/mochiCircle15.e22932a4905867e4cc2a.jpg",
     "static/media/screenshot05.jpg": "/ThreeJSReactSite/static/media/screenshot05.516101246709f9a66a1f.jpg",
     "static/media/island2_icon_v2.jpg": "/ThreeJSReactSite/static/media/island2_icon_v2.f64b0ecf7539a861a1b0.jpg",
     "static/media/push-up9.jpg": "/ThreeJSReactSite/static/media/push-up9.f9dd0f7d0f6133ca8d8c.jpg",
+    "static/media/genericController.fbx": "/ThreeJSReactSite/static/media/genericController.069792e2c1a45cf39d34.fbx",
+    "static/media/webAbstract.fbx": "/ThreeJSReactSite/static/media/webAbstract.41b58ff2108b89790b13.fbx",
     "static/media/push-up6.jpg": "/ThreeJSReactSite/static/media/push-up6.b01bac67fe8f72795aca.jpg",
     "static/media/push-up2.jpg": "/ThreeJSReactSite/static/media/push-up2.65cd4d5b9a16ba207722.jpg",
     "static/media/push-up5.jpg": "/ThreeJSReactSite/static/media/push-up5.86dc7b2ddd3734623908.jpg",
@@ -112,11 +116,11 @@
     "static/media/tieLogo.svg": "/ThreeJSReactSite/static/media/tieLogo.44bc0bf1c499d899993dce5a1a81c93f.svg",
     "static/media/chevWeb.svg": "/ThreeJSReactSite/static/media/chevWeb.785a81c5c5f61394cecc3ca783b6eba6.svg",
     "main.b9f74804.css.map": "/ThreeJSReactSite/static/css/main.b9f74804.css.map",
-    "main.5643c0ab.js.map": "/ThreeJSReactSite/static/js/main.5643c0ab.js.map",
+    "main.a9bc8cc0.js.map": "/ThreeJSReactSite/static/js/main.a9bc8cc0.js.map",
     "787.348ddb5b.chunk.js.map": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b9f74804.css",
-    "static/js/main.5643c0ab.js"
+    "static/js/main.a9bc8cc0.js"
   ]
 }
