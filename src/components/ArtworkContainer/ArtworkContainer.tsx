@@ -1,5 +1,8 @@
 import React, { ReactElement, useEffect, useState } from "react"
 import '../WorkContainer/WorkContainer.scss';
+import loadImg from '../../assets/loadingImages/cc0youtubeload.gif';
+import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
+import { loadLazyImagesFromObserver } from "../../utils/internalPageUtils/internalPageUtils";
 
 interface IContentLink {
     linkText: string,
@@ -15,7 +18,8 @@ interface IProps {
     mobileAspectRatio: boolean,
     contentLinks?: IContentLink[],
     content?: ReactElement,
-    contentImgs?: string[]
+    contentImgs?: string[],
+    contentSubtext?: string[]
 }
 
 export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
@@ -31,7 +35,7 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
         const element: HTMLElement = event.target;
         // Will toggle content if not a link and not an image (exception for chevron img)
         if (element.tagName !== 'A'){
-            if(element.tagName === 'IMG'){
+            if(element.tagName === 'IMG' || element.tagName === 'BUTTON'){
                 if(element.id === 'chev'){
                     setShowContent(!showContent);
                 }
@@ -40,6 +44,10 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
             }
         }
     }
+
+    useEffect(() => {
+        loadLazyImagesFromObserver('.work-img-zoom');
+    }, []);
 
     return(
         <>
@@ -54,7 +62,7 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
                     style={{
                         backgroundColor: `black`,
                         backgroundImage: props.contentImgs ? `url(${props.contentImgs[0]})` : '',
-                        opacity: showContent ? 0.9 : 0.8,
+                        opacity: showContent ? 0.9 : 0.3,
                     }}
                 >
                     <div className='content-image-tint'
@@ -88,10 +96,10 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
                                 transform: showContent ? 'rotate(180deg)' : ''
                             }}
                         >
-                            <img className='work-img' id='chev' src={props.chevronImgSrc} alt='chevron svg'/>
+                            <img className='work-img' id='chev' src={props.chevronImgSrc} alt='chevron svg' loading='lazy'/>
                         </div>
                     </div>
-                    {showContent ?
+                    {showContent &&
                         <>
                             <hr style={{
                                     border: `1px solid ${props.color}`,
@@ -118,41 +126,32 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
                                 )
                             })}
                             <br></br>
-                            <div className='row justify-content-center'>
-                                {props.content ?
-                                    <div className='content-container col-sm-5'
-                                        style={{
-                                            backgroundColor: `${props.bgColor}`,
-                                            WebkitFilter: 'saturate(0.4)',
-                                            height: 'auto',
-                                            maxHeight: 250,
-                                            overflowY: 'hidden'
-                                        }}
-                                    >
-                                        {props.content}
-                                    </div> :
-                                    <></>}
-                                <div className='col-sm-5'>
-                                    <div className='row justify-content-center'>
-                                    {props.contentImgs ?
-                                        props.contentImgs.map((imgSrc, index)=>{
-                                            return (
-                                                <div className='col-8' onClick={()=>viewImg(imgSrc)}>
-                                                    <img
-                                                        src={imgSrc}
-                                                        alt={`${props.title}Img${index}`}
-                                                        style={{ width: '100%', margin: 5}}
-                                                        className='work-img-zoom'
-                                                    />
-                                                </div>
-                                            )
-                                        }) :
-                                    null}
-                                    </div>
-                                </div>
+                            {props?.contentImgs && props?.contentImgs?.length > 2 && props?.contentSubtext && props?.contentSubtext?.length > 2 && 
+                                <ImageCarousel
+                                    key={props.title}
+                                    images={props.contentImgs}
+                                    subtext={props.contentSubtext}
+                                    bgColor={props.bgColor}
+                                    color={props.color}
+                                />}
+                            <div className='row justify-content-center' style={{marginTop: 20}}>
+                                {props?.contentImgs &&
+                                    props.contentImgs.map((imgSrc, index)=>{
+                                        return (
+                                            <div key={index} className='col-sm-2' onClick={()=>viewImg(imgSrc)}>
+                                                <img
+                                                    data-src={imgSrc}
+                                                    src={loadImg}
+                                                    alt={`${props.title}Img${index}`}
+                                                    style={{overflow: 'hidden', width: '100%'}}
+                                                    className='work-img-zoom'
+                                                    loading='lazy'
+                                                />
+                                            </div>
+                                        )
+                                    })}
                             </div>
-                        </> :
-                        null}
+                        </>}
                 </div>
             </div>
         </>

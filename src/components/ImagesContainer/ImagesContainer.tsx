@@ -68,6 +68,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                         }}
                                         src={props.images[0]}
                                         onClick={()=>navigate(props.redirectString)}
+                                        loading='lazy'
                                     />
                                     <img
                                         id={`${props.redirectString}img2`}
@@ -78,6 +79,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                         }}
                                         src={props.images[1]}
                                         onClick={()=>navigate(props.redirectString)}
+                                        loading='lazy'
                                     />
                                     <img
                                         id={`${props.redirectString}img3`}
@@ -88,6 +90,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                         }}
                                         src={props.images[2]}
                                         onClick={()=>navigate(props.redirectString)}
+                                        loading='lazy'
                                     />
                                     <img
                                         id={`${props.redirectString}img4`}
@@ -98,6 +101,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                         }}
                                         src={props.images[3]}
                                         onClick={()=>navigate(props.redirectString)}
+                                        loading='lazy'
                                     />
                                 </>
                             ) : (

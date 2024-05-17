@@ -8,8 +8,11 @@ import chevWeb from '../../assets/chevronSvgs/chevWeb.svg';
 import { ArtworkContainer } from '../ArtworkContainer/ArtworkContainer';
 import '../HomePageContainer/HomePageContainer.scss';
 
-import garticImg1 from '../../assets/artImages/gartic/album_2022-02-12_00-14-22_fast.gif';
-import garticImg2 from '../../assets/artImages/gartic/album_2022-02-12_00-14-22.gif';
+import garticImg1 from '../../assets/artImages/gartic/garticShockAni.gif';
+import garticImg2 from '../../assets/artImages/gartic/fastFurious.png';
+import garticImg3 from '../../assets/artImages/gartic/uncharted.png';
+import garticImg4 from '../../assets/artImages/gartic/teeth.png';
+import garticImg5 from '../../assets/artImages/gartic/noTitle.png';
 
 import realImg1 from '../../assets/artImages/realArt/IMG_0996_edited.jpg';
 import realImg2 from '../../assets/artImages/realArt/IMG_1024_edited.jpg';
@@ -178,9 +181,17 @@ export const ArtPageContainer: React.FC = () => {
                         </>
                     )}
                     contentImgs={[
+                        garticImg1,
                         garticImg2,
-                        garticImg1
-                    ]}               
+                        garticImg3,
+                        garticImg4,
+                        garticImg5
+                    ]}
+                    contentSubtext={[
+                        'This was from my first and last gartic animation session. Not a great environment for animation, that\'s for sure.',
+                        'Man that guy is fast. Sheeesh.',
+                        'Doesn\'t Nathan Drake have a massive chin? No? I still like this one.'
+                    ]}              
                 />
 
                 <ArtworkContainer
@@ -202,7 +213,12 @@ export const ArtPageContainer: React.FC = () => {
                         realImg1,
                         realImg2,
                         realImg3
-                    ]}       
+                    ]}
+                    contentSubtext={[
+                        'Effortless Success - 2019',
+                        'Crystal Ball - 2019',
+                        'Pride - 2019'
+                    ]}        
                 />
 
                 <ArtworkContainer
@@ -216,7 +232,7 @@ export const ArtPageContainer: React.FC = () => {
                     content={(
                         <>
                             <p style={{color: 'white'}}>
-                                Model Sheets for charcters I planned on using for animations / games in the near future.
+                                Model Sheets for charcters I planned on using for animations & games in the near future.
                             </p>
                         </>
                     )}
@@ -224,7 +240,12 @@ export const ArtPageContainer: React.FC = () => {
                         charImg2,
                         charImg1,
                         charImg3
-                    ]}                   
+                    ]}
+                    contentSubtext={[
+                        'Neb was code-named an "anxious nerdo fuckster" by a fellow student. I think it fits.',
+                        'Taffy Pilot was desgined for an adventure game very similar to Conker\'s Bad Fur Day. I ended up using him on a short film instead.',
+                        'Gep was meant to be the "everybody\'s uncle" character in a short animated series meant for YouTube.'
+                    ]}                
                 />
 
                 <ArtworkContainer
@@ -253,7 +274,12 @@ export const ArtPageContainer: React.FC = () => {
                         inkImg8,
                         inkImg9,
                         inkImg1
-                    ]}              
+                    ]}
+                    contentSubtext={[
+                        'Siren! Get it? I had fun with this one.',
+                        'I kinda struggled with my Basilisk concept, so messing with Harry Potter lore it is!',
+                        'Cerberus is a real dingus, I\'ll tell ya that much. And I don\'t use that word lightly.'
+                    ]}               
                 />
             </div>
 

@@ -4,10 +4,10 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 import artGeo from '../../assets/models/artPallete.fbx';
 import gameGeo from '../../assets/models/genericController.fbx';
-import webGeo from '../../assets/models/webAbstract.fbx';
+import webGeo from '../../assets/models/webCrtMonitor.fbx';
 
-import frontImg from '../../assets/profileImages/front.jpg';
-import backImg from '../../assets/profileImages/back.jpg';
+import frontImg from '../../assets/profileImages/back.jpg';
+import backImg from '../../assets/profileImages/front.jpg';
 
 export const setupHomePageObjects = ( scene, renderer, 
     camera, quality, mobileAspectRatio) => {

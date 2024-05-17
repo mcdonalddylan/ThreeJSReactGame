@@ -10,6 +10,9 @@ import chevWeb from '../../assets/chevronSvgs/chevWeb.svg';
 import { WorkContainer } from '../WorkContainer/WorkContainer';
 import '../HomePageContainer/HomePageContainer.scss';
 
+import sickImg1 from '../../assets/gameImages/sickGame/sickGameMenuUIDemo.gif';
+import sickImg2 from '../../assets/gameImages/sickGame/sickGameTimeSlowDemo.gif';
+
 import eraseImg1 from '../../assets/gameImages/erase/6T_Eh7.png';
 import eraseImg2 from '../../assets/gameImages/erase/B_V_rP.png';
 import eraseImg3 from '../../assets/gameImages/erase/eCZmDz.png';
@@ -17,6 +20,9 @@ import eraseImg4 from '../../assets/gameImages/erase/fFBevO.png';
 import eraseImg5 from '../../assets/gameImages/erase/gRc+xB.gif';
 import eraseImg6 from '../../assets/gameImages/erase/Mp8aZ+.png';
 import eraseImg7 from '../../assets/gameImages/erase/X+eiQQ.png';
+import eraseImg8 from '../../assets/gameImages/erase/inGameUIBugFixes.gif';
+import eraseImg9 from '../../assets/gameImages/erase/menuUITransitionDemo.gif';
+import eraseImg10 from '../../assets/gameImages/erase/interactMechUIDemo.gif';
 
 import balloonImg1 from '../../assets/gameImages/balloon/screenshot01.jpg';
 import balloonImg2 from '../../assets/gameImages/balloon/screenshot02.jpg';
@@ -193,7 +199,7 @@ export const GamePageContainer: React.FC = () => {
                 color={mainColor}
                 bgColor={bgColor}
                 year='2022+'
-                title={`"Sick Game"`}
+                title='Sick Game'
                 contentLinks={[
                     {
                         linkText: 'Link to github page',
@@ -227,6 +233,10 @@ export const GamePageContainer: React.FC = () => {
                     </>
                 )}
                 playAbility='Nope'
+                contentImgs={[
+                    sickImg1,
+                    sickImg2
+                ]}
             />
 
             <WorkContainer
@@ -304,6 +314,9 @@ export const GamePageContainer: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
+                    eraseImg8,
+                    eraseImg9,
+                    eraseImg10,
                     eraseImg7,
                     eraseImg2,
                     eraseImg3,
@@ -311,6 +324,11 @@ export const GamePageContainer: React.FC = () => {
                     eraseImg5,
                     eraseImg6,
                     eraseImg1
+                ]}
+                contentSubtext={[
+                    'Implemented the in-game UI code for user & enemy life bars, reloading, and dashing using GDScript. Also added a depth of field effect.',
+                    'Coded and did the 2D art for the UI and all UI level transitions using GDScript and Photoshop.',
+                    'Added the UI and fixed bugs dealing the ridable mech using GDScript.'
                 ]}
                 playAbility='Download'
             />

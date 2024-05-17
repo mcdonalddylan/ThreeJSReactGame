@@ -1,0 +1,124 @@
+@import '../../Colors.scss';
+
+.img-carousel-comp {
+    text-align: center;
+    margin: auto;
+    padding: 2em;
+    border-radius: 15px;
+    max-width: 50em;
+}
+
+.img-carousel-comp__row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: end;
+    column-gap: 1em;
+}
+
+.img-carousel-comp__row > * {
+    transition: all 0.3s ease;
+}
+
+.img-carousel-comp__row--margin-top {
+    margin-top: 3em;
+}
+
+.img-carousel-comp__row--carousel {
+    height: 15em;
+}
+
+.img-carousel-comp__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.img-carousel-comp__col--nav-button {
+    align-self: center;
+    flex: 1 1 10%;
+}
+
+.img-carousel-comp__col--img-button-unselected {
+    flex: 1 1 10%;
+}
+
+.img-carousel-comp__col--img-button-selected {
+    flex: 1 1 60%;
+}
+
+.img-carousel-comp__nav-button {
+    background-color: rgba(0,0,0,0.5);
+    font-size: 1.5em;
+    border-radius: 1em;
+    padding: 1em;
+}
+
+.img-carousel-comp__nav-button,
+.img-carousel-comp__img-button {
+    border: 0;
+}
+
+.img-carousel-comp__nav-button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.img-carousel-comp__img-button {
+    padding: 0; 
+    background: none;
+}
+
+.img-carousel-comp__img-button:hover,
+.img-carousel-comp__img-button:focus {
+    transform: scale(1.05);
+}
+
+.img-carousel-comp__img {
+    width: 100%;
+    max-width: 20em;
+    max-height: 15em;
+    box-shadow: 0 0 30px black;
+    border-radius: 5px;
+}
+
+.img-carousel-comp__subtext {
+    font-size: 1.1rem;
+}
+
+.img-carousel-comp__subtext--fade-in {
+    animation-name: fade-in-ani;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade-in-ani {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Mobile styling */
+@media screen and (max-width: 614px) {
+    .img-carousel-comp {
+        padding: 1em;
+    }
+
+    .img-carousel-comp__row--carousel {
+        height: 6em;
+    }
+
+    .img-carousel-comp__col--img-button-selected {
+        flex: 1 1 50%;
+    }
+
+    .img-carousel-comp__col--img-button-unselected {
+        display: none;
+    }
+
+    .img-carousel-comp__img {
+        max-width: 8em;
+        max-height: 6em;
+    }
+
+    .img-carousel-comp__nav-button {
+        font-size: 1em;
+        padding: 0.5em;
+    }
+}

@@ -40,6 +40,7 @@ export const HomePageContainer: React.FC = () => {
     let animationTimerId: any = undefined;
 
     useEffect(() => {
+        // The image animation timer
         if (!animationTimerId) {
             animationTimerId = setInterval(() => {
                 setAnimationCycle(currentAnimationCycle => {

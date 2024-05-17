@@ -6,6 +6,7 @@ import { ErrorPageContainer } from './components/ErrorPageContainer/ErrorPageCon
 import { WebPageContainer } from './components/WebPageContainer/WebPageContainer';
 import { GamePageContainer } from './components/GamePageContainer/GamePageContainer';
 import { ArtPageContainer } from './components/ArtPageContainer/ArtPageContainer';
+import './App.scss';
 
 export const App = () => {
 

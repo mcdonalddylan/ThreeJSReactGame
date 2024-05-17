@@ -10,6 +10,10 @@ import chevWeb from '../../assets/chevronSvgs/chevWeb.svg';
 import { WorkContainer } from '../WorkContainer/WorkContainer';
 import '../HomePageContainer/HomePageContainer.scss';
 
+import hcscImg1 from '../../assets/webImages/hcscPublic/formFinderDocDisplay.gif';
+import hcscImg2 from '../../assets/webImages/hcscPublic/bcbsMedicareForm.gif';
+import hcscImg3 from '../../assets/webImages/hcscPublic/hcscRebrand2023.gif';
+
 import mochiImg1 from '../../assets/webImages/mochiCircle/mochiCircle1.jpg';
 import mochiImg2 from '../../assets/webImages/mochiCircle/mochiCircle2.jpg';
 import mochiImg3 from '../../assets/webImages/mochiCircle/mochiCircle3.jpg';
@@ -193,13 +197,58 @@ export const WebPageContainer: React.FC = () => {
                 chevronImgSrc={chevWeb}
                 color={mainColor}
                 bgColor={bgColor}
-                year='2021+'
-                title='Bam 2.0'
+                year='2023+'
+                title='Health Care Service Corporation - Public Sites'
+                contentLinks={[
+                    {
+                        linkText: 'Form Finder Site',
+                        linkUrl: 'https://www.bcbsil.com/form-finder'
+                    },
+                    {
+                        linkText: 'Medicare Documents Search Form',
+                        linkUrl: 'https://www.bcbsil.com/medicare/tools-resources/forms-documents/mapd-plan-documents'
+                    }
+                ]}
+                content={(
+                    <>
+                        <p>This is a web application to encourage those of us who are on our computers for hours on end, to do some push ups every so often. More detailed information about the project itself can be in the github link above.</p>
+                        <br></br>
+                        <p>This is my first solo project that I’ve worked on in a few months. As much as I enjoy React and front-end development in general, it’s nice to get back into Spring and get some back-end work again. I mostly created this app just to keep my skills fresh, but I do genuinely think it’s a very useful tool for a lot of us out there. I just can’t wait to get a little further with it so that it can finally be deployed.</p>
+                    </>
+                )}
+                contentImgs={[
+                    hcscImg2,
+                    hcscImg1,
+                    hcscImg3
+                ]}
+                contentSubtext={[
+                    'Implemented a medicare zipcode search form using Javascript ES5, HTML, CSS, and the Foundation framework.',
+                    'Created the Form Finder document display, search, and pagination features using Javascript ES5, HTML, CSS, and AEM.',
+                    'Updated the HCSC banners during the redesign campaign in late 2023 using Javascript, HTML, CSS, and AEM.'
+                ]}
+            />
+
+            <WorkContainer
+                chevronImgSrc={chevWeb}
+                color={mainColor}
+                bgColor={bgColor}
+                year='2021 - 2023'
+                title='Blue Access for Members 2.0'
+                contentLinks={[
+                    {
+                        linkText: 'Illinois member forms and documents page',
+                        linkUrl: 'https://mybam.bcbsil.com/documents'
+                    },
+                    {
+                        linkText: 'Illinois member message center page',
+                        linkUrl: 'https://mybam.bcbsil.com/messages'
+                    }
+                ]}
                 content={(
                     <>
                         <p>
-                            Enterprise-level project I'm currently contributing to. 
-                            I am one of two dev specialists within an internal team of 6 other developers.
+                            My first enterprise-level project for Blue Cross Blue Shield. 
+                            I was one of two dev specialists within an internal team of 6 other developers.
                         </p>
                         <br></br>
                         <p>My contributions:</p>
@@ -260,6 +309,11 @@ export const WebPageContainer: React.FC = () => {
                     pushImg10,
                     pushImg11,
                     pushImg12
+                ]}
+                contentSubtext={[
+                    'Created an authenticated login component using React-Redux, Java, and Spring.',
+                    'Implemented dynamic alerts using the a React-Redux global state.',
+                    'Added a light/dark theme button and animated buttons based on a wireframe created in Photoshop.'
                 ]}
             />
 
@@ -334,6 +388,11 @@ export const WebPageContainer: React.FC = () => {
                     clientImg4,
                     clientImg5,
                 ]}
+                contentSubtext={[
+                    'Designed and implemented the "batch-details" page using Photoshop and React.',
+                    'Designed the "batch-state" page using Photoshop.',
+                    'Created an authenticated login component using React-Redux, Java, and Spring.'
+                ]}
             />
 
             <WorkContainer
@@ -346,10 +405,6 @@ export const WebPageContainer: React.FC = () => {
                     {
                         linkText: 'Click Here to Download The Source Files V0.2',
                         linkUrl: 'https://drive.google.com/file/d/1x4x53Fq6nlY-qvrqi8WRR84CyqXKEkse/view'
-                    },
-                    {
-                        linkText: 'Click Here to View Code Sample',
-                        linkUrl: '/'
                     }
                 ]}
                 content={(
@@ -388,6 +443,11 @@ export const WebPageContainer: React.FC = () => {
                     mochiImg26,
                     mochiImg27,
                     mochiImg28
+                ]}
+                contentSubtext={[
+                    'Coded both the front-end and back-end of the user homepage using React-Redux, Java and Spring.',
+                    'Implemented the back-end of the email verification feature using the Java-Mail-API and Spring.',
+                    'Created the messaging front-end code using React-Redux.'
                 ]}
             />
 

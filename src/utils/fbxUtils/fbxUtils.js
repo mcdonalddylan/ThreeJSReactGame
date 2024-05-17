@@ -3,8 +3,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 import artGeo from '../../assets/models/artPallete.fbx';
-import gameGeo from '../../assets/models/genericController.fbx';
-import webGeo from '../../assets/models/webAbstract.fbx';
+import gameGeo from '../../assets/models/genericControllerCordless.fbx';
+import webGeo from '../../assets/models/webCrtMonitor.fbx';
 
 export const addingArtFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
 
