@@ -1,8 +1,9 @@
-import React, { ReactElement, useEffect, useState } from "react"
+import React, { ReactElement, useEffect, useRef, useState } from "react"
 import '../WorkContainer/WorkContainer.scss';
 import loadImg from '../../assets/loadingImages/cc0youtubeload.gif';
 import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
-import { loadLazyImagesFromObserver } from "../../utils/internalPageUtils/internalPageUtils";
+import { viewImg } from '../../utils/internalPageUtils/internalPageUtils';
+import { LazyImage } from "../LazyImage/LazyImage";
 
 interface IContentLink {
     linkText: string,
@@ -26,10 +27,6 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
 
     const [showContent, setShowContent] = useState(false);
 
-    const viewImg = (imageSrc: string) => {
-        window.open(imageSrc, '_blank');
-    }
-
     const toggleContent = (event: any) => {
 
         const element: HTMLElement = event.target;
@@ -44,10 +41,6 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
             }
         }
     }
-
-    useEffect(() => {
-        loadLazyImagesFromObserver('.work-img-zoom');
-    }, []);
 
     return(
         <>
@@ -139,14 +132,11 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
                                     props.contentImgs.map((imgSrc, index)=>{
                                         return (
                                             <div key={index} className='col-sm-2' onClick={()=>viewImg(imgSrc)}>
-                                                <img
-                                                    data-src={imgSrc}
-                                                    src={loadImg}
-                                                    alt={`${props.title}Img${index}`}
+                                                <LazyImage
+                                                    src={imgSrc}
+                                                    alt={`img${index}`}
                                                     style={{overflow: 'hidden', width: '100%'}}
-                                                    className='work-img-zoom'
-                                                    loading='lazy'
-                                                />
+                                                    className='work-img-zoom'></LazyImage>
                                             </div>
                                         )
                                     })}

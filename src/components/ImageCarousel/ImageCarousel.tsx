@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ImageCarousel.scss';
-import loadImg from '../../assets/loadingImages/cc0youtubeload.gif';
-import { loadLazyImagesFromObserver } from '../../utils/internalPageUtils/internalPageUtils';
+import { viewImg } from '../../utils/internalPageUtils/internalPageUtils';
+import { LazyImage } from '../LazyImage/LazyImage';
 
 interface IProps {
     images: string[],
@@ -13,6 +13,15 @@ interface IProps {
 export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
 
     const [selectedImg, setSelectedImg] = useState<number>(2);
+
+    const handleSelectImage = (selectedImageNum: number, imageSrc: string) => {
+        if (selectedImg === selectedImageNum) {
+            viewImg(imageSrc);
+        }
+        else {
+            setSelectedImg(selectedImageNum);
+        }
+    }
 
     const cycleSelectedImg = (direction: string) => {
         if (selectedImg === 1 && direction === 'left') {
@@ -29,11 +38,6 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
             setSelectedImg(1);
         }
     }
-
-    useEffect(() => {
-        //need to fix bug with this
-        loadLazyImagesFromObserver('.img-carousel-comp__img');
-    }, []);
 
     // Triggers the fade in effect for the image subtext
     useEffect(() => {
@@ -66,8 +70,8 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                         data-testid='img-carousel-img1-btn'
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
-                        onClick={()=>setSelectedImg(1)}>
-                        <img src={loadImg} data-src={props.images[0]} alt='exampleImg1' className='img-carousel-comp__img' loading='lazy'/>
+                        onClick={()=>handleSelectImage(1, props.images[0])}>
+                            <LazyImage src={props.images[0]} alt='exampleImg1' className='img-carousel-comp__img' ></LazyImage>
                     </button>
                 </div>
                 <div className={`img-carousel-comp__col ${selectedImg === 2 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>
@@ -75,8 +79,8 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                         data-testid='img-carousel-img2-btn'
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
-                        onClick={()=>setSelectedImg(2)}>
-                        <img src={loadImg} data-src={props.images[1]} alt='exampleImg2' className='img-carousel-comp__img' loading='lazy'/>
+                        onClick={()=>handleSelectImage(2, props.images[1])}>
+                            <LazyImage src={props.images[1]} alt='exampleImg2' className='img-carousel-comp__img' ></LazyImage>
                     </button>
                 </div>
                 <div className={`img-carousel-comp__col ${selectedImg === 3 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>
@@ -84,8 +88,8 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                         data-testid='img-carousel-img3-btn'
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
-                        onClick={()=>setSelectedImg(3)}>
-                        <img src={loadImg} data-src={props.images[2]} alt='exampleImg3' className='img-carousel-comp__img' loading='lazy'/>
+                        onClick={()=>handleSelectImage(3, props.images[2])}>
+                            <LazyImage src={props.images[2]} alt='exampleImg3' className='img-carousel-comp__img' ></LazyImage>
                     </button>
                 </div>
                 <div className='img-carousel-comp__col img-carousel-comp__col--nav-button'>
