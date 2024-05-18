@@ -11,8 +11,7 @@ import '../HomePageContainer/HomePageContainer.scss';
 import garticImg1 from '../../assets/artImages/gartic/garticShockAni.gif';
 import garticImg2 from '../../assets/artImages/gartic/fastFurious.png';
 import garticImg3 from '../../assets/artImages/gartic/uncharted.png';
-import garticImg4 from '../../assets/artImages/gartic/teeth.png';
-import garticImg5 from '../../assets/artImages/gartic/noTitle.png';
+import garticImg4 from '../../assets/artImages/gartic/noTitle.png';
 
 import realImg1 from '../../assets/artImages/realArt/IMG_0996_edited.jpg';
 import realImg2 from '../../assets/artImages/realArt/IMG_1024_edited.jpg';
@@ -184,8 +183,7 @@ export const ArtPageContainer: React.FC = () => {
                         garticImg1,
                         garticImg2,
                         garticImg3,
-                        garticImg4,
-                        garticImg5
+                        garticImg4
                     ]}
                     contentSubtext={[
                         'This was from my first and last gartic animation session. Not a great environment for animation, that\'s for sure.',

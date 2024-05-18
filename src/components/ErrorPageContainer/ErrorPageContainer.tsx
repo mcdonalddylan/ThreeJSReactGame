@@ -101,7 +101,9 @@ export const ErrorPageContainer: React.FC = () => {
     })
     
     return(
-        <div style={{margin: "0 auto", display: "block"}}>
+        <div
+            style={{margin: "0 auto", display: "block"}}
+            data-testid='error-page-container'>
         </div>
     )
 }

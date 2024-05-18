@@ -54,7 +54,7 @@ export const NavBarContainer: React.FC = () => {
                                                     onClick={() => {
                                                         if (quality === 1) {
                                                             window.scrollTo(0, 0);
-                                                            dispatch(setQuality(2.5));
+                                                            dispatch(setQuality(6));
                                                         } else {
                                                             window.scrollTo(0, 0);
                                                             dispatch(setQuality(1));

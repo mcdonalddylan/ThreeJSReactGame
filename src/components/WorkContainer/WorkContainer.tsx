@@ -2,7 +2,7 @@ import React, { ReactElement, RefObject, useEffect, useRef, useState } from "rea
 import './WorkContainer.scss';
 import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
 import loadImg from '../../assets/loadingImages/cc0youtubeload.gif';
-import { viewImg } from '../../utils/internalPageUtils/internalPageUtils';
+import { generateLazyImageObserver, viewImg } from '../../utils/internalPageUtils/internalPageUtils';
 import { LazyImage } from "../LazyImage/LazyImage";
 
 interface IContentLink {
@@ -26,6 +26,7 @@ interface IProps {
 export const WorkContainer: React.FC<IProps> = (props: IProps) => {
 
     const [showContent, setShowContent] = useState(false);
+    const observerRef = useRef<IntersectionObserver>();
 
     const viewImg = (imageSrc: string) => {
         window.open(imageSrc, '_blank');
@@ -46,6 +47,10 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
             }
         }
     }
+
+    useEffect(() => {
+        observerRef.current = generateLazyImageObserver();
+    }, []);
 
     return(
         <>
@@ -79,7 +84,6 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                         <div className={`${props.playAbility ? 'col-sm-6' : 'col-sm-8'}`}>
                             <h1 className='work-title-text'
                                 style={{
-                                    color: showContent ? 'white' : props.color,
                                     textShadow: showContent ? `0 0 8px ${'black'}` : ''
                                 }}
                             >

@@ -71,7 +71,10 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
                         onClick={()=>handleSelectImage(1, props.images[0])}>
-                            <LazyImage src={props.images[0]} alt='exampleImg1' className='img-carousel-comp__img' ></LazyImage>
+                            <LazyImage
+                                src={props.images[0]}
+                                alt='exampleImg1'
+                                className='img-carousel-comp__img'></LazyImage>
                     </button>
                 </div>
                 <div className={`img-carousel-comp__col ${selectedImg === 2 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>
@@ -80,7 +83,10 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
                         onClick={()=>handleSelectImage(2, props.images[1])}>
-                            <LazyImage src={props.images[1]} alt='exampleImg2' className='img-carousel-comp__img' ></LazyImage>
+                            <LazyImage
+                                src={props.images[1]}
+                                alt='exampleImg2'
+                                className='img-carousel-comp__img'></LazyImage>
                     </button>
                 </div>
                 <div className={`img-carousel-comp__col ${selectedImg === 3 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>
@@ -89,7 +95,10 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
                         onClick={()=>handleSelectImage(3, props.images[2])}>
-                            <LazyImage src={props.images[2]} alt='exampleImg3' className='img-carousel-comp__img' ></LazyImage>
+                            <LazyImage
+                                src={props.images[2]}
+                                alt='exampleImg3'
+                                className='img-carousel-comp__img'></LazyImage>
                     </button>
                 </div>
                 <div className='img-carousel-comp__col img-carousel-comp__col--nav-button'>

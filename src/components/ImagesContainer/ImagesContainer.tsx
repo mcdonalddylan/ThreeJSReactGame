@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ImagesContainer.scss';
+import { LazyImage } from '../LazyImage/LazyImage';
 
 interface IProps {
     images: string[],
@@ -14,14 +15,14 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
 
     const navigate = useNavigate();
     const isFourImages: boolean = props.images.length === 4;
-    let animationSpeed = props.animationSpeed;
+    let animationSpeed = props?.animationSpeed;
 
     if (!animationSpeed) {
         animationSpeed = 2;
     }
 
     useEffect(() => {
-        if (isFourImages && props.animationCycle) {
+        if (isFourImages && props?.animationCycle) {
             const img1Element = document.getElementById(`${props.redirectString}img1`);
             const img2Element = document.getElementById(`${props.redirectString}img2`);
             const img3Element = document.getElementById(`${props.redirectString}img3`);
@@ -49,7 +50,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                 img1Element?.classList.add('img-up-ani');
             }
         }
-    }, [props.animationCycle]);
+    }, [props?.animationCycle]);
 
     return (
         <div className="imgs-container">
@@ -59,50 +60,42 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                         <div className='img'>
                             {isFourImages ? (
                                 <>
-                                    <img
+                                    <LazyImage
                                         id={`${props.redirectString}img1`}
                                         className='img-inner img-fade-out'
                                         alt='img1'
                                         style={{
-                                            animationDuration: `${animationSpeed ? animationSpeed + 1 : 3}s`
+                                            animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
                                         }}
                                         src={props.images[0]}
-                                        onClick={()=>navigate(props.redirectString)}
-                                        loading='lazy'
-                                    />
-                                    <img
+                                        onClick={()=>navigate(props.redirectString)}></LazyImage>
+                                    <LazyImage
                                         id={`${props.redirectString}img2`}
                                         className='img-inner img-down-ani img-fade-in'
                                         alt='img2'
                                         style={{
-                                            animationDuration: `${animationSpeed ? animationSpeed + 1 : 3}s`
+                                            animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
                                         }}
                                         src={props.images[1]}
-                                        onClick={()=>navigate(props.redirectString)}
-                                        loading='lazy'
-                                    />
-                                    <img
+                                        onClick={()=>navigate(props.redirectString)}></LazyImage>
+                                    <LazyImage
                                         id={`${props.redirectString}img3`}
                                         className='img-inner img-fade-out'
                                         alt='img3'
                                         style={{
-                                            animationDuration: `${animationSpeed ? animationSpeed + 1 : 3}s`
+                                            animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
                                         }}
                                         src={props.images[2]}
-                                        onClick={()=>navigate(props.redirectString)}
-                                        loading='lazy'
-                                    />
-                                    <img
+                                        onClick={()=>navigate(props.redirectString)}></LazyImage>
+                                    <LazyImage
                                         id={`${props.redirectString}img4`}
                                         className='img-inner img-fade-out'
                                         alt='img4'
                                         style={{
-                                            animationDuration: `${animationSpeed ? animationSpeed + 1 : 3}s`
+                                            animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
                                         }}
                                         src={props.images[3]}
-                                        onClick={()=>navigate(props.redirectString)}
-                                        loading='lazy'
-                                    />
+                                        onClick={()=>navigate(props.redirectString)}></LazyImage>
                                 </>
                             ) : (
                                 <h1>ERROR: Need to pass exactly 4 images into this container.</h1>
