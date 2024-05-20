@@ -121,7 +121,7 @@ export const WebPageContainer: React.FC = () => {
             if (fbxObject) {
                 const delta = clock.getDelta();
                 fbxObject.fbxMixer.update(delta);
-                const acceleration = -0.0005;
+                const acceleration = -0.0009;
 
                 if (fbxObject.fbxGroup.rotation.x >= 359 ){
                     fbxObject.fbxGroup.rotation.x = 0;  
@@ -211,9 +211,14 @@ export const WebPageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p>This is a web application to encourage those of us who are on our computers for hours on end, to do some push ups every so often. More detailed information about the project itself can be in the github link above.</p>
+                        <p>This is the second project and second team I've worked with at Blue Cross Blue Sheild HQ in Illinois. Yet another great team with plenty of front-end and back-end work for me to do.</p>
                         <br></br>
-                        <p>This is my first solo project that I’ve worked on in a few months. As much as I enjoy React and front-end development in general, it’s nice to get back into Spring and get some back-end work again. I mostly created this app just to keep my skills fresh, but I do genuinely think it’s a very useful tool for a lot of us out there. I just can’t wait to get a little further with it so that it can finally be deployed.</p>
+                        <p>Since these sites are public, I can more easily show the work I've done. Here are some other contributions from my time with this team:</p>
+                        <ul>
+                            <li>
+                                Implemented code which dynamically injects the "line of business" and "role" the user has selected into links on an instruction page.
+                            </li>
+                        </ul>
                     </>
                 )}
                 contentImgs={[

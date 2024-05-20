@@ -4,7 +4,7 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 import artGeo from '../../assets/models/artPallete.fbx';
 import gameGeo from '../../assets/models/genericControllerCordless.fbx';
-import webGeo from '../../assets/models/webCrtMonitor.fbx';
+import webGeo from '../../assets/models/webCrtMonitorNoMouse.fbx';
 
 export const addingArtFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
 
@@ -110,7 +110,7 @@ export const addingWebFBXFile = (scene, renderer, camera, material, shinyMateria
 
         fbxGroup.scale.set( 0.0035, 0.0035, 0.0035 );
         new THREE.Box3().setFromObject( fbxGroup ).getCenter( fbxGroup.position ).multiplyScalar( -1 ); 
-        fbxGroup.position.set( 0, 0, -2 );
+        fbxGroup.position.set( 0, 0, -2.5 );
 
         const fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {

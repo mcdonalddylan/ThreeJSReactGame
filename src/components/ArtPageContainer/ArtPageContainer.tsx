@@ -91,7 +91,7 @@ export const ArtPageContainer: React.FC = () => {
             if (fbxObject) {
                 const delta = clock.getDelta();
                 fbxObject.fbxMixer.update(delta);
-                const acceleration = -0.0005;
+                const acceleration = -0.0009;
 
                 if (fbxObject.fbxGroup.rotation.x >= 359 ){
                     fbxObject.fbxGroup.rotation.x = 0;  

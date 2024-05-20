@@ -2,10 +2,12 @@ import * as THREE from "three";
 import { Clock } from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
+import skillsGeo from '../../assets/models/skillsCube.fbx';
 import artGeo from '../../assets/models/artPallete.fbx';
 import gameGeo from '../../assets/models/genericController.fbx';
 import webGeo from '../../assets/models/webCrtMonitor.fbx';
 
+import skillsImg from '../../assets/profileImages/coolCubeForSiteUV.jpg';
 import frontImg from '../../assets/profileImages/back.jpg';
 import backImg from '../../assets/profileImages/front.jpg';
 
@@ -41,12 +43,12 @@ export const setupHomePageObjects = ( scene, renderer,
         shininess: 100,
         reflectivity: 1
     });
+    const skillsCubeTexture = new THREE.TextureLoader().load(skillsImg);
     const frontPhotoTexture = new THREE.TextureLoader().load(frontImg);
-    const backPhotoTexture = new THREE.TextureLoader().load(backImg);  
+    const backPhotoTexture = new THREE.TextureLoader().load(backImg);
+    const skillsCubeMat = new THREE.MeshPhongMaterial( { map: skillsCubeTexture } );
     const frontPhotoMat = new THREE.MeshBasicMaterial( { map: frontPhotoTexture } );
     const backPhotoMat = new THREE.MeshBasicMaterial( { map: backPhotoTexture } );
-    let tempBox = new THREE.Mesh( boxGeo, greenMat );
-    tempBox.position.set( boxXPos, -0.9, -5.5 );
 
     let planeGeo = new THREE.PlaneGeometry( planeSize, planeSize, 1 );
     let frontPhotoPlane = new THREE.Mesh( planeGeo, frontPhotoMat );
@@ -57,7 +59,7 @@ export const setupHomePageObjects = ( scene, renderer,
     backPhotoPlane.position.set( planeXPos, -0.9, -5.5 );
     backPhotoPlane.rotateY(Math.PI);
 
-    scene.add( tempBox, frontPhotoPlane, backPhotoPlane );
+    scene.add( frontPhotoPlane, backPhotoPlane );
 
     //==============================
     // Adding FBX files to project
@@ -66,6 +68,42 @@ export const setupHomePageObjects = ( scene, renderer,
     // Load the scene groups of models, anmiations, etc from .fbx files
     const loader = new FBXLoader();
     const fbxObjects = {};
+
+    // +++++++++++++++++++++
+    // Skills Cube 3D Model
+    // +++++++++++++++++++++
+    loader.load(skillsGeo, (fbx) => {
+        const fbxGroup = fbx;
+
+        fbxGroup.traverse((obj) => {
+            if (obj.name.includes('MainCube')) {
+                obj.material = skillsCubeMat;
+            }
+            else {
+                obj.material = greenMat;
+            }
+        });
+
+        fbxGroup.scale.setScalar(0.0025);
+        fbxGroup.position.set( boxXPos, -0.9, -5.5 );
+        fbxGroup.rotation.set( 0, 1, 0 );
+
+        const fbxMixer = new THREE.AnimationMixer(fbxGroup);
+        if (fbxGroup.animations.length > 0) {
+            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+        };
+
+        scene.add( fbxGroup );
+
+        renderer.render( scene, camera );
+        fbxObjects.skillGroup = fbxGroup;
+        fbxObjects.skillMixer = fbxMixer;
+    
+        animate(fbxObjects);
+    }, () => {},
+    (error) => {
+        console.error('***', error, '***');
+    });
 
     // +++++++++++++
     // ART 3D Model
@@ -146,12 +184,13 @@ export const setupHomePageObjects = ( scene, renderer,
         const fbxGroup = fbx;
 
         fbxGroup.traverse((obj) => {
-            if (obj.name === 'Cursor') {
-                obj.material = whiteMat;
-            }
-            else {
-                obj.material = shinyGreenMat;
-            }
+            // if (obj.name === 'Cursor') {
+            //     obj.material = whiteMat;
+            // }
+            // else {
+            //     obj.material = shinyGreenMat;
+            // }
+            obj.material = shinyGreenMat;
         });
 
         fbxGroup.scale.setScalar(0.0025);
@@ -244,11 +283,11 @@ export const setupHomePageObjects = ( scene, renderer,
     const clock = new THREE.Clock;
     const animate = (fbxObjects) => {
 
-        tempBox.rotation.x += 0.01;
-        tempBox.rotation.y += 0.015;
-
         delta = clock.getDelta();
         if (fbxObjects) {
+            fbxObjects.skillMixer.update(delta);
+            fbxObjects.skillGroup.rotation.x += 0.01;
+            fbxObjects.skillGroup.rotation.y += 0.015;
             fbxObjects.artMixer.update(delta);
             fbxObjects.artGroup.rotation.y += 0.005;
             fbxObjects.gameMixer.update(delta);

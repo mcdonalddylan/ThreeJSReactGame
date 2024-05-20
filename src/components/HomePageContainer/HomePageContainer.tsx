@@ -139,7 +139,7 @@ export const HomePageContainer: React.FC = () => {
                     </h3>
                     <div className="row justify-content-center" style={{margin: "auto", textAlign: "center"}}>
                         <div className="col-sm-3">
-                            <a href='https://drive.google.com/file/d/1V94dxoOiaAv2I0Fa8BB3xNZc9XROQxB9/view?usp=sharing'
+                            <a href='https://docs.google.com/document/d/1z9Wxv00gJzBwnmLd6gWF5FjgUcYMDd-O/edit?usp=sharing&ouid=107142401991010822003&rtpof=true&sd=true'
                             className="main-link" target='_blank'>
                                 Resume 
                             </a>
