@@ -72,7 +72,7 @@ export const GamePageContainer: React.FC = () => {
     const bgColor = '#301c1e';
 
     const quality: any = useSelector<IState>(state => state.qualityState);
-    const [refresh, setRefresh] = useState(false);
+    // const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
         if (WEBGL.isWebGLAvailable()) {
@@ -101,10 +101,10 @@ export const GamePageContainer: React.FC = () => {
                 }
             }
 
-            window.onresize = () => {
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                setRefresh(!refresh);
-            };
+            // window.onresize = () => {
+            //     renderer.setSize(window.innerWidth, window.innerHeight);
+            //     setRefresh(!refresh);
+            // };
 
             // Camera / Scene setup
             let scene = new THREE.Scene();
@@ -176,7 +176,7 @@ export const GamePageContainer: React.FC = () => {
             const warning = WEBGL.getWebGLErrorMessage();
             document.body.appendChild(warning);
         }
-    })
+    }, [quality]);
 
     return (
         <div className='container position-absolute' style={{ right: 0, left: "50%", transform: `translate(-50%)`, zIndex: 2 }}>

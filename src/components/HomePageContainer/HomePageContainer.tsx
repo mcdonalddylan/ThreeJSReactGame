@@ -31,7 +31,7 @@ import { useNavigate } from 'react-router-dom';
 export const HomePageContainer: React.FC = () => {
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
-    const [refresh, setRefresh] = useState(false);
+    // const [refresh, setRefresh] = useState(false);
     const navigate = useNavigate();
     const [isMobileAspectRatio, setIsMobileAspectRatio] = useState(false);
 
@@ -81,10 +81,10 @@ export const HomePageContainer: React.FC = () => {
                 } 
             }
             
-            window.onresize = () => {
-                renderer.setSize( window.innerWidth, window.innerHeight);
-                setRefresh(!refresh);
-            };
+            // window.onresize = () => {
+            //     renderer.setSize( window.innerWidth, window.innerHeight);
+            //     setRefresh(!refresh);
+            // };
 
             // Camera / Scene setup
             let scene = new THREE.Scene();
@@ -103,7 +103,7 @@ export const HomePageContainer: React.FC = () => {
             document.body.appendChild( warning );
         }
 
-    },[refresh, quality, isMobileAspectRatio]);
+    },[quality]);
 
     const wobbleToggle = (event: any) => {
         const element: HTMLCanvasElement = event.target;

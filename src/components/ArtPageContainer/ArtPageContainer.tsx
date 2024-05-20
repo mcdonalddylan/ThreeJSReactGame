@@ -41,7 +41,7 @@ export const ArtPageContainer: React.FC = () => {
     const bgColor = '#5a5c27';
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
-    const [refresh, setRefresh] = useState(false);
+    // const [refresh, setRefresh] = useState(false);
     const [isMobileAspectRatio, setIsMobileAspectRatio] = useState(false);
 
     useEffect(()=>{
@@ -70,10 +70,10 @@ export const ArtPageContainer: React.FC = () => {
             } 
         }
         
-        window.onresize = () => {
-            renderer.setSize( window.innerWidth, window.innerHeight);
-            setRefresh(!refresh);
-        };
+        // window.onresize = () => {
+        //     renderer.setSize( window.innerWidth, window.innerHeight);
+        //     setRefresh(!refresh);
+        // };
 
         // Camera / Scene setup
         let scene = new THREE.Scene();
@@ -145,7 +145,7 @@ export const ArtPageContainer: React.FC = () => {
             const warning = WEBGL.getWebGLErrorMessage();
             document.body.appendChild( warning );
         }
-    }, [refresh, isMobileAspectRatio, quality]);
+    }, [quality]);
     
     return(
         <div className='container position-absolute' style={{right: 0, left: "50%", transform: `translate(-50%)`, zIndex: 2 }}>
