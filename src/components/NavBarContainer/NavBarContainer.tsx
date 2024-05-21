@@ -33,8 +33,7 @@ export const NavBarContainer: React.FC = () => {
                             <div className="container">
                                 <div className='row justify-content-md-center'>
                                     {/* Home Button (only render button if NOT home) */}
-                                    {isHome ?
-                                        null :
+                                    {!isHome &&
                                         (
                                             <div className="text-center h-100 col-md-auto">
                                                 <button
@@ -48,7 +47,7 @@ export const NavBarContainer: React.FC = () => {
                                     }
                                     {/* Quality Button */}
                                     <div className="text-center h-100 col-md-auto">
-                                        {WEBGL.isWebGLAvailable() ?
+                                        {WEBGL.isWebGLAvailable() &&
                                             (
                                                 <button
                                                     onClick={() => {
@@ -64,9 +63,6 @@ export const NavBarContainer: React.FC = () => {
                                                 >
                                                     Quality
                                                 </button>
-                                            ) :
-                                            (
-                                                <></>
                                             )}
                                     </div>
                                 </div>

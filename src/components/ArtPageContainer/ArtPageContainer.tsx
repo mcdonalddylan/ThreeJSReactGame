@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { IState } from '../..';
 import { setupHomePageLights } from '../../utils/homePageUtils/homePageUtils';
 import { WEBGL } from '../../utils/webGlUtils/webGlUtils';
-import chevWeb from '../../assets/chevronSvgs/chevWeb.svg';
+import chevArt from '../../assets/chevronSvgs/chevArt.svg';
 import { ArtworkContainer } from '../ArtworkContainer/ArtworkContainer';
 import '../HomePageContainer/HomePageContainer.scss';
 
@@ -166,7 +166,7 @@ export const ArtPageContainer: React.FC = () => {
             <div className='row justify-content-center'>
                 <ArtworkContainer
                     key={'gartic'}
-                    chevronImgSrc={chevWeb}
+                    chevronImgSrc={chevArt}
                     color={mainColor}
                     bgColor={bgColor}
                     year={'2022'}
@@ -194,7 +194,7 @@ export const ArtPageContainer: React.FC = () => {
 
                 <ArtworkContainer
                     key={'charcoal'}
-                    chevronImgSrc={chevWeb}
+                    chevronImgSrc={chevArt}
                     color={mainColor}
                     bgColor={bgColor}
                     year={'2019'}
@@ -221,7 +221,7 @@ export const ArtPageContainer: React.FC = () => {
 
                 <ArtworkContainer
                     key={'character designs'}
-                    chevronImgSrc={chevWeb}
+                    chevronImgSrc={chevArt}
                     color={mainColor}
                     bgColor={bgColor}
                     year={'2017'}
@@ -248,7 +248,7 @@ export const ArtPageContainer: React.FC = () => {
 
                 <ArtworkContainer
                     key={'inkTober'}
-                    chevronImgSrc={chevWeb}
+                    chevronImgSrc={chevArt}
                     color={mainColor}
                     bgColor={bgColor}
                     year={'2017'}

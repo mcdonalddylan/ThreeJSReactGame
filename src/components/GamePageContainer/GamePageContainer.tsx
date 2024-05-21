@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import { IState } from '../..';
 import { setupHomePageLights } from '../../utils/homePageUtils/homePageUtils';
 import { WEBGL } from '../../utils/webGlUtils/webGlUtils';
-import chevWeb from '../../assets/chevronSvgs/chevWeb.svg';
+import chevGame from '../../assets/chevronSvgs/chevGame.svg';
 import { WorkContainer } from '../WorkContainer/WorkContainer';
 import '../HomePageContainer/HomePageContainer.scss';
 
@@ -195,7 +195,7 @@ export const GamePageContainer: React.FC = () => {
             </div>
 
             <WorkContainer
-                chevronImgSrc={chevWeb}
+                chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
                 year='2022+'
@@ -240,7 +240,7 @@ export const GamePageContainer: React.FC = () => {
             />
 
             <WorkContainer
-                chevronImgSrc={chevWeb}
+                chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
                 year='2022'
@@ -275,7 +275,7 @@ export const GamePageContainer: React.FC = () => {
             />
 
             <WorkContainer
-                chevronImgSrc={chevWeb}
+                chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
                 year='2021'
@@ -334,7 +334,7 @@ export const GamePageContainer: React.FC = () => {
             />
 
             <WorkContainer
-                chevronImgSrc={chevWeb}
+                chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
                 year='2020'
@@ -395,7 +395,7 @@ export const GamePageContainer: React.FC = () => {
             />
 
             <WorkContainer
-                chevronImgSrc={chevWeb}
+                chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
                 year='2019'
@@ -443,7 +443,7 @@ export const GamePageContainer: React.FC = () => {
             />
 
             <WorkContainer
-                chevronImgSrc={chevWeb}
+                chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
                 year='2019'
@@ -486,7 +486,7 @@ export const GamePageContainer: React.FC = () => {
             />
 
             <WorkContainer
-                chevronImgSrc={chevWeb}
+                chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
                 year='2019'
@@ -524,7 +524,7 @@ export const GamePageContainer: React.FC = () => {
             />
 
             <WorkContainer
-                chevronImgSrc={chevWeb}
+                chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
                 year='2018'

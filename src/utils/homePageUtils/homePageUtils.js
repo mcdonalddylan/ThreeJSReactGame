@@ -120,13 +120,14 @@ export const setupHomePageObjects = ( scene, renderer,
             }
         });
 
-        fbxGroup.scale.setScalar(0.0009);
-        fbxGroup.position.set( 18.5, -11, -5 );
+        fbxGroup.scale.setScalar(0.002);
+        fbxGroup.position.set( 0, -12, -5.5 );
         fbxGroup.rotation.set( 0, 1, 0 );
 
         const fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {
             fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+            fbxMixer.clipAction( fbxGroup.animations[2] ).play();
         };
 
         scene.add( fbxGroup );
@@ -156,12 +157,13 @@ export const setupHomePageObjects = ( scene, renderer,
             }
         });
 
-        fbxGroup.scale.setScalar(0.0009);
-        fbxGroup.position.set( 8.5, -7.2, -3 );
+        fbxGroup.scale.setScalar(0.002);
+        fbxGroup.position.set( 0, -8, -5.5 );
         fbxGroup.rotation.set( 0, 1, 0 );
 
         let fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {
+            console.log('ani: ', fbxGroup.animations );
             fbxMixer.clipAction( fbxGroup.animations[0] ).play();
         };
 
@@ -193,13 +195,14 @@ export const setupHomePageObjects = ( scene, renderer,
             obj.material = shinyGreenMat;
         });
 
-        fbxGroup.scale.setScalar(0.0025);
-        fbxGroup.position.set( 0.8, -3.95, -5 );
+        fbxGroup.scale.setScalar(0.0021);
+        fbxGroup.position.set( 0, -4, -5.5 );
         fbxGroup.rotation.set( 0, 1, 0 );
 
         let fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {
             fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+            fbxMixer.clipAction( fbxGroup.animations[2] ).play();
         };
 
         scene.add( fbxGroup );
@@ -216,14 +219,18 @@ export const setupHomePageObjects = ( scene, renderer,
     //==================================================================================================
 
     // Input setup
+    const cameraGroup = new THREE.Group();
+    cameraGroup.position.set(0,0,-5.5);
+    cameraGroup.add(camera);
+    camera.position.z = 5.5;
+    scene.add( cameraGroup );
     const moveCamera = () => {
+        //console.log(camera.position);
 
         const currentScrollPos = document.body.getBoundingClientRect().top;
 
-        camera.rotation.y = currentScrollPos * -0.0019;
-        camera.position.z = currentScrollPos * 0.004;
-        camera.position.x = currentScrollPos * -0.01;
-        camera.position.y = currentScrollPos * 0.006;
+        cameraGroup.rotation.y = currentScrollPos * -0.0019;
+        cameraGroup.position.y = currentScrollPos * 0.006;
 
         scrollFadeAnimations(currentScrollPos);
     }
@@ -297,8 +304,14 @@ export const setupHomePageObjects = ( scene, renderer,
         };
 
         // animating the photo plane
-        frontPhotoPlane.rotation.y += 0.005;
-        backPhotoPlane.rotation.y -= 0.005;
+        let rotSpeed = 0.007;
+        if (frontPhotoPlane.rotation.y%6.3 > 5.4 && frontPhotoPlane.rotation.y%6.3 <= 6.3) {
+            rotSpeed = 0.007
+        } else {
+            rotSpeed = 0.07
+        }
+        frontPhotoPlane.rotation.y += rotSpeed;
+        backPhotoPlane.rotation.y -= rotSpeed;
 
         // animating the background grid rectangles
         for(let j = 0; j < rectsVert.length; j++){

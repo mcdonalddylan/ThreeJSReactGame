@@ -35,6 +35,7 @@ export const addingArtFBXFile = (scene, renderer, camera, material, shinyMateria
         fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {
             fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+            fbxMixer.clipAction( fbxGroup.animations[2] ).play();
         };
 
         scene.add( fbxGroup );
@@ -60,7 +61,7 @@ export const addingGameFBXFile = (scene, renderer, camera, material, shinyMateri
         const fbxGroup = fbx;
 
         fbxGroup.traverse((obj) => {
-            if (obj.name.includes('Button') || obj.name === 'DPad' || obj.name === 'Cable') {
+            if (obj.name.includes('Button') || obj.name === 'DPad' || obj.name === 'RTrigger' || obj.name === 'LTrigger') {
                 obj.material = shinyMaterial;
             }
             else {
@@ -114,7 +115,7 @@ export const addingWebFBXFile = (scene, renderer, camera, material, shinyMateria
 
         const fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {
-            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+            //fbxMixer.clipAction( fbxGroup.animations[0] ).play();
         };
 
         scene.add( fbxGroup );
