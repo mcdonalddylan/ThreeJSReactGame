@@ -13,6 +13,7 @@ interface IProps {
 
 export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
 
+    // TODO: These images should be preloaded instead of lazy loaded 
     const navigate = useNavigate();
     const isFourImages: boolean = props.images.length === 4;
     let animationSpeed = props?.animationSpeed;

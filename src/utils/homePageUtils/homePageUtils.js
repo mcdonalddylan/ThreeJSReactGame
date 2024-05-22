@@ -4,7 +4,7 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 import skillsGeo from '../../assets/models/skillsCube.fbx';
 import artGeo from '../../assets/models/artPallete.fbx';
-import gameGeo from '../../assets/models/genericController.fbx';
+import gameGeo from '../../assets/models/genericControllerCordless.fbx';
 import webGeo from '../../assets/models/webCrtMonitor.fbx';
 
 import skillsImg from '../../assets/profileImages/coolCubeForSiteUV.jpg';
@@ -149,7 +149,7 @@ export const setupHomePageObjects = ( scene, renderer,
         const fbxGroup = fbx;
 
         fbxGroup.traverse((obj) => {
-            if (obj.name.includes('Button') || obj.name === 'DPad' || obj.name === 'Cable') {
+            if (obj.name.includes('Button') || obj.name === 'DPad' || obj.name === 'RTrigger' || obj.name === 'LTrigger') {
                 obj.material = shinyGreenMat;
             }
             else {
@@ -164,7 +164,9 @@ export const setupHomePageObjects = ( scene, renderer,
         let fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {
             console.log('ani: ', fbxGroup.animations );
-            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+            for (let k = 0; k < 100; k++) {
+                fbxMixer.clipAction( fbxGroup.animations[k] ).play();
+            }
         };
 
         scene.add( fbxGroup );
