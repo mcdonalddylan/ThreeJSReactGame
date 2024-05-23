@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ThreeJSReactSite/static/css/main.68f94012.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.64f87fc1.js",
+    "main.js": "/ThreeJSReactSite/static/js/main.9254c289.js",
     "static/js/787.348ddb5b.chunk.js": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js",
     "static/media/IMG_1024_edited.jpg": "/ThreeJSReactSite/static/media/IMG_1024_edited.b4e4a70a4d97e05640aa.jpg",
     "static/media/model_sheet_final_v2.jpg": "/ThreeJSReactSite/static/media/model_sheet_final_v2.b67aa911f9d77e7f460d.jpg",
@@ -19,8 +19,13 @@
     "static/media/goodpic01.png": "/ThreeJSReactSite/static/media/goodpic01.0934b1d381cc692576d8.png",
     "static/media/tree-hugging-sim-gdd-dylan-mcdonald_version3.pdf": "/ThreeJSReactSite/static/media/tree-hugging-sim-gdd-dylan-mcdonald_version3.db38bf43a96983b9e07d.pdf",
     "static/media/TP_Character_Model_Sheet.jpg": "/ThreeJSReactSite/static/media/TP_Character_Model_Sheet.a24c605f4156fd1cb069.jpg",
+    "static/media/rectAvoidDemo.gif": "/ThreeJSReactSite/static/media/rectAvoidDemo.2d65aaee74801b297858.gif",
     "static/media/hcscRebrand2023.gif": "/ThreeJSReactSite/static/media/hcscRebrand2023.991829dc94d4ec6ebf96.gif",
+    "static/media/rectInvincibleDemo.gif": "/ThreeJSReactSite/static/media/rectInvincibleDemo.72a3471195e7086d874f.gif",
+    "static/media/coolTitleMenuDemo.gif": "/ThreeJSReactSite/static/media/coolTitleMenuDemo.4c426aae9c66bf9202fe.gif",
     "static/media/goodpic02-1.png": "/ThreeJSReactSite/static/media/goodpic02-1.e0f3f39af0b1ac284710.png",
+    "static/media/rectInvertedColorDemo.gif": "/ThreeJSReactSite/static/media/rectInvertedColorDemo.d30a352fb255764e34ea.gif",
+    "static/media/squareStartAndEndDemo.gif": "/ThreeJSReactSite/static/media/squareStartAndEndDemo.828398741ba70b245644.gif",
     "static/media/bcbsMedicareForm.gif": "/ThreeJSReactSite/static/media/bcbsMedicareForm.5b0b25aceaeeef9c4756.gif",
     "static/media/genericControllerCordless.fbx": "/ThreeJSReactSite/static/media/genericControllerCordless.d138c74dace144af8951.fbx",
     "static/media/menuUITransitionDemo.gif": "/ThreeJSReactSite/static/media/menuUITransitionDemo.28d6fd0f5ad15a74ea5c.gif",
@@ -28,17 +33,20 @@
     "static/media/formFinderDocDisplay.gif": "/ThreeJSReactSite/static/media/formFinderDocDisplay.398d92eee9897eca0725.gif",
     "static/media/inGameUIBugFixes.gif": "/ThreeJSReactSite/static/media/inGameUIBugFixes.23ad9f0ba8a5a13717a9.gif",
     "static/media/front.jpg": "/ThreeJSReactSite/static/media/front.3e02afba8e6e5f548e55.jpg",
+    "static/media/balloonCustom.png": "/ThreeJSReactSite/static/media/balloonCustom.7c1fcccfb924173afe69.png",
     "static/media/back.jpg": "/ThreeJSReactSite/static/media/back.2d6eb299fc42857de1ee.jpg",
     "static/media/genericControllerCordlessStatic.fbx": "/ThreeJSReactSite/static/media/genericControllerCordlessStatic.f0de180d59a96b2335b6.fbx",
     "static/media/B_V_rP.png": "/ThreeJSReactSite/static/media/B_V_rP.3783a0670d4cb822f988.png",
     "static/media/X+eiQQ.png": "/ThreeJSReactSite/static/media/X+eiQQ.675657d130148ec5fa4b.png",
     "static/media/Elemental.jpg": "/ThreeJSReactSite/static/media/Elemental.8e89fea581b91bb03624.jpg",
+    "static/media/squareBad.png": "/ThreeJSReactSite/static/media/squareBad.f35f9f786d385e2558f9.png",
     "static/media/Kelpie.jpg": "/ThreeJSReactSite/static/media/Kelpie.4dd0081c99a91ad36141.jpg",
     "static/media/6T_Eh7.png": "/ThreeJSReactSite/static/media/6T_Eh7.6fd51a2ff3f4259c251e.png",
     "static/media/3D Bug Thang.jpg": "/ThreeJSReactSite/static/media/3D Bug Thang.bd835a1874155ae666db.jpg",
     "static/media/eCZmDz.png": "/ThreeJSReactSite/static/media/eCZmDz.b9250eb1380680731a5d.png",
     "static/media/Siren.jpg": "/ThreeJSReactSite/static/media/Siren.4675f2c1b5475f0d432e.jpg",
     "static/media/screenshot01.png": "/ThreeJSReactSite/static/media/screenshot01.49e5e8b98259aa0d083e.png",
+    "static/media/squareGood.png": "/ThreeJSReactSite/static/media/squareGood.a26f04ad67cec4bc16fe.png",
     "static/media/Plant Monster.jpg": "/ThreeJSReactSite/static/media/Plant Monster.7f0f8830cdb4cb8c38c9.jpg",
     "static/media/Basalisk.jpg": "/ThreeJSReactSite/static/media/Basalisk.cad35f984423e933d651.jpg",
     "static/media/Dragon.jpg": "/ThreeJSReactSite/static/media/Dragon.7f7d4120a676e47a9a6d.jpg",
@@ -133,11 +141,11 @@
     "static/media/chevArt.svg": "/ThreeJSReactSite/static/media/chevArt.edfb8fa625e1681d1b7babb8e800662a.svg",
     "static/media/chevWeb.svg": "/ThreeJSReactSite/static/media/chevWeb.785a81c5c5f61394cecc3ca783b6eba6.svg",
     "main.68f94012.css.map": "/ThreeJSReactSite/static/css/main.68f94012.css.map",
-    "main.64f87fc1.js.map": "/ThreeJSReactSite/static/js/main.64f87fc1.js.map",
+    "main.9254c289.js.map": "/ThreeJSReactSite/static/js/main.9254c289.js.map",
     "787.348ddb5b.chunk.js.map": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.68f94012.css",
-    "static/js/main.64f87fc1.js"
+    "static/js/main.9254c289.js"
   ]
 }
