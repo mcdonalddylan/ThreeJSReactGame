@@ -216,6 +216,9 @@ export const WebPageContainer: React.FC = () => {
                         <p>Since these sites are public, I can more easily show the work I've done. Here are some other contributions from my time with this team:</p>
                         <ul>
                             <li>
+                                Worked with a designer to capture
+                            </li>
+                            <li>
                                 Implemented code which dynamically injects the "line of business" and "role" the user has selected into links on an instruction page.
                             </li>
                         </ul>

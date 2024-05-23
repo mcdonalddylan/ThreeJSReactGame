@@ -13,6 +13,10 @@ import '../HomePageContainer/HomePageContainer.scss';
 import sickImg1 from '../../assets/gameImages/sickGame/sickGameMenuUIDemo.gif';
 import sickImg2 from '../../assets/gameImages/sickGame/sickGameTimeSlowDemo.gif';
 
+import squareImg1 from '../../assets/gameImages/square/squareStartAndEndDemo.gif';
+import squareImg2 from '../../assets/gameImages/square/squareBad.png';
+import squareImg3 from '../../assets/gameImages/square/squareGood.png';
+
 import eraseImg1 from '../../assets/gameImages/erase/6T_Eh7.png';
 import eraseImg2 from '../../assets/gameImages/erase/B_V_rP.png';
 import eraseImg3 from '../../assets/gameImages/erase/eCZmDz.png';
@@ -30,6 +34,7 @@ import balloonImg3 from '../../assets/gameImages/balloon/screenshot03.jpg';
 import balloonImg4 from '../../assets/gameImages/balloon/screenshot04.jpg';
 import balloonImg5 from '../../assets/gameImages/balloon/screenshot05.jpg';
 import balloonImg6 from '../../assets/gameImages/balloon/screenshot06.jpg';
+import balloonImg7 from '../../assets/gameImages/balloon/balloonCustom.png';
 
 import treeImg1 from '../../assets/gameImages/treeHugVR/goodpic01.png';
 import treeImg2 from '../../assets/gameImages/treeHugVR/goodpic02-1.png';
@@ -49,6 +54,7 @@ import coolImg3 from '../../assets/gameImages/coolTitle/cooltitlescreen03.jpg';
 import coolImg4 from '../../assets/gameImages/coolTitle/cooltitlescreen04.jpg';
 import coolImg5 from '../../assets/gameImages/coolTitle/cooltitlescreen05.jpg';
 import coolImg6 from '../../assets/gameImages/coolTitle/cooltitlescreen06.jpg';
+import coolImg7 from '../../assets/gameImages/coolTitle/coolTitleMenuDemo.gif';
 
 import recImg1 from '../../assets/gameImages/square/avoidrect01.jpg';
 import recImg2 from '../../assets/gameImages/square/avoidrect02.jpg';
@@ -57,6 +63,9 @@ import recImg4 from '../../assets/gameImages/square/avoidrect04.jpg';
 import recImg5 from '../../assets/gameImages/square/avoidrect05.jpg';
 import recImg6 from '../../assets/gameImages/square/avoidrect06.jpg';
 import recImg7 from '../../assets/gameImages/square/avoidrect07.jpg';
+import recImg8 from '../../assets/gameImages/square/rectAvoidDemo.gif';
+import recImg9 from '../../assets/gameImages/square/rectInvincibleDemo.gif';
+import recImg10 from '../../assets/gameImages/square/rectInvertedColorDemo.gif';
 
 import tafImg1 from '../../assets/gameImages/taffyPilot/taffy-pilot-menu-concept.png';
 import tafImg2 from '../../assets/gameImages/taffyPilot/taffy-pilot-in-dick-land-in-game.gif';
@@ -271,6 +280,16 @@ export const GamePageContainer: React.FC = () => {
                         </ul>
                     </>
                 )}
+                contentImgs={[
+                    squareImg2,
+                    squareImg1,
+                    squareImg3
+                ]}
+                contentSubtext={[
+                    'Lower quality graphics to improve performance on mobile.',
+                    'Reimagined this old game using three.js, React, and typescript.',
+                    '"Good" quality graphics for desktop users.' 
+                ]}
                 playAbility='Playable'
             />
 
@@ -384,12 +403,18 @@ export const GamePageContainer: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    balloonImg1,
-                    balloonImg2,
-                    balloonImg3,
-                    balloonImg4,
                     balloonImg5,
+                    balloonImg2,
+                    balloonImg7,
+                    balloonImg4,
+                    balloonImg3,
+                    balloonImg1,
                     balloonImg6
+                ]}
+                contentSubtext={[
+                    'Implemented a graphics options menu which works as intended in all versions of the game.',
+                    'Added an level select area with a cutscene before the first level and after the final level.',
+                    'Gave the player the ability to customize the playable character from the main menu.'
                 ]}
                 playAbility='Playable'
             />
@@ -428,16 +453,21 @@ export const GamePageContainer: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    treeImg6,
+                    treeImg7,
                     treeImg2,
+                    treeImg5,
                     treeImg3,
                     treeImg4,
-                    treeImg5,
                     treeImg1,
-                    treeImg7,
+                    treeImg6,
                     treeImg8,
                     treeImg9,
                     treeImg10
+                ]}
+                contentSubtext={[
+                    'The "hugging" feature was done using a combination of raycasts from each hand and multiple colliders. I created an algorithm to determine whether the hug is "good" or "sick".',
+                    'This VR game was playtested my multiple students throughout development.',
+                    'Implemented a "money shot" feature to let the player destroy certain objects that are upsetting the trees.'
                 ]}
                 playAbility='Download'
             />
@@ -475,12 +505,18 @@ export const GamePageContainer: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    coolImg1,
-                    coolImg2,
-                    coolImg3,
                     coolImg4,
-                    coolImg5,
-                    coolImg6
+                    coolImg7,
+                    coolImg6,
+                    coolImg1,
+                    coolImg3,
+                    coolImg5,                    
+                    coolImg2
+                ]}
+                contentSubtext={[
+                    'Developed an algorithm for determining the "coolness" of the user chosen title.',
+                    'I added an easier "baby" difficulty mode after some of the feedback I recieved on the default difficulty.',
+                    'The nerd enemies track the player\'s position before throwing their glasses.'
                 ]}
                 playAbility='Download'
             />
@@ -512,6 +548,9 @@ export const GamePageContainer: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
+                    recImg9,
+                    recImg8,
+                    recImg10,
                     recImg6,
                     recImg2,
                     recImg3,
@@ -519,6 +558,11 @@ export const GamePageContainer: React.FC = () => {
                     recImg5,
                     recImg1,
                     recImg7
+                ]}
+                contentSubtext={[
+                    'Pressing the "v" key will bring up a secret menu which can alter the game in multiple ways. Including invincibility, size alterations, hard mode and a couple "filters" for fun :D.',
+                    'It took a lot of feedback to nail down the default difficulty.',
+                    'This "invertion" filter was one of the features I enjoyed coding the most.'
                 ]}
                 playAbility='Download'
             />
@@ -560,9 +604,14 @@ export const GamePageContainer: React.FC = () => {
                     </>
                 )}
                 contentImgs={[
-                    tafImg1,
                     tafImg2,
-                    tafImg3
+                    tafImg3,
+                    tafImg1
+                ]}
+                contentSubtext={[
+                    '',
+                    '',
+                    ''
                 ]}
                 playAbility='Nope'
             />

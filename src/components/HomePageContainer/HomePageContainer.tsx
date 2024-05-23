@@ -11,9 +11,9 @@ import linLogo from '../../assets/logoSvgs/tieLogo.svg';
 import emaLogo from '../../assets/logoSvgs/emailLogo.svg';
 import gitLogo from '../../assets/logoSvgs/githubLogo.svg';
 
-import webImg1 from '../../assets/webImages/pushUp/push-up1.jpg';
-import webImg2 from '../../assets/webImages/mochiCircle/mochiCircle6.jpg';
-import webImg3 from '../../assets/webImages/clientEngage/client3.jpg';
+import webImg1 from '../../assets/webImages/hcscPublic/formFinderDocDisplay.gif';
+import webImg2 from '../../assets/webImages/pushUp/push-up1-5.jpg';
+import webImg3 from '../../assets/webImages/hcscPublic/hcscRebrand2023.gif';
 import webImg4 from '../../assets/webImages/mochiCircle/mochiCircle1.jpg';
 
 import gameImg1 from '../../assets/gameImages/balloon/screenshot02.jpg';

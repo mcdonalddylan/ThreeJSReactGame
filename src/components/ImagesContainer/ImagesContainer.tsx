@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ImagesContainer.scss';
 import { LazyImage } from '../LazyImage/LazyImage';
+import { PreloadImage } from '../PreloadImage/PreloadImage';
 
 interface IProps {
     images: string[],
@@ -13,7 +14,8 @@ interface IProps {
 
 export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
 
-    // TODO: These images should be preloaded instead of lazy loaded 
+    // TODO: These images should be preloaded instead of lazy loaded
+
     const navigate = useNavigate();
     const isFourImages: boolean = props.images.length === 4;
     let animationSpeed = props?.animationSpeed;
@@ -61,7 +63,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                         <div className='img'>
                             {isFourImages ? (
                                 <>
-                                    <LazyImage
+                                    <img
                                         id={`${props.redirectString}img1`}
                                         className='img-inner img-fade-out'
                                         alt='img1'
@@ -69,8 +71,8 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                             animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
                                         }}
                                         src={props.images[0]}
-                                        onClick={()=>navigate(props.redirectString)}></LazyImage>
-                                    <LazyImage
+                                        onClick={()=>navigate(props.redirectString)} />
+                                    <img
                                         id={`${props.redirectString}img2`}
                                         className='img-inner img-down-ani img-fade-in'
                                         alt='img2'
@@ -78,8 +80,8 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                             animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
                                         }}
                                         src={props.images[1]}
-                                        onClick={()=>navigate(props.redirectString)}></LazyImage>
-                                    <LazyImage
+                                        onClick={()=>navigate(props.redirectString)} />
+                                    <img
                                         id={`${props.redirectString}img3`}
                                         className='img-inner img-fade-out'
                                         alt='img3'
@@ -87,8 +89,8 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                             animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
                                         }}
                                         src={props.images[2]}
-                                        onClick={()=>navigate(props.redirectString)}></LazyImage>
-                                    <LazyImage
+                                        onClick={()=>navigate(props.redirectString)} />
+                                    <img
                                         id={`${props.redirectString}img4`}
                                         className='img-inner img-fade-out'
                                         alt='img4'
@@ -96,7 +98,7 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
                                             animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
                                         }}
                                         src={props.images[3]}
-                                        onClick={()=>navigate(props.redirectString)}></LazyImage>
+                                        onClick={()=>navigate(props.redirectString)} />
                                 </>
                             ) : (
                                 <h1>ERROR: Need to pass exactly 4 images into this container.</h1>

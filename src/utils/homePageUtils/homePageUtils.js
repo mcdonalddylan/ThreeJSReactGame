@@ -163,7 +163,6 @@ export const setupHomePageObjects = ( scene, renderer,
 
         let fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {
-            console.log('ani: ', fbxGroup.animations );
             for (let k = 0; k < 100; k++) {
                 fbxMixer.clipAction( fbxGroup.animations[k] ).play();
             }
