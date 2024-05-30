@@ -41,7 +41,8 @@
     transition: 0.3s;
 }
 
-.nav-bar-comp__btn:hover {
+.nav-bar-comp__btn:hover,
+.nav-bar-comp__btn:focus {
     color: $white;
     transition: 0.3s;
     background-color: #55ff0055;
