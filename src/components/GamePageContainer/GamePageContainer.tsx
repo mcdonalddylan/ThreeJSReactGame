@@ -202,7 +202,7 @@ export const GamePageContainer: React.FC = () => {
                 chevronImgSrc={chevGame}
                 color={mainColor}
                 bgColor={bgColor}
-                year='2022+'
+                year='2022 - Now'
                 title='Sick Game'
                 contentLinks={[
                     {
@@ -229,9 +229,6 @@ export const GamePageContainer: React.FC = () => {
                             </li>
                             <li>
                                 Create an webGL and Android version
-                            </li>
-                            <li>
-                                TBD
                             </li>
                         </ul>
                     </>

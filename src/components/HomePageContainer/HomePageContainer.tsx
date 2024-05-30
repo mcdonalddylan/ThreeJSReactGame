@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { MouseEvent, useEffect, useState } from 'react';
 import * as THREE from "three";
 import { setupHomePageLights, setupHomePageObjects } from '../../utils/homePageUtils/homePageUtils';
 import './HomePageContainer.scss';
@@ -34,6 +34,7 @@ export const HomePageContainer: React.FC = () => {
     // const [refresh, setRefresh] = useState(false);
     const navigate = useNavigate();
     const [isMobileAspectRatio, setIsMobileAspectRatio] = useState(false);
+    const [displayEmail, setDisplayEmail] = useState(false);
 
     const [animationCycle, setAnimationCycle] = useState(1);
     const IMAGES_ANIMATION_SPEED = 2;
@@ -120,6 +121,25 @@ export const HomePageContainer: React.FC = () => {
         }
     };
 
+    const handleClickEmailBtn = (event: MouseEvent) => {
+        if (displayEmail) {
+            event.preventDefault();
+            setDisplayEmail(false);
+        }
+        else {
+            setDisplayEmail(true);
+        }
+    }
+
+    useEffect(() => {
+        if (displayEmail) {
+            document.querySelector('.home-page-comp__email-label')?.classList.add('fade-in-img');
+        }
+        else {
+            document.querySelector('.home-page-comp__email-label')?.classList.remove('fade-in-img');
+        }
+    }, [displayEmail]);
+
     return(
         <div className="home-page-comp">            
             <div className="home-page-comp__text-grid home-page-comp__text-grid--first wobble" id="first" onClick={wobbleToggle}>
@@ -148,13 +168,14 @@ export const HomePageContainer: React.FC = () => {
                                 <div className="home-page-comp__link-img">
                                     <LinLogo />
                                 </div>
-                                <p className='home-page-comp__link-label'>Linked-in</p>
+                                <p className='home-page-comp__link-label'>LinkedIn</p>
                             </a>
                         </div>
                         <div className="home-page-comp__links-col">
-                            <a href='mailto:dylandavidmcdonald@gmail.com' 
+                            <a href='mailto:dylandavidmcdonald@gmail.com'
                                className='home-page-comp__link'
-                               target='_blank'>
+                               target='_blank'
+                               onClick={handleClickEmailBtn}>
                                 <div className="home-page-comp__link-img">
                                     <EmaLogo />
                                 </div>
@@ -172,6 +193,12 @@ export const HomePageContainer: React.FC = () => {
                             </a>
                         </div>
                     </div>
+                    {displayEmail &&
+                        <div className='home-page-comp__email-row'>
+                            <div className='home-page-comp__email-col'>
+                                <p className='home-page-comp__email-label'>dylandavidmcdonald@gmail.com</p>
+                            </div>
+                        </div>}
             </div>
             
             <div className="home-page-comp__text-grid home-page-comp__text-grid--second fade-out wobble" id="second" onClick={wobbleToggle}>

@@ -40,7 +40,8 @@
 }
 
 .home-page-comp__links-row,
-.home-page-comp__page-nav-row {
+.home-page-comp__page-nav-row,
+.home-page-comp__email-row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,9 +49,15 @@
 }
 
 .home-page-comp__links-col,
-.home-page-comp__page-nav-col {
+.home-page-comp__page-nav-col,
+.home-page-comp__email-col {
     display: flex;
     flex-direction: column;
+}
+
+.home-page-comp__email-label {
+    font-size: 1.1rem;
+    margin: 1.5em 0 0;
 }
 
 .home-page-comp__page-nav-col {

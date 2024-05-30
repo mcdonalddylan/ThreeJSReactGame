@@ -192,7 +192,7 @@ export const WebPageContainer: React.FC = () => {
                 chevronImgSrc={chevWeb}
                 color={mainColor}
                 bgColor={bgColor}
-                year='2023+'
+                year='2023 - Now'
                 title='Health Care Service Corporation - Public Sites'
                 contentLinks={[
                     {
@@ -206,7 +206,7 @@ export const WebPageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p>This is the second project and second team I've worked with at Blue Cross Blue Sheild HQ in Illinois. Yet another great team with plenty of front-end and back-end work for me to do.</p>
+                        <p>This is the second project and second team I've worked with at Blue Cross Blue Shield HQ in Illinois. Yet another great team with plenty of front-end and back-end work for me to do.</p>
                         <br></br>
                         <p>Since these sites are public, I can more easily show the work I've done. Here are some other contributions from my time with this team:</p>
                         <ul>
