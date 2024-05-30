@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ThreeJSReactSite/static/css/main.68f94012.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.9254c289.js",
+    "main.css": "/ThreeJSReactSite/static/css/main.d7495e12.css",
+    "main.js": "/ThreeJSReactSite/static/js/main.e065ae6e.js",
     "static/js/787.348ddb5b.chunk.js": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js",
     "static/media/IMG_1024_edited.jpg": "/ThreeJSReactSite/static/media/IMG_1024_edited.b4e4a70a4d97e05640aa.jpg",
     "static/media/model_sheet_final_v2.jpg": "/ThreeJSReactSite/static/media/model_sheet_final_v2.b67aa911f9d77e7f460d.jpg",
@@ -32,9 +32,7 @@
     "static/media/taffy-pilot-menu-concept.png": "/ThreeJSReactSite/static/media/taffy-pilot-menu-concept.6fa23066c9db72bbc119.png",
     "static/media/formFinderDocDisplay.gif": "/ThreeJSReactSite/static/media/formFinderDocDisplay.398d92eee9897eca0725.gif",
     "static/media/inGameUIBugFixes.gif": "/ThreeJSReactSite/static/media/inGameUIBugFixes.23ad9f0ba8a5a13717a9.gif",
-    "static/media/front.jpg": "/ThreeJSReactSite/static/media/front.3e02afba8e6e5f548e55.jpg",
     "static/media/balloonCustom.png": "/ThreeJSReactSite/static/media/balloonCustom.7c1fcccfb924173afe69.png",
-    "static/media/back.jpg": "/ThreeJSReactSite/static/media/back.2d6eb299fc42857de1ee.jpg",
     "static/media/genericControllerCordlessStatic.fbx": "/ThreeJSReactSite/static/media/genericControllerCordlessStatic.f0de180d59a96b2335b6.fbx",
     "static/media/B_V_rP.png": "/ThreeJSReactSite/static/media/B_V_rP.3783a0670d4cb822f988.png",
     "static/media/X+eiQQ.png": "/ThreeJSReactSite/static/media/X+eiQQ.675657d130148ec5fa4b.png",
@@ -82,7 +80,6 @@
     "static/media/mochiCircle22.jpg": "/ThreeJSReactSite/static/media/mochiCircle22.d30951b89813c0e99e93.jpg",
     "static/media/avoidrect06.jpg": "/ThreeJSReactSite/static/media/avoidrect06.3b98cc4272953947ce1c.jpg",
     "static/media/mochiCircle8.jpg": "/ThreeJSReactSite/static/media/mochiCircle8.cfaf7ec45e7807a80f85.jpg",
-    "static/media/coolCubeForSiteUV.jpg": "/ThreeJSReactSite/static/media/coolCubeForSiteUV.f8d5d6b1fec37f9f4e0a.jpg",
     "static/media/avoidrect07.jpg": "/ThreeJSReactSite/static/media/avoidrect07.2b415ea19d56bb162d9c.jpg",
     "static/media/sc3.jpg": "/ThreeJSReactSite/static/media/sc3.7bdeeed87aa949c09f36.jpg",
     "static/media/avoidrect03.jpg": "/ThreeJSReactSite/static/media/avoidrect03.df895585f7dfe7422103.jpg",
@@ -120,12 +117,15 @@
     "static/media/push-up2.jpg": "/ThreeJSReactSite/static/media/push-up2.65cd4d5b9a16ba207722.jpg",
     "static/media/push-up5.jpg": "/ThreeJSReactSite/static/media/push-up5.86dc7b2ddd3734623908.jpg",
     "static/media/push-up4.jpg": "/ThreeJSReactSite/static/media/push-up4.8ec90718fa352375c235.jpg",
+    "static/media/back-lq.jpg": "/ThreeJSReactSite/static/media/back-lq.28ada95a28e8cdcdaf22.jpg",
     "static/media/push-up2-5.jpg": "/ThreeJSReactSite/static/media/push-up2-5.abc2eddfe3835f6e9530.jpg",
+    "static/media/front-lq.jpg": "/ThreeJSReactSite/static/media/front-lq.5cff83fccdeb42d66e47.jpg",
     "static/media/screenshot01.jpg": "/ThreeJSReactSite/static/media/screenshot01.5e25aa3faedbb4769d06.jpg",
     "static/media/screenshot04.jpg": "/ThreeJSReactSite/static/media/screenshot04.452b5a069216163bc085.jpg",
     "static/media/screenshot06.jpg": "/ThreeJSReactSite/static/media/screenshot06.c6835d89bcaf3e10ffe0.jpg",
     "static/media/push-up7.jpg": "/ThreeJSReactSite/static/media/push-up7.519917b7a396ad546342.jpg",
     "static/media/push-up8.jpg": "/ThreeJSReactSite/static/media/push-up8.b4981e00e51b4ec47220.jpg",
+    "static/media/coolCubeForSiteUV-lq.jpg": "/ThreeJSReactSite/static/media/coolCubeForSiteUV-lq.e17c77130287a24996fa.jpg",
     "static/media/screenshot03.jpg": "/ThreeJSReactSite/static/media/screenshot03.4d470e88a2d0d5760b16.jpg",
     "static/media/client1.jpg": "/ThreeJSReactSite/static/media/client1.009134175e220352b500.jpg",
     "static/media/push-up1.jpg": "/ThreeJSReactSite/static/media/push-up1.09f1e5347427a815f465.jpg",
@@ -134,18 +134,18 @@
     "static/media/mochiWalkthrough5.jpg": "/ThreeJSReactSite/static/media/mochiWalkthrough5.45ed1d28d65f2a0951b4.jpg",
     "index.html": "/ThreeJSReactSite/index.html",
     "static/media/resumeLogo.svg": "/ThreeJSReactSite/static/media/resumeLogo.8a8abea7e8a03f9c3842e81fc1098235.svg",
-    "static/media/githubLogo.svg": "/ThreeJSReactSite/static/media/githubLogo.9a1f4db1cf60e543323d32b9186f4275.svg",
+    "static/media/githubLogo.svg": "/ThreeJSReactSite/static/media/githubLogo.229fd155db96ded933ffa88311c6b8ca.svg",
     "static/media/emailLogo.svg": "/ThreeJSReactSite/static/media/emailLogo.295ca66842df8dd33d44825c3f54e4c7.svg",
     "static/media/tieLogo.svg": "/ThreeJSReactSite/static/media/tieLogo.44bc0bf1c499d899993dce5a1a81c93f.svg",
     "static/media/chevGame.svg": "/ThreeJSReactSite/static/media/chevGame.1ee6d70d641be80ef9e6850ceb963ac3.svg",
     "static/media/chevArt.svg": "/ThreeJSReactSite/static/media/chevArt.edfb8fa625e1681d1b7babb8e800662a.svg",
     "static/media/chevWeb.svg": "/ThreeJSReactSite/static/media/chevWeb.785a81c5c5f61394cecc3ca783b6eba6.svg",
-    "main.68f94012.css.map": "/ThreeJSReactSite/static/css/main.68f94012.css.map",
-    "main.9254c289.js.map": "/ThreeJSReactSite/static/js/main.9254c289.js.map",
+    "main.d7495e12.css.map": "/ThreeJSReactSite/static/css/main.d7495e12.css.map",
+    "main.e065ae6e.js.map": "/ThreeJSReactSite/static/js/main.e065ae6e.js.map",
     "787.348ddb5b.chunk.js.map": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.68f94012.css",
-    "static/js/main.9254c289.js"
+    "static/css/main.d7495e12.css",
+    "static/js/main.e065ae6e.js"
   ]
 }
