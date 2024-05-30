@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-  <rect x="14.286" y="76.08" width="471.76" height="332.226" style="fill: none; stroke: rgb(0, 255, 0); stroke-width: 25px;"/>
-  <path style="fill: none; stroke-width: 25px; stroke: rgb(0, 255, 0);" d="M 18.937 79.328 L 253.488 291.953 L 484.053 80.657"/>
-  <line style="stroke: rgb(0, 255, 0); stroke-width: 25px;" x1="18.27242505953533" y1="402.9162060563159" x2="191.0299006899485" y2="247.4344931970396"/>
-  <line style="stroke: rgb(0, 255, 0); stroke-width: 25px;" x1="483.3887056029554" y1="405.40790041636996" x2="310.6312299725422" y2="250.09228530633507"/>
-</svg>

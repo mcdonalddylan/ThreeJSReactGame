@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20.691" y="80.52" width="459.08" height="319.48" style="fill: none; stroke: rgb(0, 255, 0); stroke-width: 40px; stroke-linejoin: round;"/>
+  <path style="fill: none; stroke: rgb(0, 255, 0); stroke-width: 40px;" d="M 18.937 79.328 C 18.937 79.328 199.996 275.77 253.488 275.77 C 308.506 275.77 481.356 80.556 481.356 80.556"/>
+  <line style="stroke: rgb(0, 255, 0); stroke-width: 40px;" x1="18.272" y1="402.916" x2="183.362" y2="237.826"/>
+  <line style="stroke: rgb(0, 255, 0); stroke-width: 40px;" x1="483.389" y1="405.408" x2="317.148" y2="239.167"/>
+</svg>
