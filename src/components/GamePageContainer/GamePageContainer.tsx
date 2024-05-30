@@ -192,12 +192,7 @@ export const GamePageContainer: React.FC = () => {
 
             <div className='row justify-content-center'>
                 <div className='col-12-xm'>
-                    <h1 className='page-title'
-                        style={{
-                            color: mainColor,
-                            textShadow: `0 0 4px ${mainColor}`
-                        }}
-                    >
+                    <h1 className='page-title'>
                         Game Projects:
                     </h1>
                 </div>

@@ -7,9 +7,9 @@ import artGeo from '../../assets/models/artPallete.fbx';
 import gameGeo from '../../assets/models/genericControllerCordless.fbx';
 import webGeo from '../../assets/models/webCrtMonitor.fbx';
 
-import skillsImg from '../../assets/profileImages/coolCubeForSiteUV.jpg';
-import frontImg from '../../assets/profileImages/back.jpg';
-import backImg from '../../assets/profileImages/front.jpg';
+import skillsImg from '../../assets/profileImages/coolCubeForSiteUV-lq.jpg';
+import frontImg from '../../assets/profileImages/back-lq.jpg';
+import backImg from '../../assets/profileImages/front-lq.jpg';
 
 export const setupHomePageObjects = ( scene, renderer, 
     camera, quality, mobileAspectRatio) => {
@@ -18,27 +18,24 @@ export const setupHomePageObjects = ( scene, renderer,
     let boxXPos = 0, planeXPos = 0, boxSize = 0, planeSize = 0;
     if(mobileAspectRatio === false){
         boxXPos = -1;
-        boxSize = 0.7;
+        boxSize = 0.0025;
         planeXPos = 1;
         planeSize = 0.9;
     } else {
         boxXPos = -0.5;
-        boxSize = 0.5;
+        boxSize = 0.0018;
         planeXPos = 0.5;
         planeSize = 0.7;
     }
-    let boxGeo = new THREE.BoxGeometry( boxSize, boxSize, boxSize );
-    let greenMat = new THREE.MeshPhongMaterial({
+    const greenMat = new THREE.MeshPhongMaterial({
         color: 0x44ff22,
         shininess: 0,
         reflectivity: 0
     });
-    let whiteMat = new THREE.MeshPhongMaterial({
-        color: 0xffffff,
-        shininess: 0,
-        reflectivity: 0
-    });
-    let shinyGreenMat = new THREE.MeshPhongMaterial({
+    const blackMat = new THREE.MeshBasicMaterial({
+        color: 0x000000,
+    })
+    const shinyGreenMat = new THREE.MeshPhongMaterial({
         color: 0x44ff22,
         shininess: 100,
         reflectivity: 1
@@ -50,6 +47,10 @@ export const setupHomePageObjects = ( scene, renderer,
     const frontPhotoMat = new THREE.MeshBasicMaterial( { map: frontPhotoTexture } );
     const backPhotoMat = new THREE.MeshBasicMaterial( { map: backPhotoTexture } );
 
+    const hideCylinderGeo = new THREE.CylinderGeometry( 5, 5, 50, 8 );
+    const hideCylinder = new THREE.Mesh( hideCylinderGeo, blackMat );
+    hideCylinder.position.set( 0, -24.5, -5.5 );
+
     let planeGeo = new THREE.PlaneGeometry( planeSize, planeSize, 1 );
     let frontPhotoPlane = new THREE.Mesh( planeGeo, frontPhotoMat );
     frontPhotoPlane.position.set( planeXPos, -0.9, -5.5 );
@@ -59,7 +60,7 @@ export const setupHomePageObjects = ( scene, renderer,
     backPhotoPlane.position.set( planeXPos, -0.9, -5.5 );
     backPhotoPlane.rotateY(Math.PI);
 
-    scene.add( frontPhotoPlane, backPhotoPlane );
+    scene.add( frontPhotoPlane, backPhotoPlane, hideCylinder );
 
     //==============================
     // Adding FBX files to project
@@ -84,7 +85,7 @@ export const setupHomePageObjects = ( scene, renderer,
             }
         });
 
-        fbxGroup.scale.setScalar(0.0025);
+        fbxGroup.scale.setScalar( boxSize );
         fbxGroup.position.set( boxXPos, -0.9, -5.5 );
         fbxGroup.rotation.set( 0, 1, 0 );
 
@@ -292,7 +293,7 @@ export const setupHomePageObjects = ( scene, renderer,
     const animate = (fbxObjects) => {
 
         delta = clock.getDelta();
-        if (fbxObjects) {
+        if (fbxObjects?.skillGroup && fbxObjects?.webGroup) {
             fbxObjects.skillMixer.update(delta);
             fbxObjects.skillGroup.rotation.x += 0.01;
             fbxObjects.skillGroup.rotation.y += 0.015;
@@ -302,7 +303,10 @@ export const setupHomePageObjects = ( scene, renderer,
             fbxObjects.gameGroup.rotation.y += 0.005;
             fbxObjects.webMixer.update(delta);
             fbxObjects.webGroup.rotation.y += 0.005;
-        };
+
+            if (hideCylinder.position.y > -100) {
+                hideCylinder.position.y += - 0.07;
+            }
 
         // animating the photo plane
         let rotSpeed = 0.007;
@@ -363,6 +367,7 @@ export const setupHomePageObjects = ( scene, renderer,
         renderer.render( scene, camera );
 
         requestAnimationFrame(() => animate(fbxObjects));
+        };
     }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

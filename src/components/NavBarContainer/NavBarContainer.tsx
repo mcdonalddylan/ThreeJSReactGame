@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setQuality } from '../../redux/navActions';
 import './NavBarContainer.scss';
@@ -24,55 +24,46 @@ export const NavBarContainer: React.FC = () => {
         }
     }
 
-    return (
-        WEBGL.isWebGLAvailable() ?
-            (
-                <div className="container-fluid nav-container">
-                    <div className="row">
-                        <div className="col-md">
-                            <div className="container">
-                                <div className='row justify-content-md-center'>
-                                    {/* Home Button (only render button if NOT home) */}
-                                    {!isHome &&
-                                        (
-                                            <div className="text-center h-100 col-md-auto">
-                                                <button
-                                                    onClick={goHomeReset}
-                                                    className="qual-btn"
-                                                >
-                                                    Home
-                                                </button>
-                                            </div>
-                                        )
-                                    }
-                                    {/* Quality Button */}
-                                    <div className="text-center h-100 col-md-auto">
-                                        {WEBGL.isWebGLAvailable() &&
-                                            (
-                                                <button
-                                                    onClick={() => {
-                                                        if (quality === 1) {
-                                                            window.scrollTo(0, 0);
-                                                            dispatch(setQuality(6));
-                                                        } else {
-                                                            window.scrollTo(0, 0);
-                                                            dispatch(setQuality(1));
-                                                        }
-                                                    }}
-                                                    className="qual-btn"
-                                                >
-                                                    Quality
-                                                </button>
-                                            )}
-                                    </div>
-                                </div>
-                            </div>
+    useEffect(() => {
 
+    }, []);
+
+    return (
+        <>
+            {WEBGL.isWebGLAvailable() &&
+                (
+                    <div className="nav-bar-comp">
+                        <div className="nav-bar-comp__row">
+                            {/* Home Button (only render button if NOT home) */}
+                            {!isHome &&
+                                <div className="nav-bar-comp__col">
+                                    <button
+                                        onClick={goHomeReset}
+                                        className='nav-bar-comp__btn'>
+                                        Home
+                                    </button>
+                                </div>
+                            }
+                            {/* Quality Button */}
+                            {WEBGL.isWebGLAvailable() &&
+                                <button
+                                    onClick={() => {
+                                        if (quality === 1) {
+                                            window.scrollTo(0, 0);
+                                            dispatch(setQuality(6));
+                                        } else {
+                                            window.scrollTo(0, 0);
+                                            dispatch(setQuality(1));
+                                        }
+                                    }}
+                                    className='nav-bar-comp__btn'>
+                                    Quality
+                                </button>
+                            }
                         </div>
+                        {redirectToHome && <Navigate replace to="/" />}
                     </div>
-                    {redirectToHome ? <Navigate replace to="/" /> : null}
-                </div>
-            ) :
-            null
+            )}
+        </>
     ); // end of render function
 }

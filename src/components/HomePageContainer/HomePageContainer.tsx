@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux';
 import { IState } from '../..';
 import { WEBGL } from '../../utils/webGlUtils/webGlUtils';
 import { ImagesContainer } from '../ImagesContainer/ImagesContainer';
-import resLogo from '../../assets/logoSvgs/resumeLogo.svg';
-import linLogo from '../../assets/logoSvgs/tieLogo.svg';
-import emaLogo from '../../assets/logoSvgs/emailLogo.svg';
-import gitLogo from '../../assets/logoSvgs/githubLogo.svg';
+import { ReactComponent as ResLogo } from '../../assets/logoSvgs/resumeLogo.svg';
+import { ReactComponent as LinLogo } from '../../assets/logoSvgs/tieLogo.svg';
+import { ReactComponent as EmaLogo } from '../../assets/logoSvgs/emailLogo.svg';
+import { ReactComponent as GitLogo } from '../../assets/logoSvgs/githubLogo.svg';
 
 import webImg1 from '../../assets/webImages/hcscPublic/formFinderDocDisplay.gif';
 import webImg2 from '../../assets/webImages/pushUp/push-up1-5.jpg';
@@ -103,7 +103,7 @@ export const HomePageContainer: React.FC = () => {
             document.body.appendChild( warning );
         }
 
-    },[quality]);
+    },[quality, isMobileAspectRatio]);
 
     const wobbleToggle = (event: any) => {
         const element: HTMLCanvasElement = event.target;
@@ -121,246 +121,112 @@ export const HomePageContainer: React.FC = () => {
     };
 
     return(
-        <div className="container position-absolute" style={{right: 0, left: "50%", transform: `translate(-50%)`, zIndex: 2 }}>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            
-            <div className="row justify-content-center text-grid wobble" id="first" onClick={wobbleToggle}>
-                <div className="col-sm-8 center-block">
-                    <h1 className="main-header">
+        <div className="home-page-comp">            
+            <div className="home-page-comp__text-grid home-page-comp__text-grid--first wobble" id="first" onClick={wobbleToggle}>
+                    <h1 className="home-page-comp__main-header">
                         Dylan McDonald
                     </h1>
-                    <hr className="main-hr"></hr>
-                    <h3 className="main-sub">
+                    <hr className="home-page-comp__main-hr"></hr>
+                    <h3 className="home-page-comp__main-sub">
                         React & Java Developer  |  Game Developer
                     </h3>
-                    <div className="row justify-content-center" style={{margin: "auto", textAlign: "center"}}>
-                        <div className="col-sm-3">
+                    <div className="home-page-comp__links-row">
+                        <div className="home-page-comp__links-col">
                             <a href='https://docs.google.com/document/d/1z9Wxv00gJzBwnmLd6gWF5FjgUcYMDd-O/edit?usp=sharing&ouid=107142401991010822003&rtpof=true&sd=true'
-                            className="main-link" target='_blank'>
-                                Resume 
+                               className='home-page-comp__link'
+                               target='_blank'>
+                                <div className="home-page-comp__link-img">
+                                    <ResLogo />
+                                </div>
+                                <p className='home-page-comp__link-label'>Resume</p>
                             </a>
-                            <img alt='resume-logo' className="main-img"
-                            src={resLogo}/>
                         </div>
-                        <div className="col-sm-3">
-                            <a href='http://www.linkedin.com/in/dylan-mcdonald-968709193' 
-                            className="main-link" target='_blank'>
-                                Linked-in 
+                        <div className="home-page-comp__links-col">
+                            <a href='http://www.linkedin.com/in/dylan-mcdonald-968709193'
+                               className='home-page-comp__link'
+                               target='_blank'>
+                                <div className="home-page-comp__link-img">
+                                    <LinLogo />
+                                </div>
+                                <p className='home-page-comp__link-label'>Linked-in</p>
                             </a>
-                            <img alt='linkedin-logo' className="main-img"
-                            src={linLogo}/>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="home-page-comp__links-col">
                             <a href='mailto:dylandavidmcdonald@gmail.com' 
-                            className="main-link" target='_blank'>
-                                Email 
+                               className='home-page-comp__link'
+                               target='_blank'>
+                                <div className="home-page-comp__link-img">
+                                    <EmaLogo />
+                                </div>
+                                <p className='home-page-comp__link-label'>Email</p>
                             </a>
-                            <img alt='email-logo' className="main-img"
-                            src={emaLogo}/>
                         </div>
-                        <div className="col-sm-3">
+                        <div className="home-page-comp__links-col">
                             <a href='https://github.com/mcdonalddylan'
-                            className="main-link" target='_blank'>
-                                GitHub 
+                               className='home-page-comp__link'
+                               target='_blank'>
+                                <div className="home-page-comp__link-img">
+                                    <GitLogo />
+                                </div>
+                                <p className='home-page-comp__link-label'>GitHub</p>
                             </a>
-                            <img alt='github-logo' className="main-img"
-                            src={gitLogo}/>
                         </div>
+                    </div>
+            </div>
+            
+            <div className="home-page-comp__text-grid home-page-comp__text-grid--second fade-out wobble" id="second" onClick={wobbleToggle}>
+                <div className='home-page-comp__page-nav-row'>
+                    <div className='home-page-comp__page-nav-col home-page-comp__page-nav-col--larger-link'>
+                        <a className="home-page-comp__larger-link" href='#/web'>
+                            Web Projects
+                        </a>
+                    </div>
+                    <div className='home-page-comp__page-nav-col'>
+                        <ImagesContainer
+                            images={[webImg1, webImg2, webImg3, webImg4]}
+                            redirectString={'/web'}
+                            animationCycle={animationCycle}
+                            animationSpeed={IMAGES_ANIMATION_SPEED}
+                        />
                     </div>
                 </div>
             </div>
 
-            {isMobileAspectRatio ?
-            <>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-            </>
-            :
-            <>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-            </>
-            }
-            
-
-            <div className="row justify-content-center text-grid fade-out wobble" id="second" onClick={wobbleToggle}>
-                <div className="col-sm-8 my-auto text-center" >
-                    <a className="larger-link" onClick={()=>navigate('/web')}>
-                        Web Projects
-                    </a>
-                </div>
-                <div className="col-sm-4" >
-                    <ImagesContainer
-                        images={[webImg1, webImg2, webImg3, webImg4]}
-                        redirectString={'/web'}
-                        animationCycle={animationCycle}
-                        animationSpeed={IMAGES_ANIMATION_SPEED}
-                    />
+            <div className="home-page-comp__text-grid home-page-comp__text-grid--second fade-out wobble" id="third" onClick={wobbleToggle}>
+                <div className='home-page-comp__page-nav-row'>
+                    <div className='home-page-comp__page-nav-col home-page-comp__page-nav-col--larger-link'>
+                        <a className="home-page-comp__larger-link" href='#/game'>
+                            Game Projects
+                        </a>
+                    </div>
+                    <div className='home-page-comp__page-nav-col'>
+                        <ImagesContainer
+                            images={[gameImg1, gameImg2, gameImg3, gameImg4]}
+                            redirectString={'/game'}
+                            animationCycle={animationCycle}
+                            animationSpeed={IMAGES_ANIMATION_SPEED}
+                        />
+                    </div>
                 </div>
             </div>
 
-            {isMobileAspectRatio ?
-            <>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-            </>
-            :
-            <>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-            </>
-            }
-
-            
-            <div className="row justify-content-center text-grid fade-out wobble" id="third" onClick={wobbleToggle}>
-                <div className="col-sm-8 my-auto text-center" >
-                    <a className="larger-link" onClick={()=>navigate('/game')}>
-                        Game Projects
-                    </a>
-                </div>
-                <div className="col-sm-4" >
-                    <ImagesContainer
-                        images={[gameImg1, gameImg2, gameImg3, gameImg4]}
-                        redirectString={'/game'}
-                        animationCycle={animationCycle}
-                        animationSpeed={IMAGES_ANIMATION_SPEED}
-                    />
+            <div className="home-page-comp__text-grid home-page-comp__text-grid--second fade-out wobble" id="fourth" onClick={wobbleToggle}>
+                <div className='home-page-comp__page-nav-row'>
+                    <div className='home-page-comp__page-nav-col home-page-comp__page-nav-col--larger-link'>
+                        <a className="home-page-comp__larger-link" href='#/art'>
+                            Art Projects
+                        </a>
+                    </div>
+                    <div className='home-page-comp__page-nav-col'>
+                        <ImagesContainer
+                            images={[artImg1, artImg2, artImg3, artImg4]}
+                            redirectString={'/art'}
+                            animationCycle={animationCycle}
+                            animationSpeed={IMAGES_ANIMATION_SPEED}
+                        />
+                    </div>
                 </div>
             </div>
-
-            {isMobileAspectRatio ?
-            <>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-            </>
-            :
-            <>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-            </>
-            }
-
-            <div className="row justify-content-center text-grid fade-out wobble" id="fourth" onClick={wobbleToggle}>
-                <div className="col-sm-8 my-auto text-center" >
-                    <a className="larger-link" onClick={()=>navigate('/art')}>
-                        Art Projects
-                    </a>
-                </div>
-                <div className="col-sm-4" >
-                    <ImagesContainer
-                        images={[artImg1, artImg2, artImg3, artImg4]}
-                        redirectString={'/art'}
-                        animationCycle={animationCycle}
-                        animationSpeed={IMAGES_ANIMATION_SPEED}
-                    />
-                </div>
-            </div>
-
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
         </div>
     );
-
 }

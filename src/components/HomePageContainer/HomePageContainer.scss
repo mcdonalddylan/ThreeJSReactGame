@@ -1,6 +1,20 @@
 @import '../../Colors.scss';
 
-.text-grid {
+.home-page-comp {
+    width: 100%;
+    max-width: 70em;
+
+    /* Needed to overlap the threeJS background */
+    position: absolute; 
+    right: 0;
+    left: 50%;
+    transform: translate(-50%);
+
+    /* Needed to be behind the nav bar */
+    z-index: 2;
+}
+
+.home-page-comp__text-grid {
     background-image: linear-gradient(180deg, #23232388, #44444488);
     color: $white;
     border: 1px solid $green;
@@ -10,93 +24,183 @@
     box-shadow: 0px 0px 20px $green;
 }
 
-.main-header {
-    text-align: center;
-    margin: auto;
-    font-size: 50px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
+.home-page-comp__text-grid--first {
+    margin: 5em 1em 25em;
 }
 
-.main-sub {
+.home-page-comp__text-grid--second,
+.home-page-comp__text-grid--third,
+.home-page-comp__text-grid--fourth {
+    margin: 0 1em 25em;
+}
+
+.home-page-comp__links-row {
+    text-align: center;
+    column-gap: 4em;
+}
+
+.home-page-comp__links-row,
+.home-page-comp__page-nav-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.home-page-comp__links-col,
+.home-page-comp__page-nav-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-page-comp__page-nav-col {
+    flex-basis: 40%;
+}
+
+.home-page-comp__link:hover .home-page-comp__link-img > *,
+.home-page-comp__link:focus .home-page-comp__link-img > * {
+    filter: hue-rotate(290deg);
+    -webkit-filter: hue-rotate(290deg);
+}
+
+.home-page-comp__link:hover .home-page-comp__link-label,
+.home-page-comp__link:focus .home-page-comp__link-label {
+    color: $orange;
+    padding-bottom: 0.6em;
+}
+
+.home-page-comp__link-img {
+    display: block;
+    height: 1.5em;
+    width: 1.5em;
+    margin: auto;
+    text-align: center;
+}
+
+.home-page-comp__link-img > * {
+    transition: all 0.3s ease;
+}
+
+.home-page-comp__link-label {
+    margin: 0.5em 0 0 0;
+    display: inline-block;
+    font-size: 1rem;
+    color: $white;
+    padding-bottom: 0.3em;
+    border-bottom-style: solid;
+    border-bottom-width: 1.8px;
+    width: fit-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.home-page-comp__main-header {
+    text-align: center;
+    margin: auto;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 0.3em 0;
+}
+
+.home-page-comp__main-sub {
     color: $gray;
     margin: auto;
     text-align: center;
-    font-size: 22px;
+    font-size: 1.3rem;
     font-weight: 400;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 0.5em 0 1.5em 0;
     letter-spacing: 2px;
 }
 
-.main-hr {
+.home-page-comp__main-hr {
     margin: 15px;
     text-align: center;
     margin: auto;
     width: 80%;
 }
 
-//Web version of link text
-.larger-link {
-    vertical-align: center;
-    font-size: 45px;
+.home-page-comp__larger-link {
+    font-size: 4em;
     font-weight: 100;
-    margin: 20px;
     text-align: center;
     color: $white;
     text-shadow: 0 0 5px black;
-    padding-bottom: 4px;
+    padding-bottom: 0.2em;
     border-bottom-style: solid;
-    border-bottom-width: 3.1px;
+    border-bottom-width: 0.04em;
     width: fit-content;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.larger-link:hover {
+.home-page-comp__larger-link:hover {
     cursor: pointer;
+    color: $orange;
+    padding-bottom: 0.3em;
 }
 
-@media screen and (min-width: 500px) {
-    .larger-link {
-        vertical-align: center;
-        font-size: 80px;
-        font-weight: 100;
-        text-align: center;
-        color: $white;
-        text-shadow: 0 0 5px black;
-        padding-bottom: 4px;
-        border-bottom-style: solid;
-        border-bottom-width: 3.1px;
-        width: fit-content;
-        text-decoration: none;
+.page-title {
+    text-align: center;
+    margin: 1em 0 1.5em 0;
+    font-size: 6em;
+    color: $green;
+    text-shadow: 0 0 0.3em $green;
+}
+
+@media screen and (max-width: 500px) {
+    .home-page-comp__text-grid--first {
+        margin: 5em 0.5em 25em;
     }
-}
+    
+    .home-page-comp__text-grid--second,
+    .home-page-comp__text-grid--third,
+    .home-page-comp__text-grid--fourth {
+        margin: 0 0.5em 20em;
+    }
 
+    .home-page-comp__main-header {
+        font-size: 2.2rem;
+    }
 
-.larger-link:hover {
-    color: $orange;
-}
+    .home-page-comp__main-hr {
+        width: 100%;
+    }
 
-.main-link {
-    display: inline-block;
-    font-size: 15px;
-    color: $white;
-    padding-bottom: 1.5px;
-    border-bottom-style: solid;
-    border-bottom-width: 1.8px;
-    width: fit-content;
-    text-decoration: none;
-}
+    .home-page-comp__main-sub {
+        font-size: 0.8rem;
+        margin: 0.5em 0 2em 0;
+    }
 
-.main-img {
-    display: inline-block;
-    max-height: 15px;
-    margin-left: 10px;
-}
+    .home-page-comp__links-row {
+        column-gap: 1.5em;
+    }
 
-.main-link:hover {
-    color: $orange;
+    .home-page-comp__larger-link {
+        font-size: 2.5em;
+    }
+
+    .home-page-comp__link-label {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .home-page-comp__page-nav-row,
+    .home-page-comp__page-nav-col  {
+        display: block;
+    }
+
+    .home-page-comp__page-nav-col--larger-link {
+        text-align: center;
+        margin: 0 auto 1em;
+    }
+
+    .page-title {
+        margin: 2em 0 1.5em 0;
+        font-size: 4em;
+    }
+
 }
 
 .fade-in {
@@ -135,24 +239,4 @@
     0% {transform-origin: 50% 100%;};
 
     100% {transform: translateY(0px)};
-}
-
-.page-title {
-    text-align: center;
-    margin-top: 170px;
-    margin-bottom: 25px;
-    font-size: 60px;
-    -webkit-filter: brightness(110%);
-    filter: brightness(110%);
-}
-
-@media screen and (min-width: 500px) {
-    .page-title {
-        text-align: center;
-        margin-top: 110px;
-        margin-bottom: 25px;
-        font-size: 60px;
-        -webkit-filter: brightness(110%);
-        filter: brightness(110%);
-    }
 }

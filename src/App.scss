@@ -1,9 +1,29 @@
+@import 'Colors.scss';
+
 body {
     background-color: black !important;
 }
 
 .fade-in-img {
     animation: fade-in-img-ani 1.5s;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 0.8em;
+}
+  
+::-webkit-scrollbar-track {
+    background: black;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: $green;
+    border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $orange;
 }
 
 @keyframes fade-in-img-ani {
