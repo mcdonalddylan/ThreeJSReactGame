@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ThreeJSReactSite/static/css/main.a7c60a28.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.3fe95596.js",
+    "main.css": "/ThreeJSReactSite/static/css/main.0ecdba6a.css",
+    "main.js": "/ThreeJSReactSite/static/js/main.06bd68ac.js",
     "static/js/787.348ddb5b.chunk.js": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js",
     "static/media/IMG_1024_edited.jpg": "/ThreeJSReactSite/static/media/IMG_1024_edited.b4e4a70a4d97e05640aa.jpg",
     "static/media/model_sheet_final_v2.jpg": "/ThreeJSReactSite/static/media/model_sheet_final_v2.b67aa911f9d77e7f460d.jpg",
@@ -56,7 +56,6 @@
     "static/media/mochiCircle1.jpg": "/ThreeJSReactSite/static/media/mochiCircle1.0a4f0da1651f18f3479a.jpg",
     "static/media/cooltitlescreen02.jpg": "/ThreeJSReactSite/static/media/cooltitlescreen02.7b98afae066934a2a391.jpg",
     "static/media/cooltitlescreen04.jpg": "/ThreeJSReactSite/static/media/cooltitlescreen04.555c05bb1643792f983c.jpg",
-    "static/media/GoodOlBoiV4.jpg": "/ThreeJSReactSite/static/media/GoodOlBoiV4.c36dc559a124ffee56f2.jpg",
     "static/media/fFBevO.png": "/ThreeJSReactSite/static/media/fFBevO.caf085610481bc0129b9.png",
     "static/media/mochiCircle5.jpg": "/ThreeJSReactSite/static/media/mochiCircle5.dd2bd67342025a05a71f.jpg",
     "static/media/cooltitlescreen06.jpg": "/ThreeJSReactSite/static/media/cooltitlescreen06.8b15ace458959a827bb2.jpg",
@@ -140,12 +139,12 @@
     "static/media/chevGame.svg": "/ThreeJSReactSite/static/media/chevGame.1ee6d70d641be80ef9e6850ceb963ac3.svg",
     "static/media/chevArt.svg": "/ThreeJSReactSite/static/media/chevArt.edfb8fa625e1681d1b7babb8e800662a.svg",
     "static/media/chevWeb.svg": "/ThreeJSReactSite/static/media/chevWeb.785a81c5c5f61394cecc3ca783b6eba6.svg",
-    "main.a7c60a28.css.map": "/ThreeJSReactSite/static/css/main.a7c60a28.css.map",
-    "main.3fe95596.js.map": "/ThreeJSReactSite/static/js/main.3fe95596.js.map",
+    "main.0ecdba6a.css.map": "/ThreeJSReactSite/static/css/main.0ecdba6a.css.map",
+    "main.06bd68ac.js.map": "/ThreeJSReactSite/static/js/main.06bd68ac.js.map",
     "787.348ddb5b.chunk.js.map": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7c60a28.css",
-    "static/js/main.3fe95596.js"
+    "static/css/main.0ecdba6a.css",
+    "static/js/main.06bd68ac.js"
   ]
 }
