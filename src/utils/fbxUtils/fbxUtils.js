@@ -6,11 +6,19 @@ import artGeo from '../../assets/models/artPallete.fbx';
 import gameGeo from '../../assets/models/genericControllerCordlessStatic.fbx';
 import webGeo from '../../assets/models/webCrtMonitorNoMouse.fbx';
 
-export const addingArtFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
+export const addingArtFBXFile = (scene, renderer, camera, material, shinyMaterial, animate, isMobileAspectRatio) => {
 
     let fbxObject = {};
     let fbxGroup;
     let fbxMixer;
+    let artScale;
+
+    if (isMobileAspectRatio) {
+        artScale = 0.0015;
+    }
+    else {
+        artScale = 0.003;
+    }
 
     const loader = new FBXLoader();
 
@@ -27,15 +35,15 @@ export const addingArtFBXFile = (scene, renderer, camera, material, shinyMateria
             }
         });
 
-        fbxGroup.scale.set( 0.003, 0.003, 0.003 );
+        fbxGroup.scale.set( artScale, artScale, artScale );
         new THREE.Box3().setFromObject( fbxGroup ).getCenter( fbxGroup.position ).multiplyScalar( -1 ); 
         fbxGroup.position.set( 0, 0, -2 );
         fbxGroup.rotation.set(-0.4, 0, 0);
 
         fbxMixer = new THREE.AnimationMixer(fbxGroup);
         if (fbxGroup.animations.length > 0) {
-            fbxMixer.clipAction( fbxGroup.animations[0] ).play();
-            fbxMixer.clipAction( fbxGroup.animations[2] ).play();
+            // fbxMixer.clipAction( fbxGroup.animations[0] ).play();
+            // fbxMixer.clipAction( fbxGroup.animations[2] ).play();
         };
 
         scene.add( fbxGroup );
@@ -52,7 +60,16 @@ export const addingArtFBXFile = (scene, renderer, camera, material, shinyMateria
     });
 }
 
-export const addingGameFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
+export const addingGameFBXFile = (scene, renderer, camera, material, shinyMaterial, animate, isMobileAspectRatio) => {
+
+    let gameScale;
+
+    if (isMobileAspectRatio) {
+        gameScale = 0.0015;
+    }
+    else {
+        gameScale = 0.003;
+    }
 
     const loader = new FBXLoader();
 
@@ -69,7 +86,7 @@ export const addingGameFBXFile = (scene, renderer, camera, material, shinyMateri
             }
         });
 
-        fbxGroup.scale.set( 0.003, 0.003, 0.003 );
+        fbxGroup.scale.set( gameScale, gameScale, gameScale );
         new THREE.Box3().setFromObject( fbxGroup ).getCenter( fbxGroup.position ).multiplyScalar( -1 ); 
         fbxGroup.position.set( 0, 0, -2.5 );
 
@@ -92,7 +109,16 @@ export const addingGameFBXFile = (scene, renderer, camera, material, shinyMateri
     });
 }
 
-export const addingWebFBXFile = (scene, renderer, camera, material, shinyMaterial, animate) => {
+export const addingWebFBXFile = (scene, renderer, camera, material, shinyMaterial, animate, isMobileAspectRatio) => {
+
+    let webScale;
+
+    if (isMobileAspectRatio) {
+        webScale = 0.002;
+    }
+    else {
+        webScale = 0.0035;
+    }
 
     const loader = new FBXLoader();
 
@@ -109,7 +135,7 @@ export const addingWebFBXFile = (scene, renderer, camera, material, shinyMateria
             }
         });
 
-        fbxGroup.scale.set( 0.0035, 0.0035, 0.0035 );
+        fbxGroup.scale.set( webScale, webScale, webScale );
         new THREE.Box3().setFromObject( fbxGroup ).getCenter( fbxGroup.position ).multiplyScalar( -1 ); 
         fbxGroup.position.set( 0, 0, -2.5 );
 

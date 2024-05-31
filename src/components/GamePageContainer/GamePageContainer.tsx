@@ -176,7 +176,7 @@ export const GamePageContainer: React.FC = () => {
                 shininess: 100,
                 reflectivity: 1
             });
-            addingGameFBXFile(scene, renderer, camera, gameMat, gameShinyMat, animate);
+            addingGameFBXFile(scene, renderer, camera, gameMat, gameShinyMat, animate, mobileAspectRatio);
 
             //set to top of page when first entering page
             window.scrollTo(0, 0);
@@ -192,7 +192,10 @@ export const GamePageContainer: React.FC = () => {
 
             <div className='row justify-content-center'>
                 <div className='col-12-xm'>
-                    <h1 className='page-title'>
+                    <h1 className='page-title'
+                        style={{
+                            textShadow: `0 0 0.3em ${mainColor}`
+                        }}>
                         Game Projects:
                     </h1>
                 </div>
@@ -206,7 +209,7 @@ export const GamePageContainer: React.FC = () => {
                 title='Sick Game'
                 contentLinks={[
                     {
-                        linkText: 'Link to github page',
+                        linkText: 'Github link',
                         linkUrl: 'https://github.com/mcdonalddylan/SickGame'
                     }
                 ]}
@@ -293,12 +296,12 @@ export const GamePageContainer: React.FC = () => {
                 title='E.R.A.S.E.'
                 contentLinks={[
                     {
-                        linkText: 'Link to download latest version',
+                        linkText: 'Itch.io page',
                         linkUrl: 'https://tobynboudreaux.itch.io/erase'
                     },
                     {
-                        linkText: 'Itch.io page',
-                        linkUrl: 'https://tobynboudreaux.itch.io/erase'
+                        linkText: 'Github link',
+                        linkUrl: 'https://github.com/tobynboudreaux/MechJamII/tree/post_submission'
                     }
                 ]}
                 content={(
@@ -341,7 +344,7 @@ export const GamePageContainer: React.FC = () => {
                     'Coded and did the 2D art for the UI and all UI level transitions using GDScript and Photoshop.',
                     'Added the UI and fixed bugs dealing the ridable mech using GDScript.'
                 ]}
-                playAbility='Download'
+                playAbility='Downloadable'
             />
 
             <WorkContainer
@@ -352,7 +355,7 @@ export const GamePageContainer: React.FC = () => {
                 title='Balloons Attack!'
                 contentLinks={[
                     {
-                        linkText: 'Play this game now!',
+                        linkText: 'Click here to play!',
                         linkUrl: 'https://simmer.io/@DylanMcD/balloonsattack'
                     }
                 ]}
@@ -420,11 +423,11 @@ export const GamePageContainer: React.FC = () => {
                 contentLinks={
                     [
                         {
-                            linkText: 'Link to download v1.2 (Windows 10+ & Steam VR required)',
+                            linkText: 'Download link (Windows 10+ & Steam VR required)',
                             linkUrl: 'https://drive.google.com/open?id=1oGUvlfgjy9r_wrXGyQoIrEPOSK4PgzEb'
                         },
                         {
-                            linkText: 'View Game Design Document',
+                            linkText: 'View game design document',
                             linkUrl: treePdf
                         }
                     ]}
@@ -461,7 +464,7 @@ export const GamePageContainer: React.FC = () => {
                     'This VR game was playtested my multiple students throughout development.',
                     'Implemented a "money shot" feature to let the player destroy certain objects that are upsetting the trees.'
                 ]}
-                playAbility='Download'
+                playAbility='Downloadable'
             />
 
             <WorkContainer
@@ -473,7 +476,7 @@ export const GamePageContainer: React.FC = () => {
                 contentLinks={
                     [
                         {
-                            linkText: 'Link to download game (Windows 10+ required & CPU intensive)',
+                            linkText: 'Download link (Windows 10+ required & CPU intensive)',
                             linkUrl: 'https://drive.google.com/open?id=1bjKYbplmdCy1IiiebXlLO5E1l1DoWkMn'
                         }
                     ]}
@@ -510,7 +513,7 @@ export const GamePageContainer: React.FC = () => {
                     'I added an easier "baby" difficulty mode after some of the feedback I recieved on the default difficulty.',
                     'The nerd enemies track the player\'s position before throwing their glasses.'
                 ]}
-                playAbility='Download'
+                playAbility='Downloadable'
             />
 
             <WorkContainer
@@ -522,7 +525,7 @@ export const GamePageContainer: React.FC = () => {
                 contentLinks={
                     [
                         {
-                            linkText: 'Link to download game (Windows 10+ required & CPU intensive)',
+                            linkText: 'Download link (Windows 10+ required & CPU intensive)',
                             linkUrl: 'https://drive.google.com/open?id=1t78j5Azp8SKcGDzgIPhLzs3HYjdEduDA'
                         }
                     ]}
@@ -556,7 +559,7 @@ export const GamePageContainer: React.FC = () => {
                     'It took a lot of feedback to nail down the default difficulty.',
                     'This "invertion" filter was one of the features I enjoyed coding the most.'
                 ]}
-                playAbility='Download'
+                playAbility='Downloadable'
             />
 
             <WorkContainer

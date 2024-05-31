@@ -45,26 +45,26 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
     return(
         <>
             <div className={`${props.mobileAspectRatio ? 'col-12' : 'col-5'} work-container ${showContent ? 'expanded' : ''}`} style={{
-                    border: `2px solid ${props.color}`,
+                    border: `${showContent ? `0.1em solid ${props.color}` : 'none'}`,
                     boxShadow: `0px 0px 15px ${props.color}`,
+                    backgroundColor: `${props.bgColor}88`,
                     position: 'relative'
                 }}
                 onClick={toggleContent}
             >
-                <div className='content-image-bg' 
-                    style={{
-                        backgroundColor: `black`,
-                        backgroundImage: props.contentImgs ? `url(${props.contentImgs[0]})` : '',
-                        opacity: showContent ? 0.9 : 0.3,
-                    }}
-                >
-                    <div className='content-image-tint'
+                {showContent &&
+                    <div className='content-image-bg' 
                         style={{
-                            backgroundColor: `${props.bgColor}dd`
-                        }}
-                    >
-                    </div>
-                </div>
+                            backgroundColor: `black`,
+                            backgroundImage: props.contentImgs ? `url(${props.contentImgs[0]})` : '',
+                            opacity: showContent ? 0.9 : 0.3,
+                        }}>
+                        <div className='content-image-tint'
+                            style={{
+                                backgroundColor: `${props.bgColor}dd`
+                            }}>
+                        </div>
+                    </div>}
                 <div className='work-content' >
                     <div className='row justify-content-center'>
                         <div className='col-sm-2 align-self-center'>
@@ -75,7 +75,7 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
                         <div className={`'col-sm-8'`}>
                             <h1 className='work-title-text'
                                 style={{
-                                    color: showContent ? 'white' : props.color,
+                                    color: 'white',
                                     textShadow: showContent ? `0 0 8px ${'black'}` : ''
                                 }}
                             >
@@ -127,7 +127,7 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
                                     bgColor={props.bgColor}
                                     color={props.color}
                                 />}
-                            <div className='row justify-content-center' style={{marginTop: 20}}>
+                            {/* <div className='row justify-content-center' style={{marginTop: 20}}>
                                 {props?.contentImgs &&
                                     props.contentImgs.map((imgSrc, index)=>{
                                         return (
@@ -140,7 +140,7 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
                                             </div>
                                         )
                                     })}
-                            </div>
+                            </div> */}
                         </>}
                 </div>
             </div>

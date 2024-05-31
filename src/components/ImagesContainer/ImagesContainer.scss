@@ -50,7 +50,7 @@
     position: absolute;
     top: -30px;
     left: -20px;
-    max-width: 450px;
+    width: 475px;
     vertical-align: middle;
     text-align: center;
 }
@@ -77,4 +77,10 @@
     0% {transform: translate(0, 4%);}
     
     100% {transform: translate(0,0);}
+}
+
+@media screen and (max-width: 500px) {
+    .img-inner {
+        width: 400px;
+    }
 }

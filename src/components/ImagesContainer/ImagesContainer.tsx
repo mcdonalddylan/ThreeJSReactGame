@@ -58,52 +58,50 @@ export const ImagesContainer: React.FC<IProps> = (props:IProps) => {
     return (
         <div className="imgs-container">
             <div className="row justify-content-center">
-                <div className="">
-                    <div className="img-container">
-                        <div className='img'>
-                            {isFourImages ? (
-                                <>
-                                    <img
-                                        id={`${props.redirectString}img1`}
-                                        className='img-inner img-fade-out'
-                                        alt='img1'
-                                        style={{
-                                            animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
-                                        }}
-                                        src={props.images[0]}
-                                        onClick={()=>navigate(props.redirectString)} />
-                                    <img
-                                        id={`${props.redirectString}img2`}
-                                        className='img-inner img-down-ani img-fade-in'
-                                        alt='img2'
-                                        style={{
-                                            animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
-                                        }}
-                                        src={props.images[1]}
-                                        onClick={()=>navigate(props.redirectString)} />
-                                    <img
-                                        id={`${props.redirectString}img3`}
-                                        className='img-inner img-fade-out'
-                                        alt='img3'
-                                        style={{
-                                            animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
-                                        }}
-                                        src={props.images[2]}
-                                        onClick={()=>navigate(props.redirectString)} />
-                                    <img
-                                        id={`${props.redirectString}img4`}
-                                        className='img-inner img-fade-out'
-                                        alt='img4'
-                                        style={{
-                                            animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
-                                        }}
-                                        src={props.images[3]}
-                                        onClick={()=>navigate(props.redirectString)} />
-                                </>
-                            ) : (
-                                <h1>ERROR: Need to pass exactly 4 images into this container.</h1>
-                            )}
-                        </div>
+                <div className="img-container">
+                    <div className='img'>
+                        {isFourImages ? (
+                            <>
+                                <img
+                                    id={`${props.redirectString}img1`}
+                                    className='img-inner img-fade-out'
+                                    alt='img1'
+                                    style={{
+                                        animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
+                                    }}
+                                    src={props.images[0]}
+                                    onClick={()=>navigate(props.redirectString)} />
+                                <img
+                                    id={`${props.redirectString}img2`}
+                                    className='img-inner img-down-ani img-fade-in'
+                                    alt='img2'
+                                    style={{
+                                        animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
+                                    }}
+                                    src={props.images[1]}
+                                    onClick={()=>navigate(props.redirectString)} />
+                                <img
+                                    id={`${props.redirectString}img3`}
+                                    className='img-inner img-fade-out'
+                                    alt='img3'
+                                    style={{
+                                        animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
+                                    }}
+                                    src={props.images[2]}
+                                    onClick={()=>navigate(props.redirectString)} />
+                                <img
+                                    id={`${props.redirectString}img4`}
+                                    className='img-inner img-fade-out'
+                                    alt='img4'
+                                    style={{
+                                        animationDuration: `${props?.animationSpeed ? animationSpeed + 1 : 3}s`
+                                    }}
+                                    src={props.images[3]}
+                                    onClick={()=>navigate(props.redirectString)} />
+                            </>
+                        ) : (
+                            <h1>ERROR: Need to pass exactly 4 images into this container.</h1>
+                        )}
                     </div>
                 </div>
             </div>

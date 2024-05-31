@@ -166,7 +166,7 @@ export const WebPageContainer: React.FC = () => {
             shininess: 100,
             reflectivity: 1
         });
-        addingWebFBXFile(scene, renderer, camera, webMat, webShinyMat, animate);
+        addingWebFBXFile(scene, renderer, camera, webMat, webShinyMat, animate, mobileAspectRatio);
 
         //set to top of page when first entering page
         window.scrollTo(0,0);
@@ -182,7 +182,10 @@ export const WebPageContainer: React.FC = () => {
             
             <div className='row justify-content-center'>
                 <div className='col-12-xm'>
-                    <h1 className='page-title'>
+                    <h1 className='page-title'
+                        style={{
+                            textShadow: `0 0 0.3em ${mainColor}`
+                        }}>
                         Web Projects:
                     </h1>
                 </div>
@@ -196,11 +199,11 @@ export const WebPageContainer: React.FC = () => {
                 title='Health Care Service Corporation - Public Sites'
                 contentLinks={[
                     {
-                        linkText: 'Form Finder Site',
+                        linkText: 'Form Finder page',
                         linkUrl: 'https://www.bcbsil.com/form-finder'
                     },
                     {
-                        linkText: 'Medicare Documents Search Form',
+                        linkText: 'Medicare documents search form page',
                         linkUrl: 'https://www.bcbsil.com/medicare/tools-resources/forms-documents/mapd-plan-documents'
                     }
                 ]}
@@ -329,11 +332,11 @@ export const WebPageContainer: React.FC = () => {
                 contentLinks={
                     [
                         {
-                            linkText: 'Github front end',
+                            linkText: 'Github front end link',
                             linkUrl: 'https://github.com/revaturelabs/client-engagement-portal-front'
                         },
                         {
-                            linkText: 'Github back end',
+                            linkText: 'Github back end link',
                             linkUrl: 'https://github.com/revaturelabs/client-engagement-portal-front'
                         }
                     ]}
@@ -406,7 +409,7 @@ export const WebPageContainer: React.FC = () => {
                 title='Mochi Circle'
                 contentLinks={[
                     {
-                        linkText: 'Click Here to Download The Source Files V0.2',
+                        linkText: 'Download link (v0.2)',
                         linkUrl: 'https://drive.google.com/file/d/1x4x53Fq6nlY-qvrqi8WRR84CyqXKEkse/view'
                     }
                 ]}

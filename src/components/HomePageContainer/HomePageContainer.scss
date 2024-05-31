@@ -55,9 +55,32 @@
     flex-direction: column;
 }
 
+.home-page-comp__email-row {
+    column-gap: 1em;
+}
+
+.home-page-comp__email-col {
+    margin: 1.5em 0 0;
+}
+
 .home-page-comp__email-label {
     font-size: 1.1rem;
-    margin: 1.5em 0 0;
+    margin: 0;
+}
+
+.home-page-comp__close-btn {
+    border: 1px solid $green;
+    border-radius: 50%;
+    background: none;
+    padding: 0.25em 0.75em;
+    font-size: 0.75em;
+    color: $green;
+}
+
+.home-page-comp__close-btn:hover,
+.home-page-comp__close-btn:focus {
+    background: $orange;
+    border: none;
 }
 
 .home-page-comp__page-nav-col {
@@ -152,8 +175,7 @@
     text-align: center;
     margin: 1em 0 1.5em 0;
     font-size: 6em;
-    color: $green;
-    text-shadow: 0 0 0.3em $green;
+    color: $white;
 }
 
 @media screen and (max-width: 500px) {
@@ -191,6 +213,10 @@
     .home-page-comp__link-label {
         font-size: 0.8rem;
         text-align: center;
+    }
+
+    .home-page-comp__email-label {
+        font-size: 0.75rem;
     }
 
     .home-page-comp__page-nav-row,

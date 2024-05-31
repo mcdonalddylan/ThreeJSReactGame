@@ -12,18 +12,18 @@ import { ReactComponent as EmaLogo } from '../../assets/logoSvgs/emailLogo.svg';
 import { ReactComponent as GitLogo } from '../../assets/logoSvgs/githubLogo.svg';
 
 import webImg1 from '../../assets/webImages/hcscPublic/formFinderDocDisplay.gif';
-import webImg2 from '../../assets/webImages/pushUp/push-up1-5.jpg';
+import webImg2 from '../../assets/webImages/hcscPublic/bcbsMedicareForm.gif';
 import webImg3 from '../../assets/webImages/hcscPublic/hcscRebrand2023.gif';
 import webImg4 from '../../assets/webImages/mochiCircle/mochiCircle1.jpg';
 
 import gameImg1 from '../../assets/gameImages/balloon/screenshot02.jpg';
-import gameImg2 from '../../assets/gameImages/coolTitle/cooltitlescreen05.jpg';
-import gameImg3 from '../../assets/gameImages/square/avoidrect03.jpg';
+import gameImg2 from '../../assets/gameImages/coolTitle/coolTitleMenuDemo.gif';
+import gameImg3 from '../../assets/gameImages/square/squareStartAndEndDemo.gif';
 import gameImg4 from '../../assets/gameImages/taffyPilot/taffy-pilot-in-dick-land-menu.gif';
 
-import artImg1 from '../../assets/artImages/characterDesigns/TP_Character_Model_Sheet.jpg';
+import artImg1 from '../../assets/artImages/characterDesigns/model_sheet_final_v2.jpg';
 import artImg2 from '../../assets/artImages/creatureDesigns/Dragon.jpg';
-import artImg3 from '../../assets/artImages/other/GoodOlBoiV4.jpg';
+import artImg3 from '../../assets/artImages/gartic/garticShockAni.gif';
 import artImg4 from '../../assets/artImages/realArt/PrideCharcoal.jpg';
 
 import { useNavigate } from 'react-router-dom';
@@ -197,6 +197,12 @@ export const HomePageContainer: React.FC = () => {
                         <div className='home-page-comp__email-row'>
                             <div className='home-page-comp__email-col'>
                                 <p className='home-page-comp__email-label'>dylandavidmcdonald@gmail.com</p>
+                            </div>
+                            <div className='home-page-comp__email-col'>
+                                <button className='home-page-comp__close-btn'
+                                        onClick={() => setDisplayEmail(false)}>
+                                            X
+                                </button>
                             </div>
                         </div>}
             </div>

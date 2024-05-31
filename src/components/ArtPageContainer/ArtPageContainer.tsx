@@ -136,7 +136,7 @@ export const ArtPageContainer: React.FC = () => {
             shininess: 100,
             reflectivity: 1
         });
-        addingArtFBXFile(scene, renderer, camera, artMat, artShinyMat, animate);
+        addingArtFBXFile(scene, renderer, camera, artMat, artShinyMat, animate, isMobileAspectRatio);
 
         // Set to top of page when first entering page
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -152,7 +152,10 @@ export const ArtPageContainer: React.FC = () => {
             
             <div className='row justify-content-center'>
                 <div className='col-12-xm'>
-                    <h1 className='page-title'>
+                    <h1 className='page-title'
+                        style={{
+                            textShadow: `0 0 0.3em ${mainColor}`
+                        }}>
                         Art Projects:
                     </h1>
                 </div>

@@ -1,7 +1,6 @@
 import React, { ReactElement, RefObject, useEffect, useRef, useState } from "react";
 import './WorkContainer.scss';
 import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
-import loadImg from '../../assets/loadingImages/cc0youtubeload.gif';
 import { generateLazyImageObserver, viewImg } from '../../utils/internalPageUtils/internalPageUtils';
 import { LazyImage } from "../LazyImage/LazyImage";
 
@@ -20,7 +19,7 @@ interface IProps {
     content?: ReactElement,
     contentImgs?: string[],
     contentSubtext?: string[],
-    playAbility?: 'Nope' | 'Download' | 'Playable'
+    playAbility?: 'Nope' | 'Downloadable' | 'Playable'
 }
 
 export const WorkContainer: React.FC<IProps> = (props: IProps) => {
@@ -55,25 +54,25 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
     return(
         <>
             <div className={`work-container ${showContent ? 'expanded' : ''}`} style={{
-                    border: `2px solid ${props.color}`,
+                    border: `${showContent ? `0.1em solid ${props.color}` : 'none'}`,
                     boxShadow: `0px 0px 15px ${props.color}`,
+                    backgroundColor: `${props.bgColor}88`,
                     position: 'relative'
                 }}
                 onClick={toggleContent}
             >
-                {showContent && <div className='content-image-bg' 
-                    style={{
-                        backgroundImage: props.contentImgs ? `url(${props.contentImgs[0]})` : '',
-                        opacity: 0.5,
-                    }}
-                >
-                    <div className='content-image-tint'
+                {showContent &&
+                    <div className='content-image-bg' 
                         style={{
-                            backgroundColor: `${props.bgColor}dd`
-                        }}
-                    >
-                    </div>
-                </div>}
+                            backgroundImage: props.contentImgs ? `url(${props.contentImgs[0]})` : '',
+                            opacity: 0.5,
+                        }}>
+                        <div className='content-image-tint'
+                            style={{
+                                backgroundColor: `${props.bgColor}dd`
+                            }}>
+                        </div>
+                    </div>}
                 <div className='work-content' >
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-sm-2 align-self-center'>
@@ -90,7 +89,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 {props.title}
                             </h1>
                         </div>
-                        {props.playAbility &&
+                        {props?.playAbility &&
                             <div
                                 className='col-sm-2'
                                 style={{
@@ -99,7 +98,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                             >
                                 <p style={{color: props.color, margin: 0}} >Playable?</p>
                                 <p style={{
-                                    color: props.playAbility === 'Playable' ? 'lime' : props.playAbility === 'Download' ? 'yellow' : 'red',
+                                    color: (props.playAbility === 'Playable' || props.playAbility === 'Downloadable') ? 'lime' : 'red',
                                     fontWeight: 800,
                                     margin: 0,
                                     textShadow: '0 0 10px black'
@@ -143,15 +142,6 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 )
                             })}
                             <br></br>
-                            {props?.contentImgs && props?.contentImgs?.length > 2 && props?.contentSubtext && props?.contentSubtext?.length > 2 && 
-                                <ImageCarousel
-                                    key={props.title}
-                                    images={props.contentImgs}
-                                    subtext={props.contentSubtext}
-                                    bgColor={props.bgColor}
-                                    color={props.color}
-                                />}
-                            <br></br>
                             <div className='row justify-content-center'>
                                 <div className='content-container col-sm-8'
                                     style={{
@@ -162,7 +152,17 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                     {props.content}
                                 </div>
                             </div>
-                            <div className='row justify-content-center' style={{marginTop: 20}}>
+                            <br></br>
+                            {props?.contentImgs && props?.contentImgs?.length > 2 && props?.contentSubtext && props?.contentSubtext?.length > 2 && 
+                                <ImageCarousel
+                                    key={props.title}
+                                    images={props.contentImgs}
+                                    subtext={props.contentSubtext}
+                                    bgColor={props.bgColor}
+                                    color={props.color}
+                                />}
+                            <br></br>
+                            {/* <div className='row justify-content-center' style={{marginTop: 20}}>
                             {props.contentImgs ?
                                 props.contentImgs.map((imgSrc, index)=>{
                                     return (
@@ -176,7 +176,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                     )
                                 }) :
                                 null}
-                            </div>
+                            </div> */}
                         </> :
                         null}
                 </div>
