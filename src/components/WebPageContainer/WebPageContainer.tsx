@@ -209,15 +209,21 @@ export const WebPageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p>This is the second project and second team I've worked with at Blue Cross Blue Shield HQ in Illinois. Yet another great team with plenty of front-end and back-end work for me to do.</p>
+                        <p>This is the second project and second team I've worked with at Blue Cross Blue Shield HQ in Illinois. Another great team with plenty of front-end and back-end work for me to do.</p>
                         <br></br>
-                        <p>Since these sites are public, I can more easily show the work I've done. Here are some other contributions from my time with this team:</p>
+                        <p>Aside from the accomplishments shown below, here are some other contributions from my time with this team:</p>
                         <ul>
                             <li>
-                                Worked with a designer to capture
+                                Documented a simplified way of connecting two web projects together, ultimately saving HCSC time and money while avoiding security issues. 
                             </li>
                             <li>
-                                Implemented code which dynamically injects the "line of business" and "role" the user has selected into links on an instruction page.
+                                Implemented a way to dynamically inject the "line of business" and "role" the user has selected into links on an instruction page.
+                            </li>
+                            <li>
+                                Refactored the front-end code several times to help prevent cross-site scripting attacks.
+                            </li>
+                            <li>
+                                Resolved many bugs within the existing codebase.
                             </li>
                         </ul>
                     </>
@@ -254,8 +260,10 @@ export const WebPageContainer: React.FC = () => {
                     <>
                         <p>
                             My first enterprise-level project for Blue Cross Blue Shield. 
-                            I was one of two dev specialists within an internal team of 6 other developers.
+                            I was one of two full-stack dev specialists within a team of 6 other developers.
                         </p>
+                        <br></br>
+                        <p>While this web project is public, it is only available to members of Blue Cross Blue Shield.</p>
                         <br></br>
                         <p>My contributions:</p>
                         <ul>
@@ -266,7 +274,7 @@ export const WebPageContainer: React.FC = () => {
                                 Added a message threading feature to allow users to view previous reply messages.
                             </li>
                             <li>
-                                Refactored our four support pages to use micro-front-end architecture with the single-spa-react library.
+                                Refactored all four support pages to use micro-front-end architecture with the single-spa-react library.
                             </li>
                             <li>
                                 Deployed all four of our UI pages and all seven of our support APIs to each test environment using Jenkins and UCD. I've also deployed to the production environment using Pivotal Cloud Foundry and the Concourse CLI.
