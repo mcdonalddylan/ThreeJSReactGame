@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ThreeJSReactSite/static/css/main.0ecdba6a.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.75e608f3.js",
+    "main.css": "/ThreeJSReactSite/static/css/main.178ceea8.css",
+    "main.js": "/ThreeJSReactSite/static/js/main.276fc073.js",
     "static/js/787.348ddb5b.chunk.js": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js",
     "static/media/IMG_1024_edited.jpg": "/ThreeJSReactSite/static/media/IMG_1024_edited.b4e4a70a4d97e05640aa.jpg",
     "static/media/model_sheet_final_v2.jpg": "/ThreeJSReactSite/static/media/model_sheet_final_v2.b67aa911f9d77e7f460d.jpg",
@@ -18,6 +18,7 @@
     "static/media/Chameleon Dude.jpg": "/ThreeJSReactSite/static/media/Chameleon Dude.371b6378020adc36b6ad.jpg",
     "static/media/goodpic01.png": "/ThreeJSReactSite/static/media/goodpic01.0934b1d381cc692576d8.png",
     "static/media/tree-hugging-sim-gdd-dylan-mcdonald_version3.pdf": "/ThreeJSReactSite/static/media/tree-hugging-sim-gdd-dylan-mcdonald_version3.db38bf43a96983b9e07d.pdf",
+    "static/media/IMG_0996-lq.gif": "/ThreeJSReactSite/static/media/IMG_0996-lq.78790c94cf2f0975c89f.gif",
     "static/media/TP_Character_Model_Sheet.jpg": "/ThreeJSReactSite/static/media/TP_Character_Model_Sheet.a24c605f4156fd1cb069.jpg",
     "static/media/rectAvoidDemo.gif": "/ThreeJSReactSite/static/media/rectAvoidDemo.2d65aaee74801b297858.gif",
     "static/media/hcscRebrand2023.gif": "/ThreeJSReactSite/static/media/hcscRebrand2023.991829dc94d4ec6ebf96.gif",
@@ -30,10 +31,12 @@
     "static/media/genericControllerCordless.fbx": "/ThreeJSReactSite/static/media/genericControllerCordless.d138c74dace144af8951.fbx",
     "static/media/menuUITransitionDemo.gif": "/ThreeJSReactSite/static/media/menuUITransitionDemo.28d6fd0f5ad15a74ea5c.gif",
     "static/media/taffy-pilot-menu-concept.png": "/ThreeJSReactSite/static/media/taffy-pilot-menu-concept.6fa23066c9db72bbc119.png",
+    "static/media/PrideCharcoal-lq.gif": "/ThreeJSReactSite/static/media/PrideCharcoal-lq.1e2db2247c44e7fcf028.gif",
     "static/media/formFinderDocDisplay.gif": "/ThreeJSReactSite/static/media/formFinderDocDisplay.398d92eee9897eca0725.gif",
     "static/media/inGameUIBugFixes.gif": "/ThreeJSReactSite/static/media/inGameUIBugFixes.23ad9f0ba8a5a13717a9.gif",
     "static/media/balloonCustom.png": "/ThreeJSReactSite/static/media/balloonCustom.7c1fcccfb924173afe69.png",
     "static/media/genericControllerCordlessStatic.fbx": "/ThreeJSReactSite/static/media/genericControllerCordlessStatic.f0de180d59a96b2335b6.fbx",
+    "static/media/IMG_1024-lq.gif": "/ThreeJSReactSite/static/media/IMG_1024-lq.4d4616f03516c5e22625.gif",
     "static/media/B_V_rP.png": "/ThreeJSReactSite/static/media/B_V_rP.3783a0670d4cb822f988.png",
     "static/media/X+eiQQ.png": "/ThreeJSReactSite/static/media/X+eiQQ.675657d130148ec5fa4b.png",
     "static/media/Elemental.jpg": "/ThreeJSReactSite/static/media/Elemental.8e89fea581b91bb03624.jpg",
@@ -98,9 +101,12 @@
     "static/media/mochiCircle13.jpg": "/ThreeJSReactSite/static/media/mochiCircle13.b6385f722aa46758481d.jpg",
     "static/media/mochiCircle21.jpg": "/ThreeJSReactSite/static/media/mochiCircle21.81a5f97c1b66e40c6d4b.jpg",
     "static/media/mochiCircle6.jpg": "/ThreeJSReactSite/static/media/mochiCircle6.e3e56cfeb3e007677436.jpg",
+    "static/media/model_sheet_hybrid_v3-lq.gif": "/ThreeJSReactSite/static/media/model_sheet_hybrid_v3-lq.bb8aa8e6c90676bae348.gif",
     "static/media/sc8.jpg": "/ThreeJSReactSite/static/media/sc8.137d3d65cc5df1aa3d9c.jpg",
+    "static/media/TP_Character_Model_Sheet-lq.gif": "/ThreeJSReactSite/static/media/TP_Character_Model_Sheet-lq.c0dad8193640fe56307f.gif",
     "static/media/mochiCircle7.jpg": "/ThreeJSReactSite/static/media/mochiCircle7.b012d8df6585abd9b1cc.jpg",
     "static/media/screenshot02.jpg": "/ThreeJSReactSite/static/media/screenshot02.3f9ac95fe5c82ca64dd8.jpg",
+    "static/media/model_sheet_final_v2-lq.gif": "/ThreeJSReactSite/static/media/model_sheet_final_v2-lq.17168198fe01cc598bb4.gif",
     "static/media/client5.jpg": "/ThreeJSReactSite/static/media/client5.b845b5e380f486b01e84.jpg",
     "static/media/mochiWalkthrough3.jpg": "/ThreeJSReactSite/static/media/mochiWalkthrough3.15bd85a41e8e453de989.jpg",
     "static/media/push-up1-5.jpg": "/ThreeJSReactSite/static/media/push-up1-5.03c0fbbfbd7267ef6c33.jpg",
@@ -126,10 +132,10 @@
     "static/media/push-up8.jpg": "/ThreeJSReactSite/static/media/push-up8.b4981e00e51b4ec47220.jpg",
     "static/media/coolCubeForSiteUV-lq.jpg": "/ThreeJSReactSite/static/media/coolCubeForSiteUV-lq.e17c77130287a24996fa.jpg",
     "static/media/screenshot03.jpg": "/ThreeJSReactSite/static/media/screenshot03.4d470e88a2d0d5760b16.jpg",
-    "static/media/client1.jpg": "/ThreeJSReactSite/static/media/client1.009134175e220352b500.jpg",
     "static/media/push-up1.jpg": "/ThreeJSReactSite/static/media/push-up1.09f1e5347427a815f465.jpg",
     "static/media/cc0youtubeload.gif": "/ThreeJSReactSite/static/media/cc0youtubeload.8f311db1c61ce5861b9f.gif",
     "static/media/push-up10.jpg": "/ThreeJSReactSite/static/media/push-up10.60458582a20d84bc99c4.jpg",
+    "static/media/client1.jpg": "/ThreeJSReactSite/static/media/client1.6f1ad632936ff5239d12.jpg",
     "static/media/mochiWalkthrough5.jpg": "/ThreeJSReactSite/static/media/mochiWalkthrough5.45ed1d28d65f2a0951b4.jpg",
     "index.html": "/ThreeJSReactSite/index.html",
     "static/media/resumeLogo.svg": "/ThreeJSReactSite/static/media/resumeLogo.c0b8d29dce6dcc705ca167b075a3d3b5.svg",
@@ -139,12 +145,12 @@
     "static/media/chevGame.svg": "/ThreeJSReactSite/static/media/chevGame.1ee6d70d641be80ef9e6850ceb963ac3.svg",
     "static/media/chevArt.svg": "/ThreeJSReactSite/static/media/chevArt.edfb8fa625e1681d1b7babb8e800662a.svg",
     "static/media/chevWeb.svg": "/ThreeJSReactSite/static/media/chevWeb.785a81c5c5f61394cecc3ca783b6eba6.svg",
-    "main.0ecdba6a.css.map": "/ThreeJSReactSite/static/css/main.0ecdba6a.css.map",
-    "main.75e608f3.js.map": "/ThreeJSReactSite/static/js/main.75e608f3.js.map",
+    "main.178ceea8.css.map": "/ThreeJSReactSite/static/css/main.178ceea8.css.map",
+    "main.276fc073.js.map": "/ThreeJSReactSite/static/js/main.276fc073.js.map",
     "787.348ddb5b.chunk.js.map": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ecdba6a.css",
-    "static/js/main.75e608f3.js"
+    "static/css/main.178ceea8.css",
+    "static/js/main.276fc073.js"
   ]
 }
