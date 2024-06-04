@@ -211,9 +211,9 @@ export const ArtPageContainer: React.FC = () => {
                         realImg3
                     ]}
                     contentSubtext={[
-                        'Effortless Success - 2019',
-                        'Crystal Ball - 2019',
-                        'Pride - 2019'
+                        'Effortless Success',
+                        'Crystal Ball',
+                        'Pride'
                     ]}        
                 />
 

@@ -9,7 +9,7 @@ import { ImagesContainer } from '../ImagesContainer/ImagesContainer';
 import { ReactComponent as ResLogo } from '../../assets/logoSvgs/resumeLogo.svg';
 import { ReactComponent as LinLogo } from '../../assets/logoSvgs/tieLogo.svg';
 import { ReactComponent as EmaLogo } from '../../assets/logoSvgs/emailLogo.svg';
-import { ReactComponent as GitLogo } from '../../assets/logoSvgs/githubLogo.svg';
+import { ReactComponent as GitLogo } from '../../assets/logoSvgs/gitLogo.svg';
 
 import webImg1 from '../../assets/webImages/hcscPublic/formFinderDocDisplay.gif';
 import webImg2 from '../../assets/webImages/hcscPublic/bcbsMedicareForm.gif';
