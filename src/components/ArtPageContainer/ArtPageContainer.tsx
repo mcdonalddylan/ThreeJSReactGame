@@ -16,10 +16,16 @@ import garticImg4 from '../../assets/artImages/gartic/noTitle.png';
 import realImg1 from '../../assets/artImages/realArt/IMG_0996_edited.jpg';
 import realImg2 from '../../assets/artImages/realArt/IMG_1024_edited.jpg';
 import realImg3 from '../../assets/artImages/realArt/PrideCharcoal.jpg';
+import realImg4 from '../../assets/artImages/realArt/IMG_0996-lq.gif';
+import realImg5 from '../../assets/artImages/realArt/IMG_1024-lq.gif';
+import realImg6 from '../../assets/artImages/realArt/PrideCharcoal-lq.gif';
 
 import charImg1 from '../../assets/artImages/characterDesigns/TP_Character_Model_Sheet.jpg';
 import charImg2 from '../../assets/artImages/characterDesigns/model_sheet_final_v2.jpg';
 import charImg3 from '../../assets/artImages/characterDesigns/model_sheet_hybrid_v3.jpg';
+import charImg4 from '../../assets/artImages/characterDesigns/TP_Character_Model_Sheet-lq.gif';
+import charImg5 from '../../assets/artImages/characterDesigns/model_sheet_final_v2-lq.gif';
+import charImg6 from '../../assets/artImages/characterDesigns/model_sheet_hybrid_v3-lq.gif';
 
 import inkImg1 from '../../assets/artImages/creatureDesigns/3D Bug Thang.jpg';
 import inkImg2 from '../../assets/artImages/creatureDesigns/Basalisk.jpg';
@@ -41,7 +47,6 @@ export const ArtPageContainer: React.FC = () => {
     const bgColor = '#5a5c27';
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
-    // const [refresh, setRefresh] = useState(false);
     const [isMobileAspectRatio, setIsMobileAspectRatio] = useState(false);
 
     useEffect(()=>{
@@ -69,11 +74,6 @@ export const ArtPageContainer: React.FC = () => {
                 document.body.append( renderer.domElement );
             } 
         }
-        
-        // window.onresize = () => {
-        //     renderer.setSize( window.innerWidth, window.innerHeight);
-        //     setRefresh(!refresh);
-        // };
 
         // Camera / Scene setup
         let scene = new THREE.Scene();
@@ -168,7 +168,7 @@ export const ArtPageContainer: React.FC = () => {
                     color={mainColor}
                     bgColor={bgColor}
                     year={'2022'}
-                    title={'Gartic Fun Times'}
+                    title={'Pictionary Fun'}
                     mobileAspectRatio={isMobileAspectRatio}
                     content={(
                         <>
@@ -210,6 +210,11 @@ export const ArtPageContainer: React.FC = () => {
                         realImg2,
                         realImg3
                     ]}
+                    lqContentImgs={[
+                        realImg4,
+                        realImg5,
+                        realImg6
+                    ]}
                     contentSubtext={[
                         'Effortless Success',
                         'Crystal Ball',
@@ -237,10 +242,15 @@ export const ArtPageContainer: React.FC = () => {
                         charImg1,
                         charImg3
                     ]}
+                    lqContentImgs={[
+                        charImg5,
+                        charImg4,
+                        charImg6
+                    ]}
                     contentSubtext={[
                         'Neb was code-named an "anxious nerdo fuckster" by a fellow student. I think it fits.',
                         'Taffy Pilot was desgined for an adventure game very similar to Conker\'s Bad Fur Day. I ended up using him on a short film instead.',
-                        'Gep was meant to be the "everybody\'s uncle" character in a short animated series meant for YouTube.'
+                        'Gep was meant to be the "everybody\'s uncle" character in a short animated YouTube series.'
                     ]}                
                 />
 

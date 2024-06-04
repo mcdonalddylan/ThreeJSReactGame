@@ -1,8 +1,7 @@
-import React, { ReactElement, RefObject, useEffect, useRef, useState } from "react";
+import React, { ReactElement, useEffect, useRef, useState } from "react";
 import './WorkContainer.scss';
 import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
-import { generateLazyImageObserver, viewImg } from '../../utils/internalPageUtils/internalPageUtils';
-import { LazyImage } from "../LazyImage/LazyImage";
+import { generateLazyImageObserver } from '../../utils/internalPageUtils/internalPageUtils';
 
 interface IContentLink {
     linkText: string,
@@ -35,15 +34,8 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
 
         const element: HTMLElement = event.target;
         // Will toggle content if not a link and not an image (exception for chevron img)
-        if (element.tagName !== 'A'){
-            if(element.tagName === 'IMG' || element.tagName === 'P' ||
-            element.tagName === 'LI' || element.tagName === 'BUTTON') {
-                if(element.id === 'chev'){
-                    setShowContent(!showContent);
-                }
-            } else {
-                setShowContent(!showContent);
-            }
+        if ((element.tagName !== 'A' && element.tagName !== 'IMG' && element.tagName !== 'P' && element.tagName !== 'LI') || element.id === 'chev') {
+            setShowContent(!showContent);
         }
     }
 
@@ -53,7 +45,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
 
     return(
         <>
-            <div className={`work-container ${showContent ? 'expanded' : ''}`} style={{
+            <button className={`work-container ${showContent ? 'expanded' : ''}`} style={{
                     border: `${showContent ? `0.1em solid ${props.color}` : 'none'}`,
                     boxShadow: `0px 0px 15px ${props.color}`,
                     backgroundColor: `${props.bgColor}88`,
@@ -162,25 +154,10 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                     color={props.color}
                                 />}
                             <br></br>
-                            {/* <div className='row justify-content-center' style={{marginTop: 20}}>
-                            {props.contentImgs ?
-                                props.contentImgs.map((imgSrc, index)=>{
-                                    return (
-                                        <div key={index} className='col-sm-1' onClick={()=>viewImg(imgSrc)}>
-                                            <LazyImage
-                                                src={imgSrc}
-                                                alt={`img${index}`}
-                                                style={{overflow: 'hidden', width: '100%'}}
-                                                className='work-img-zoom'></LazyImage>
-                                        </div>
-                                    )
-                                }) :
-                                null}
-                            </div> */}
                         </> :
                         null}
                 </div>
-            </div>
+            </button>
         </>
     )
 }

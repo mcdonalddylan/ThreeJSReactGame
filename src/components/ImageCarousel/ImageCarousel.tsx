@@ -7,14 +7,16 @@ interface IProps {
     images: string[],
     subtext: string[],
     bgColor: string,
-    color: string
+    color: string,
+    lqImages?: string[]
 }
 
 export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
 
     const [selectedImg, setSelectedImg] = useState<number>(2);
 
-    const handleSelectImage = (selectedImageNum: number, imageSrc: string) => {
+    const handleSelectImage = (event: React.MouseEvent, selectedImageNum: number, imageSrc: string) => {
+        event.preventDefault();
         if (selectedImg === selectedImageNum) {
             viewImg(imageSrc);
         }
@@ -23,7 +25,8 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
         }
     }
 
-    const cycleSelectedImg = (direction: string) => {
+    const cycleSelectedImg = (event: React.MouseEvent, direction: string) => {
+        event.preventDefault();
         if (selectedImg === 1 && direction === 'left') {
             setSelectedImg(3);
         } else if (selectedImg === 1 && direction === 'right') {
@@ -57,58 +60,63 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
             }}>
             <div className='img-carousel-comp__row img-carousel-comp__row--carousel'>
                 <div className='img-carousel-comp__col img-carousel-comp__col--nav-button'>
-                    <button
+                    <a
+                        href='#'
                         data-testid='img-carousel-left-btn'
                         className='img-carousel-comp__nav-button'
                         style={{ color: `${props.color}` }}
-                        onClick={()=>cycleSelectedImg('left')}>
-                        {'\u2190'} 
-                    </button>
+                        onClick={(event)=>cycleSelectedImg(event, 'left')}>
+                        {'\u2190'}
+                    </a>
                 </div>
                 <div className={`img-carousel-comp__col ${selectedImg === 1 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>
-                    <button
+                    <a
+                        href='#'
                         data-testid='img-carousel-img1-btn'
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
-                        onClick={()=>handleSelectImage(1, props.images[0])}>
+                        onClick={(event)=>handleSelectImage(event, 1, props.images[0])}>
                             <LazyImage
-                                src={props.images[0]}
+                                src={props?.lqImages && props?.lqImages[0] ? props.lqImages[0] : props.images[0]}
                                 alt='exampleImg1'
                                 className='img-carousel-comp__img'></LazyImage>
-                    </button>
+                    </a>
                 </div>
                 <div className={`img-carousel-comp__col ${selectedImg === 2 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>
-                    <button
+                    <a
+                        href='#'
                         data-testid='img-carousel-img2-btn'
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
-                        onClick={()=>handleSelectImage(2, props.images[1])}>
+                        onClick={(event)=>handleSelectImage(event, 2, props.images[1])}>
                             <LazyImage
-                                src={props.images[1]}
+                                src={props?.lqImages && props?.lqImages[1] ? props.lqImages[1] : props.images[1]}
                                 alt='exampleImg2'
                                 className='img-carousel-comp__img'></LazyImage>
-                    </button>
+                    </a>
                 </div>
                 <div className={`img-carousel-comp__col ${selectedImg === 3 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>
-                    <button
+                    <a
+                        href='#'
                         data-testid='img-carousel-img3-btn'
                         className='img-carousel-comp__img-button'
                         style={{ color: `${props.color}` }}
-                        onClick={()=>handleSelectImage(3, props.images[2])}>
+                        onClick={(event)=>handleSelectImage(event, 3, props.images[2])}>
                             <LazyImage
-                                src={props.images[2]}
+                                src={props?.lqImages && props?.lqImages[2] ? props.lqImages[2] : props.images[2]}
                                 alt='exampleImg3'
                                 className='img-carousel-comp__img'></LazyImage>
-                    </button>
+                    </a>
                 </div>
                 <div className='img-carousel-comp__col img-carousel-comp__col--nav-button'>
-                    <button
+                    <a
+                        href='#'
                         data-testid='img-carousel-right-btn'
                         className='img-carousel-comp__nav-button'
                         style={{ color: `${props.color}` }}
-                        onClick={()=>cycleSelectedImg('right')}>
+                        onClick={(event)=>cycleSelectedImg(event, 'right')}>
                         {'\u2192'} 
-                    </button>
+                    </a>
                 </div>
             </div>
             <div className='img-carousel-comp__row img-carousel-comp__row--margin-top'>

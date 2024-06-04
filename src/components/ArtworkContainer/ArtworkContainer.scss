@@ -1,0 +1,7 @@
+.work-container--artwork:not(.expanded) {
+    max-height: 13em;
+}
+
+.work-container--artwork .expanded {
+    max-height: none;
+}

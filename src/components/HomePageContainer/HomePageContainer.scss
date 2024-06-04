@@ -80,6 +80,7 @@
 .home-page-comp__close-btn:hover,
 .home-page-comp__close-btn:focus {
     background: $orange;
+    color: $white;
     border: none;
 }
 
@@ -173,7 +174,7 @@
 
 .page-title {
     text-align: center;
-    margin: 1em 0 1.5em 0;
+    margin: 0.75em 0 1.5em 0;
     font-size: 6em;
     color: $white;
 }
@@ -230,7 +231,7 @@
     }
 
     .page-title {
-        margin: 2em 0 1.5em 0;
+        margin: 1em 0 1.25em 0;
         font-size: 4em;
     }
 

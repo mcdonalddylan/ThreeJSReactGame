@@ -1,12 +1,14 @@
 @import '../../Colors.scss';
 
 .work-container {
-    max-height: 250px;
-    overflow: hidden;
+    width: 100%;
     border-radius: 30px;
     padding: 20px 30px;
-    margin: 30px 10px;
+    margin: 30px auto;
     transition: 0.4s all ease;
+
+    /* Hides the background image corners & when the spinning chevron morphs the container */
+    overflow: hidden;
 }
 
 .work-content {
@@ -17,6 +19,10 @@
 .content-container {
     padding: 30px !important;
     border-radius: 25px;
+}
+
+.content-container li, p {
+    text-align: left;
 }
 
 li, p {
@@ -87,29 +93,3 @@ li:nth-child(even) {
     color: $orange;
     transition: 0.1s;
 }
-
-// /* width */
-// ::-webkit-scrollbar {
-//     width: 10px;
-    
-// }
-
-// /* Track */
-// ::-webkit-scrollbar-track {
-//     background: none;
-// }
-
-// /* Handle */
-// ::-webkit-scrollbar-thumb {
-//     border-radius: 5px;
-//     background: #888888;
-//     border-right: 4px #5a5c27 solid;
-//     background-clip: padding-box;
-//     filter: saturate(0.4);
-//     -webkit-filter: saturate(0.4);
-// }
-
-// /* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//     background: #444444;
-// }

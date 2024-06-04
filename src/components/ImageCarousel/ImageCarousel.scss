@@ -55,6 +55,7 @@
 
 .img-carousel-comp__nav-button,
 .img-carousel-comp__img-button {
+    text-decoration: none;
     border: 0;
 }
 
@@ -82,6 +83,7 @@
 
 .img-carousel-comp__subtext {
     font-size: 1.1rem;
+    text-align: center;
 }
 
 .img-carousel-comp__subtext--fade-in {

@@ -71,7 +71,6 @@ export const WebPageContainer: React.FC = () => {
     const bgColor = '#062432';
 
     const quality: any = useSelector<IState>(state=>state.qualityState);
-    // const [refresh, setRefresh] = useState(false);
     
     useEffect(()=>{
         if (WEBGL.isWebGLAvailable()){
@@ -99,11 +98,6 @@ export const WebPageContainer: React.FC = () => {
                 document.body.append( renderer.domElement );
             } 
         }
-        
-        // window.onresize = () => {
-        //     renderer.setSize( window.innerWidth, window.innerHeight);
-        //     setRefresh(!refresh);
-        // };
 
         // Camera / Scene setup
         let scene = new THREE.Scene();
@@ -340,12 +334,8 @@ export const WebPageContainer: React.FC = () => {
                 contentLinks={
                     [
                         {
-                            linkText: 'Github front end link',
-                            linkUrl: 'https://github.com/revaturelabs/client-engagement-portal-front'
-                        },
-                        {
-                            linkText: 'Github back end link',
-                            linkUrl: 'https://github.com/revaturelabs/client-engagement-portal-front'
+                            linkText: 'Github front-end link',
+                            linkUrl: 'https://github.com/revaturelabs/client-engagement-portal-front/pull/120/files'
                         }
                     ]}
                 content={(
@@ -416,6 +406,14 @@ export const WebPageContainer: React.FC = () => {
                 year='2020'
                 title='Mochi Circle'
                 contentLinks={[
+                    {
+                        linkText: 'Github front-end link',
+                        linkUrl: 'https://github.com/MochiCircle/social-media-app-frontend/pull/52/files'
+                    },
+                    {
+                        linkText: 'Github back-end link',
+                        linkUrl: 'https://github.com/MochiCircle/social-media-app-backend/pull/25/files'
+                    },
                     {
                         linkText: 'Download link (v0.2)',
                         linkUrl: 'https://drive.google.com/file/d/1x4x53Fq6nlY-qvrqi8WRR84CyqXKEkse/view'

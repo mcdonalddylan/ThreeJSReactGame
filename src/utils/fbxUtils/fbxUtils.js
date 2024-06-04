@@ -17,7 +17,7 @@ export const addingArtFBXFile = (scene, renderer, camera, material, shinyMateria
         artScale = 0.0015;
     }
     else {
-        artScale = 0.003;
+        artScale = 0.0026;
     }
 
     const loader = new FBXLoader();

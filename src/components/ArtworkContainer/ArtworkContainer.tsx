@@ -1,9 +1,8 @@
 import React, { ReactElement, useEffect, useRef, useState } from "react"
 import '../WorkContainer/WorkContainer.scss';
-import loadImg from '../../assets/loadingImages/cc0youtubeload.gif';
+import './ArtworkContainer.scss';
 import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
-import { viewImg } from '../../utils/internalPageUtils/internalPageUtils';
-import { LazyImage } from "../LazyImage/LazyImage";
+
 
 interface IContentLink {
     linkText: string,
@@ -20,6 +19,7 @@ interface IProps {
     contentLinks?: IContentLink[],
     content?: ReactElement,
     contentImgs?: string[],
+    lqContentImgs?: string[],
     contentSubtext?: string[]
 }
 
@@ -31,20 +31,14 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
 
         const element: HTMLElement = event.target;
         // Will toggle content if not a link and not an image (exception for chevron img)
-        if (element.tagName !== 'A'){
-            if(element.tagName === 'IMG' || element.tagName === 'BUTTON'){
-                if(element.id === 'chev'){
-                    setShowContent(!showContent);
-                }
-            } else {
-                setShowContent(!showContent);
-            }
+        if ((element.tagName !== 'A' && element.tagName !== 'IMG' && element.tagName !== 'P' && element.tagName !== 'LI') || element.id === 'chev') {
+            setShowContent(!showContent);
         }
     }
 
     return(
         <>
-            <div className={`${props.mobileAspectRatio ? 'col-12' : 'col-5'} work-container ${showContent ? 'expanded' : ''}`} style={{
+            <button className={`${props.mobileAspectRatio ? 'col-12' : 'col-5'} work-container work-container--artwork ${showContent ? 'expanded' : ''}`} style={{
                     border: `${showContent ? `0.1em solid ${props.color}` : 'none'}`,
                     boxShadow: `0px 0px 15px ${props.color}`,
                     backgroundColor: `${props.bgColor}88`,
@@ -123,27 +117,14 @@ export const ArtworkContainer: React.FC<IProps> = (props: IProps) => {
                                 <ImageCarousel
                                     key={props.title}
                                     images={props.contentImgs}
+                                    lqImages={props?.lqContentImgs}
                                     subtext={props.contentSubtext}
                                     bgColor={props.bgColor}
                                     color={props.color}
                                 />}
-                            {/* <div className='row justify-content-center' style={{marginTop: 20}}>
-                                {props?.contentImgs &&
-                                    props.contentImgs.map((imgSrc, index)=>{
-                                        return (
-                                            <div key={index} className='col-sm-2' onClick={()=>viewImg(imgSrc)}>
-                                                <LazyImage
-                                                    src={imgSrc}
-                                                    alt={`img${index}`}
-                                                    style={{overflow: 'hidden', width: '100%'}}
-                                                    className='work-img-zoom'></LazyImage>
-                                            </div>
-                                        )
-                                    })}
-                            </div> */}
                         </>}
                 </div>
-            </div>
+            </button>
         </>
     )
 }
