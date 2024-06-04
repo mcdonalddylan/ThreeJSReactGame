@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <path style="fill: none; stroke: rgb(0, 255, 0); stroke-width: 40px; stroke-linejoin: round;" d="M 163.774 21.082 L 252.379 157.152 L 337.619 21.082 L 163.774 21.082 Z"/>
+  <path style="fill: none; stroke: rgb(0, 255, 0); stroke-width: 40px; stroke-linejoin: round;" d="M 248.569 141.421 C 248.569 141.421 100 357.783 100 397.426 C 100 417.593 251.108 478.323 251.108 478.323 C 251.108 478.323 400 418.308 400 397.426 C 400 358.414 248.569 141.421 248.569 141.421 Z"/>
+</svg>

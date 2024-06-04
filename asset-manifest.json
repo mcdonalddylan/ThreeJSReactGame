@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ThreeJSReactSite/static/css/main.0ecdba6a.css",
-    "main.js": "/ThreeJSReactSite/static/js/main.57f0a99f.js",
+    "main.js": "/ThreeJSReactSite/static/js/main.75e608f3.js",
     "static/js/787.348ddb5b.chunk.js": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js",
     "static/media/IMG_1024_edited.jpg": "/ThreeJSReactSite/static/media/IMG_1024_edited.b4e4a70a4d97e05640aa.jpg",
     "static/media/model_sheet_final_v2.jpg": "/ThreeJSReactSite/static/media/model_sheet_final_v2.b67aa911f9d77e7f460d.jpg",
@@ -133,18 +133,18 @@
     "static/media/mochiWalkthrough5.jpg": "/ThreeJSReactSite/static/media/mochiWalkthrough5.45ed1d28d65f2a0951b4.jpg",
     "index.html": "/ThreeJSReactSite/index.html",
     "static/media/resumeLogo.svg": "/ThreeJSReactSite/static/media/resumeLogo.c0b8d29dce6dcc705ca167b075a3d3b5.svg",
-    "static/media/githubLogo.svg": "/ThreeJSReactSite/static/media/githubLogo.229fd155db96ded933ffa88311c6b8ca.svg",
     "static/media/emailLogo.svg": "/ThreeJSReactSite/static/media/emailLogo.05d27bf8fda52cd3e970ea81f4ee1090.svg",
-    "static/media/tieLogo.svg": "/ThreeJSReactSite/static/media/tieLogo.0fc78eeb2f553a7be21e65ed8bdec6de.svg",
+    "static/media/gitLogo.svg": "/ThreeJSReactSite/static/media/gitLogo.7bed215af239ddbe8eeee0b23aa30cb0.svg",
+    "static/media/tieLogo.svg": "/ThreeJSReactSite/static/media/tieLogo.c741920a82647eda3030bafb1630998f.svg",
     "static/media/chevGame.svg": "/ThreeJSReactSite/static/media/chevGame.1ee6d70d641be80ef9e6850ceb963ac3.svg",
     "static/media/chevArt.svg": "/ThreeJSReactSite/static/media/chevArt.edfb8fa625e1681d1b7babb8e800662a.svg",
     "static/media/chevWeb.svg": "/ThreeJSReactSite/static/media/chevWeb.785a81c5c5f61394cecc3ca783b6eba6.svg",
     "main.0ecdba6a.css.map": "/ThreeJSReactSite/static/css/main.0ecdba6a.css.map",
-    "main.57f0a99f.js.map": "/ThreeJSReactSite/static/js/main.57f0a99f.js.map",
+    "main.75e608f3.js.map": "/ThreeJSReactSite/static/js/main.75e608f3.js.map",
     "787.348ddb5b.chunk.js.map": "/ThreeJSReactSite/static/js/787.348ddb5b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0ecdba6a.css",
-    "static/js/main.57f0a99f.js"
+    "static/js/main.75e608f3.js"
   ]
 }
