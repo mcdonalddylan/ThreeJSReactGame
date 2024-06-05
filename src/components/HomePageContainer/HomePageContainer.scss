@@ -81,7 +81,7 @@
 .home-page-comp__close-btn:focus {
     background: $orange;
     color: $white;
-    border: none;
+    border: 1px solid $orange;
 }
 
 .home-page-comp__page-nav-col {

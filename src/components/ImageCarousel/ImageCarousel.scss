@@ -25,7 +25,15 @@
 }
 
 .img-carousel-comp__row--carousel {
-    height: 15em;
+    margin-top: 1em;
+}
+
+.img-carousel-comp__row--enlarged-img {
+    min-height: 17em;
+}
+
+.img-carousel-comp__row--justify-left {
+    justify-content: left;
 }
 
 .img-carousel-comp__col {
@@ -43,7 +51,9 @@
 }
 
 .img-carousel-comp__col--img-button-selected {
-    flex: 1 1 60%;
+    flex: 1 1 25%;
+    filter: drop-shadow(0 0.5em 1.5em $white);
+    -webkit-filter: drop-shadow(0 0.5em 1.5em $white);
 }
 
 .img-carousel-comp__nav-button {
@@ -59,8 +69,11 @@
     border: 0;
 }
 
-.img-carousel-comp__nav-button:hover {
-    background-color: rgba(255,255,255,0.2);
+.img-carousel-comp__nav-button:hover,
+.img-carousel-comp__nav-button:focus {
+    background-color: $orange;
+    color: $white !important;
+    border: 1px solid $orange !important;
 }
 
 .img-carousel-comp__img-button {
@@ -74,11 +87,24 @@
 }
 
 .img-carousel-comp__img {
+    max-width: 8em;
+    max-height: 6em;
+}
+
+.img-carousel-comp__img,
+.img-carousel-comp__enlarged-img {
     width: 100%;
-    max-width: 20em;
-    max-height: 15em;
+    border-radius: 0.5em;
+}
+
+.img-carousel-comp__enlarged-img {
+    max-width: 25em;
+    max-height: 20em;
     box-shadow: 0 0 30px black;
-    border-radius: 5px;
+}
+
+.img-carousel-comp__enlarged-img--hidden {
+    display: none;
 }
 
 .img-carousel-comp__subtext {
@@ -86,9 +112,17 @@
     text-align: center;
 }
 
-.img-carousel-comp__subtext--fade-in {
+.img-carousel-comp__subtext--fade-in,
+.img-carousel-comp__enlarged-img--fade-in {
     animation-name: fade-in-ani;
+}
+
+.img-carousel-comp__subtext--fade-in {
     animation-duration: 0.5s;
+}
+
+.img-carousel-comp__enlarged-img--fade-in {
+    animation-duration: 0.25s;
 }
 
 @keyframes fade-in-ani {
@@ -102,8 +136,13 @@
         padding: 1em;
     }
 
-    .img-carousel-comp__row--carousel {
-        height: 6em;
+    .img-carousel-comp__row--enlarged-img {
+        min-height: 8em;
+    }
+
+    .img-carousel-comp__img {
+        max-width: 6em;
+        max-height: 4em;
     }
 
     .img-carousel-comp__col--img-button-selected {
@@ -112,11 +151,6 @@
 
     .img-carousel-comp__col--img-button-unselected {
         display: none;
-    }
-
-    .img-carousel-comp__img {
-        max-width: 8em;
-        max-height: 6em;
     }
 
     .img-carousel-comp__nav-button {

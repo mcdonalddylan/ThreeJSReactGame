@@ -9,7 +9,8 @@ describe('<ImageCarousel />', () => {
     let images,
         subtext,
         bgColor,
-        color;
+        color,
+        lqImages;
 
     beforeEach(() => {
         images = ['testimg1','testimg2','testimg3'];
@@ -25,13 +26,22 @@ describe('<ImageCarousel />', () => {
                 images={images}
                 subtext={subtext}
                 bgColor={bgColor}
-                color={color} />
+                color={color}
+                lqImages={lqImages} />
         );
     };
 
     test('should render subtext for the 2nd image by default', () => {
         const { getByText } = setupRTL();
         expect(getByText('test subtext 2')).toBeInTheDocument();
+    });
+
+    test('should render the lqImage when added to the props', () => {
+        lqImages = ['lqTestImg1','lqTestImg2','lqTestImg3'];
+        const { getByTestId } = setupRTL();
+        expect(getByTestId('img-carousel-img1-btn').children[0]).toHaveAttribute('data-src', 'lqTestImg1');
+        expect(getByTestId('img-carousel-img2-btn').children[0]).toHaveAttribute('data-src', 'lqTestImg2');
+        expect(getByTestId('img-carousel-img3-btn').children[0]).toHaveAttribute('data-src', 'lqTestImg3');
     });
 
     test('should render subtext for the 1st image after clicking on it', () => {
@@ -64,11 +74,11 @@ describe('<ImageCarousel />', () => {
         expect(getByText('test subtext 3')).toBeInTheDocument();
     });
 
-    test('should render subtext for the 1st image after clicking the right nav button twice', () => {
-        const { getByText, getByTestId } = setupRTL();
-        act(() => getByTestId('img-carousel-right-btn').click());
-        act(() => getByTestId('img-carousel-right-btn').click());
-        expect(getByText('test subtext 1')).toBeInTheDocument();
+    test('should open a new window after clicking on the enlarged image', () => {
+        window.open = jest.fn();
+        const { getByTestId } = setupRTL();
+        act(() => getByTestId('img-carousel-enlarged-button').click());
+        waitFor(() => expect(window.open).toBeCalledTimes(1));
     });
 
     test('should render subtext for the 2nd image after clicking the right nav button three times', () => {

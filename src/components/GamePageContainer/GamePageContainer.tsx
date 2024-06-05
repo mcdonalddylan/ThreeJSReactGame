@@ -1,5 +1,4 @@
-import { request } from 'https';
-import React, { useState } from 'react';
+import React from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import * as THREE from 'three';
@@ -81,7 +80,6 @@ export const GamePageContainer: React.FC = () => {
     const bgColor = '#301c1e';
 
     const quality: any = useSelector<IState>(state => state.qualityState);
-    // const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
         if (WEBGL.isWebGLAvailable()) {
@@ -110,11 +108,6 @@ export const GamePageContainer: React.FC = () => {
                 }
             }
 
-            // window.onresize = () => {
-            //     renderer.setSize(window.innerWidth, window.innerHeight);
-            //     setRefresh(!refresh);
-            // };
-
             // Camera / Scene setup
             let scene = new THREE.Scene();
             let camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -123,7 +116,7 @@ export const GamePageContainer: React.FC = () => {
             setupHomePageLights(scene);
 
             // Animating the background 3D model when scrolling up and down
-            const clock = new THREE.Clock;
+            const clock = new THREE.Clock();
             let direction = 1;
             let speed = 0;
             const INITIAL_SPEED = 0.003;
@@ -240,6 +233,10 @@ export const GamePageContainer: React.FC = () => {
                 contentImgs={[
                     sickImg1,
                     sickImg2
+                ]}
+                contentSubtext={[
+                    'I had the menus and graphics options functioning as intended prior to moving to UE5.',
+                    'Implemented the "time slowing" feature in Unity.'
                 ]}
             />
 

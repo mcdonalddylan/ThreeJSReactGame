@@ -26,10 +26,6 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
     const [showContent, setShowContent] = useState(false);
     const observerRef = useRef<IntersectionObserver>();
 
-    const viewImg = (imageSrc: string) => {
-        window.open(imageSrc, '_blank');
-    }
-
     const toggleContent = (event: any) => {
 
         const element: HTMLElement = event.target;
@@ -120,7 +116,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 return (
                                     <div key={index} className='row justify-content-center'>
                                         <div className='col-sm-12' style={{textAlign: 'center'}}>
-                                            <a href={link.linkUrl} target={'_blank'}
+                                            <a href={link.linkUrl} target='_blank' rel='noreferrer'
                                                 style={{
                                                     color: props.color,
                                                     textShadow: `0px 0px 10px ${props.color}`
@@ -145,7 +141,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                                 </div>
                             </div>
                             <br></br>
-                            {props?.contentImgs && props?.contentImgs?.length > 2 && props?.contentSubtext && props?.contentSubtext?.length > 2 && 
+                            {props?.contentImgs && props?.contentImgs?.length > 1 && props?.contentSubtext && props?.contentSubtext?.length > 1 && 
                                 <ImageCarousel
                                     key={props.title}
                                     images={props.contentImgs}

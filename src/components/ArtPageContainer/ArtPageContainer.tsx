@@ -83,7 +83,7 @@ export const ArtPageContainer: React.FC = () => {
         setupHomePageLights( scene );
 
         // Animating the background 3D model when scrolling up and down
-        const clock = new THREE.Clock;
+        const clock = new THREE.Clock();
         let direction = 1;
         let speed = 0;
         const INITIAL_SPEED = 0.003;
@@ -288,27 +288,6 @@ export const ArtPageContainer: React.FC = () => {
                     ]}               
                 />
             </div>
-
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             
         </div>
     )

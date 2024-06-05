@@ -1,5 +1,4 @@
-import { request } from 'https';
-import React, { useState } from 'react';
+import React from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import * as THREE from 'three';
@@ -16,32 +15,17 @@ import hcscImg3 from '../../assets/webImages/hcscPublic/hcscRebrand2023.gif';
 
 import mochiImg1 from '../../assets/webImages/mochiCircle/mochiCircle1.jpg';
 import mochiImg2 from '../../assets/webImages/mochiCircle/mochiCircle2.jpg';
-import mochiImg3 from '../../assets/webImages/mochiCircle/mochiCircle3.jpg';
 import mochiImg4 from '../../assets/webImages/mochiCircle/mochiCircle4.jpg';
-import mochiImg5 from '../../assets/webImages/mochiCircle/mochiCircle5.jpg';
-import mochiImg6 from '../../assets/webImages/mochiCircle/mochiCircle6.jpg';
 import mochiImg7 from '../../assets/webImages/mochiCircle/mochiCircle7.jpg';
 import mochiImg8 from '../../assets/webImages/mochiCircle/mochiCircle8.jpg';
-import mochiImg9 from '../../assets/webImages/mochiCircle/mochiCircle9.jpg';
 import mochiImg10 from '../../assets/webImages/mochiCircle/mochiCircle10.jpg';
 import mochiImg11 from '../../assets/webImages/mochiCircle/mochiCircle11.jpg';
 import mochiImg12 from '../../assets/webImages/mochiCircle/mochiCircle12.jpg';
 import mochiImg13 from '../../assets/webImages/mochiCircle/mochiCircle13.jpg';
 import mochiImg14 from '../../assets/webImages/mochiCircle/mochiCircle14.jpg';
 import mochiImg15 from '../../assets/webImages/mochiCircle/mochiCircle15.jpg';
-import mochiImg16 from '../../assets/webImages/mochiCircle/mochiCircle16.jpg';
-import mochiImg17 from '../../assets/webImages/mochiCircle/mochiCircle17.jpg';
-import mochiImg18 from '../../assets/webImages/mochiCircle/mochiCircle18.jpg';
 import mochiImg19 from '../../assets/webImages/mochiCircle/mochiCircle19.jpg';
-import mochiImg20 from '../../assets/webImages/mochiCircle/mochiCircle20.jpg';
-import mochiImg21 from '../../assets/webImages/mochiCircle/mochiCircle21.jpg';
 import mochiImg22 from '../../assets/webImages/mochiCircle/mochiCircle22.jpg';
-import mochiImg23 from '../../assets/webImages/mochiCircle/mochiWalkthrough1.jpg';
-import mochiImg24 from '../../assets/webImages/mochiCircle/mochiWalkthrough2.jpg';
-import mochiImg25 from '../../assets/webImages/mochiCircle/mochiWalkthrough3.jpg';
-import mochiImg26 from '../../assets/webImages/mochiCircle/mochiWalkthrough4.jpg';
-import mochiImg27 from '../../assets/webImages/mochiCircle/mochiWalkthrough5.jpg';
-import mochiImg28 from '../../assets/webImages/mochiCircle/mochiWalkthrough6.jpg';
 
 import pushImg1 from '../../assets/webImages/pushUp/push-up1.jpg';
 import pushImg2 from '../../assets/webImages/pushUp/push-up1-5.jpg';
@@ -107,7 +91,7 @@ export const WebPageContainer: React.FC = () => {
         setupHomePageLights( scene );
 
         // Animating the background 3D model when scrolling up and down
-        const clock = new THREE.Clock;
+        const clock = new THREE.Clock();
         let direction = 1;
         let speed = 0;
         const INITIAL_SPEED = 0.003;
@@ -203,7 +187,7 @@ export const WebPageContainer: React.FC = () => {
                 ]}
                 content={(
                     <>
-                        <p>This is the second project and second team I've worked with at Blue Cross Blue Shield HQ in Illinois. Another great team with plenty of front-end and back-end work for me to do.</p>
+                        <p>This is my second Blue Cross Blue Shield project. Another great team with plenty of front-end and back-end work for me to do.</p>
                         <br></br>
                         <p>Aside from the accomplishments shown below, here are some other contributions from my time with this team:</p>
                         <ul>
@@ -429,32 +413,17 @@ export const WebPageContainer: React.FC = () => {
                 contentImgs={[
                     mochiImg1,
                     mochiImg2,
-                    mochiImg3,
                     mochiImg4,
-                    mochiImg5,
-                    mochiImg6,
                     mochiImg7,
                     mochiImg8,
-                    mochiImg9,
                     mochiImg10,
                     mochiImg11,
                     mochiImg12,
                     mochiImg13,
                     mochiImg14,
                     mochiImg15,
-                    mochiImg16,
-                    mochiImg17,
-                    mochiImg18,
                     mochiImg19,
-                    mochiImg20,
-                    mochiImg21,
-                    mochiImg22,
-                    mochiImg23,
-                    mochiImg24,
-                    mochiImg25,
-                    mochiImg26,
-                    mochiImg27,
-                    mochiImg28
+                    mochiImg22
                 ]}
                 contentSubtext={[
                     'Coded both the front-end and back-end of the user homepage using React-Redux, Java and Spring.',
@@ -462,27 +431,6 @@ export const WebPageContainer: React.FC = () => {
                     'Created the messaging front-end code using React-Redux.'
                 ]}
             />
-
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             
         </div>
     )
