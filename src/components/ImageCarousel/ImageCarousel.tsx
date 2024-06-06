@@ -98,7 +98,7 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                     </a>
                 </div>
                 <div className='img-carousel-comp__col'>
-                    <div className='img-carousel-comp__row img-carousel-comp__row--justify-left'>
+                    <div className='img-carousel-comp__row img-carousel-comp__row--hidden-mobile img-carousel-comp__row--justify-left'>
                         {props.images.map((image, index) => {
                                 return (
                                     <div key={index} className={`img-carousel-comp__col ${selectedImg === index+1 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>

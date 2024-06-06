@@ -24,8 +24,24 @@ export const NavBarContainer: React.FC = () => {
         }
     }
 
-    useEffect(() => {
+    const scrollSizeChange = () => {
+        const buttons = document.querySelectorAll('.nav-bar-comp__btn');
+        if (window.scrollY > 20) {
+            Array.from(buttons).forEach((button) => {
+                button.classList.add('nav-bar-comp__btn--shrink');
+            });
+        }
+        else if (buttons.length > 0 && buttons[0]?.classList.contains('nav-bar-comp__btn--shrink') && window.scrollY <= 20) {
+            Array.from(buttons).forEach((button) => {
+                button.classList.remove('nav-bar-comp__btn--shrink');
+            });
+        }
+    };
 
+    useEffect(() => {
+        window.addEventListener('hashchange', scrollSizeChange);
+        window.addEventListener('wheel', scrollSizeChange);
+        window.addEventListener('touchmove', scrollSizeChange);
     }, []);
 
     return (
@@ -33,7 +49,7 @@ export const NavBarContainer: React.FC = () => {
             {WEBGL.isWebGLAvailable() &&
                 (
                     <div className="nav-bar-comp">
-                        <div className="nav-bar-comp__row">
+                        <div className="nav-bar-comp__row nav-bar-comp__row--transition nav-bar-comp__row--bg-gradient">
                             {/* Home Button (only render button if NOT home) */}
                             {!isHome &&
                                 <div className="nav-bar-comp__col">

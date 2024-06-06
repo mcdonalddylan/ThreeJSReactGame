@@ -22,7 +22,15 @@
 .nav-bar-comp__row {
     justify-content: center;
     column-gap: 1em;
- }
+}
+
+.nav-bar-comp__row--transition {
+    transition: all 0.5s ease;
+}
+
+.nav-bar-comp__row--bg-gradient {
+    background: linear-gradient(180deg, black, #00000000);
+}
 
 .nav-bar-comp__col {
     flex-direction: column;
@@ -66,4 +74,9 @@
     top: 50%;
     left: 50%;
     padding: 0;
+}
+
+.nav-bar-comp__btn--shrink {
+    font-size: 0.75rem;
+    padding: 0.5em;
 }
