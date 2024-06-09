@@ -4,6 +4,7 @@ import { viewImg } from '../../utils/internalPageUtils/internalPageUtils';
 import { LazyImage } from '../LazyImage/LazyImage';
 
 interface IProps {
+    id: number,
     images: string[],
     subtext: string[],
     bgColor: string,
@@ -42,8 +43,8 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
 
     // Triggers the fade in effect for the image subtext
     useEffect(() => {
-        const subtext = document.querySelector('.img-carousel-comp__subtext');
-        const selectedImgElements: NodeListOf<Element> = document.querySelectorAll('.img-carousel-comp__enlarged-img');
+        const subtext = document.querySelector('#img-carousel-subtext-'.concat(props?.id.toString()));
+        const selectedImgElements: NodeListOf<Element> = document.querySelectorAll('.enlarged-img-group-'.concat(props?.id.toString()));
         if (selectedImgElements.length > 0) {
             Array.from(selectedImgElements).forEach((imgEl) => {
                 imgEl.classList.add('img-carousel-comp__enlarged-img--hidden');
@@ -80,7 +81,7 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                                     id={'englared-img'.concat(index.toString())}
                                     src={props?.lqImages && props?.lqImages[index] ? props.lqImages[index] : image}
                                     alt='enlargedImg'
-                                    className='img-carousel-comp__enlarged-img img-carousel-comp__enlarged-img--hidden'></LazyImage>
+                                    className={'img-carousel-comp__enlarged-img img-carousel-comp__enlarged-img--hidden enlarged-img-group-'.concat(props?.id.toString())}></LazyImage>
                             )}
                         )}  
                     </a>
@@ -98,7 +99,8 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
                     </a>
                 </div>
                 <div className='img-carousel-comp__col'>
-                    <div className='img-carousel-comp__row img-carousel-comp__row--hidden-mobile img-carousel-comp__row--justify-left'>
+                    <div className='img-carousel-comp__row 
+                     img-carousel-comp__row--justify-left'>
                         {props.images.map((image, index) => {
                                 return (
                                     <div key={index} className={`img-carousel-comp__col ${selectedImg === index+1 ? 'img-carousel-comp__col--img-button-selected' : 'img-carousel-comp__col--img-button-unselected'}`}>
@@ -132,7 +134,9 @@ export const ImageCarousel: React.FC<IProps> = (props:IProps) => {
             </div>
             <div className='img-carousel-comp__row img-carousel-comp__row--margin-top'>
                 <div className='img-carousel-comp__col'>
-                    <p className='img-carousel-comp__subtext'>{props.subtext[selectedImg-1]}</p>
+                    <p id={'img-carousel-subtext-'.concat(props.id.toString())} className='img-carousel-comp__subtext'>
+                        {props.subtext[selectedImg-1]}
+                    </p>
                 </div>
             </div>
         </section>

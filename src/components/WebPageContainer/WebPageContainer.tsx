@@ -119,14 +119,21 @@ export const WebPageContainer: React.FC = () => {
 
         let oldScrollY = window.scrollY;
         const rotateObject = () => {
-            speed += 0.003;
+            if (mobileAspectRatio) {
+                speed += 0.001;
+            }
+            else {
+                speed += 0.003;
+            }
+            
             if (speed > 0.3) {
                 speed = 0.3;
             }
             
-            if(oldScrollY < window.scrollY){
+            if((oldScrollY < window.scrollY && !mobileAspectRatio) || (oldScrollY > window.scrollY && mobileAspectRatio)) {
                 direction = 1;
-            } else {
+            }
+            else if ((oldScrollY > window.scrollY && !mobileAspectRatio) || (oldScrollY < window.scrollY && mobileAspectRatio)){
                 direction = -1;
             }
             oldScrollY = window.scrollY;
@@ -170,6 +177,7 @@ export const WebPageContainer: React.FC = () => {
             </div>
 
             <WorkContainer
+                idNum={4}
                 chevronImgSrc={chevWeb}
                 color={mainColor}
                 bgColor={bgColor}
@@ -219,6 +227,7 @@ export const WebPageContainer: React.FC = () => {
             />
 
             <WorkContainer
+                idNum={3}
                 chevronImgSrc={chevWeb}
                 color={mainColor}
                 bgColor={bgColor}
@@ -270,6 +279,7 @@ export const WebPageContainer: React.FC = () => {
             />
 
             <WorkContainer
+                idNum={2}
                 chevronImgSrc={chevWeb}
                 color={mainColor}
                 bgColor={bgColor}
@@ -310,6 +320,7 @@ export const WebPageContainer: React.FC = () => {
             />
 
             <WorkContainer
+                idNum={1}
                 chevronImgSrc={chevWeb}
                 color={mainColor}
                 bgColor={bgColor}
@@ -384,6 +395,7 @@ export const WebPageContainer: React.FC = () => {
             />
 
             <WorkContainer
+                idNum={0}
                 chevronImgSrc={chevWeb}
                 color={mainColor}
                 bgColor={bgColor}

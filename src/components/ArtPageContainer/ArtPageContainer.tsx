@@ -111,14 +111,21 @@ export const ArtPageContainer: React.FC = () => {
 
         let oldScrollY = window.scrollY;
         const rotateObject = () => {
-            speed += 0.003;
+            if (isMobileAspectRatio) {
+                speed += 0.001;
+            }
+            else {
+                speed += 0.003;
+            }
+            
             if (speed > 0.3) {
                 speed = 0.3;
             }
-
-            if(oldScrollY < window.scrollY){
+            
+            if((oldScrollY < window.scrollY && !isMobileAspectRatio) || (oldScrollY > window.scrollY && isMobileAspectRatio)) {
                 direction = 1;
-            } else {
+            }
+            else if ((oldScrollY > window.scrollY && !isMobileAspectRatio) || (oldScrollY < window.scrollY && isMobileAspectRatio)){
                 direction = -1;
             }
             oldScrollY = window.scrollY;
@@ -163,6 +170,7 @@ export const ArtPageContainer: React.FC = () => {
 
             <div className='row justify-content-center'>
                 <ArtworkContainer
+                    idNum={3}
                     key={'gartic'}
                     chevronImgSrc={chevArt}
                     color={mainColor}
@@ -191,6 +199,7 @@ export const ArtPageContainer: React.FC = () => {
                 />
 
                 <ArtworkContainer
+                    idNum={2}
                     key={'charcoal'}
                     chevronImgSrc={chevArt}
                     color={mainColor}
@@ -223,6 +232,7 @@ export const ArtPageContainer: React.FC = () => {
                 />
 
                 <ArtworkContainer
+                    idNum={1}
                     key={'character designs'}
                     chevronImgSrc={chevArt}
                     color={mainColor}
@@ -255,6 +265,7 @@ export const ArtPageContainer: React.FC = () => {
                 />
 
                 <ArtworkContainer
+                    idNum={0}
                     key={'inkTober'}
                     chevronImgSrc={chevArt}
                     color={mainColor}

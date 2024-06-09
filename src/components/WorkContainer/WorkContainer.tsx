@@ -9,6 +9,7 @@ interface IContentLink {
 }
 
 interface IProps {
+    idNum: number,
     chevronImgSrc: string,
     color: string,
     bgColor: string,
@@ -143,6 +144,7 @@ export const WorkContainer: React.FC<IProps> = (props: IProps) => {
                             <br></br>
                             {props?.contentImgs && props?.contentImgs?.length > 1 && props?.contentSubtext && props?.contentSubtext?.length > 1 && 
                                 <ImageCarousel
+                                    id={props.idNum}
                                     key={props.title}
                                     images={props.contentImgs}
                                     subtext={props.contentSubtext}

@@ -39,9 +39,7 @@ export const NavBarContainer: React.FC = () => {
     };
 
     useEffect(() => {
-        window.addEventListener('hashchange', scrollSizeChange);
-        window.addEventListener('wheel', scrollSizeChange);
-        window.addEventListener('touchmove', scrollSizeChange);
+        window.addEventListener('scroll', scrollSizeChange);
     }, []);
 
     return (
