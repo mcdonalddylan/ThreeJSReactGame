@@ -1,6 +1,12 @@
 import * as THREE from "three";
 import { Clock } from "three";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
+import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass';
 
 import skillsGeo from '../../assets/models/skillsCube.fbx';
 import artGeo from '../../assets/models/artPallete.fbx';
@@ -218,6 +224,22 @@ export const setupHomePageObjects = ( scene, renderer,
     (error) => {
         console.error('***', error, '***');
     });
+
+    // ++++++++++++++++
+    // Post Processing
+    // ++++++++++++++++
+    const composer = new EffectComposer( renderer );
+    const basicRenderPass = new RenderPass( scene, camera );
+    composer.addPass( basicRenderPass );
+    if (quality === 1) {
+        const bloomPass = new UnrealBloomPass( new THREE.Vector2(window.innerWidth, window.innerHeight), 0.4, 0.09, 0.001);
+        composer.addPass(bloomPass);
+        const fxaaPass = new ShaderPass( FXAAShader );
+        composer.addPass(fxaaPass);
+    }
+    const outputPass = new OutputPass();
+    composer.addPass( outputPass );
+
     //==================================================================================================
 
     // Input setup
@@ -364,7 +386,8 @@ export const setupHomePageObjects = ( scene, renderer,
             }
         }
 
-        renderer.render( scene, camera );
+        //renderer.render( scene, camera );
+        composer.render();
 
         requestAnimationFrame(() => animate(fbxObjects));
         };

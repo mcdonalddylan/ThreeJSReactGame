@@ -3,12 +3,18 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import * as THREE from 'three';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import { FontData, FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
+import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass';
 import { IState } from '../..';
 import { setupHomePageLights } from '../../utils/homePageUtils/homePageUtils';
 import { WEBGL } from '../../utils/webGlUtils/webGlUtils';
-import textFont from '../../assets/fonts/liera-sans-bold.json';
+import textFont from '../../assets/fonts/optimer_bold.typeface.json';
 
 export const ErrorPageContainer: React.FC = () => {
     
@@ -76,12 +82,19 @@ export const ErrorPageContainer: React.FC = () => {
         textMesh.receiveShadow = true;
         scene.add( textMesh );
 
-        // Render function babyyyyy
-        renderer.render( scene, camera );
+        const composer = new EffectComposer( renderer );
+        const basicRenderPass = new RenderPass( scene, camera );
+        composer.addPass( basicRenderPass );
+        if (quality === 1) {
+            const bloomPass = new UnrealBloomPass( new THREE.Vector2(window.innerWidth, window.innerHeight), 0.4, 0.09, 0.001);
+            composer.addPass(bloomPass);
+            const fxaaPass = new ShaderPass( FXAAShader );
+            composer.addPass(fxaaPass);
+        }
+        const outputPass = new OutputPass();
+        composer.addPass( outputPass );
 
         const animate = (textMesh: any) => {
-            requestAnimationFrame(() => animate(textMesh) );
-
             let rotSpeed = 0.007;
             if (textMesh.rotation.y%6.3 > 5.4 && textMesh.rotation.y%6.3 <= 6.3) {
                 rotSpeed = 0.007
@@ -89,8 +102,9 @@ export const ErrorPageContainer: React.FC = () => {
                 rotSpeed = 0.07
             }
             textMesh.rotation.y += rotSpeed;
-
-            renderer.render( scene, camera );
+            
+            composer.render();
+            requestAnimationFrame(() => animate(textMesh) );
         }
         animate(textMesh);
 

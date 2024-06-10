@@ -24,6 +24,10 @@
     margin-top: 3em;
 }
 
+.img-carousel-comp__row--thumbnails {
+    overflow: hidden;
+}
+
 .img-carousel-comp__row--carousel {
     margin-top: 1em;
 }
@@ -149,7 +153,7 @@
         flex: 1 1 50%;
     }
 
-    .img-carousel-comp__row--hidden-mobile {
+    .img-carousel-comp__row--thumbnails {
         display: none;
     }
 

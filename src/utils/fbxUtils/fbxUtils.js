@@ -1,7 +1,5 @@
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
-
 import artGeo from '../../assets/models/artPallete.fbx';
 import gameGeo from '../../assets/models/genericControllerCordlessStatic.fbx';
 import webGeo from '../../assets/models/webCrtMonitorNoMouse.fbx';

@@ -14,7 +14,7 @@ import { ReactComponent as GitLogo } from '../../assets/logoSvgs/gitLogo.svg';
 import webImg1 from '../../assets/webImages/hcscPublic/formFinderDocDisplay.gif';
 import webImg2 from '../../assets/webImages/hcscPublic/bcbsMedicareForm.gif';
 import webImg3 from '../../assets/webImages/hcscPublic/hcscRebrand2023.gif';
-import webImg4 from '../../assets/webImages/mochiCircle/mochiCircle1.jpg';
+import webImg4 from '../../assets/webImages/mochiCircle/mochiCircle10.jpg';
 
 import gameImg1 from '../../assets/gameImages/balloon/screenshot02.jpg';
 import gameImg2 from '../../assets/gameImages/coolTitle/coolTitleMenuDemo.gif';
